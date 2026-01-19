@@ -1,0 +1,25 @@
+name: Mexant Theme
+type: theme
+description: 'Custom Drupal 11 theme based on the Mexant HTML Template'
+core_version_requirement: ^10 || ^11
+base theme: stable9
+components:
+  - components
+
+libraries:
+  - mexant_theme/global-styling
+  - mexant_theme/global-scripts
+
+regions:
+  header: Header
+  navigation: Navigation
+  services: Services
+  simple_cta: Simple_cta
+  about_us: About_us
+  calculator: Calculator
+  testimonials: Testimonials
+  partners: Partners
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
+  copy_right: Copy_Right

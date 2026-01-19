@@ -1,0 +1,80 @@
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.album
+  module:
+    - node
+    - ui_patterns
+    - ui_patterns_legacy_test
+    - ui_patterns_views
+module: views
+display:
+  default:
+    display_options:
+      style:
+        type: ui_patterns
+        options:
+          uses_fields: false
+          ui_patterns:
+            ui_patterns:
+              component_id: 'ui_patterns_legacy_test:grid_row'
+              variant_id:
+                source_id: select
+                source:
+                  value: ''
+              props:
+                attributes:
+                  source_id: attributes
+                  source:
+                    value: ''
+                gutters:
+                  source_id: select
+                  source:
+                    value: g-5
+                gutters_horizontal:
+                  source_id: select
+                  source:
+                    value: ''
+                gutters_vertical:
+                  source_id: select
+                  source:
+                    value: ''
+                col_xs:
+                  source_id: select
+                  source:
+                    value: 'col-12'
+                col_sm:
+                  source_id: select
+                  source:
+                    value: ''
+                col_md:
+                  source_id: select
+                  source:
+                    value: 'col-md-3'
+                col_lg:
+                  source_id: select
+                  source:
+                    value: ''
+                col_xl:
+                  source_id: select
+                  source:
+                    value: ''
+                col_xxl:
+                  source_id: select
+                  source:
+                    value: ''
+              slots:
+                content:
+                  sources:
+                    -
+                      source_id: view_rows
+                      source:
+                        ui_patterns_views_field: ''
+                      _weight: '0'
+                    -
+                      source_id: view_title
+                      _weight: '1'
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser

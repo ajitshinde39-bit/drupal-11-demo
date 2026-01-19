@@ -1,0 +1,34 @@
+ui_suite.index:
+  path: "/admin/appearance/ui"
+  defaults:
+    _controller: '\Drupal\system\Controller\SystemController::systemAdminMenuBlockPage'
+    _title: "UI libraries"
+  requirements:
+    _permission: "access components page+access_ui_styles_library+access_ui_examples_library+access ui icons library"
+ui_patterns_library.overview:
+  path: "/admin/appearance/ui/components"
+  defaults:
+    _controller: '\Drupal\ui_patterns_library\Controller\LibraryController::overview'
+    _title: "Components library"
+  requirements:
+    _permission: "access components page"
+  options:
+    _admin_route: FALSE
+ui_patterns_library.provider:
+  path: "/admin/appearance/ui/components/{provider}"
+  defaults:
+    _controller: '\Drupal\ui_patterns_library\Controller\LibraryController::provider'
+    _title_callback: '\Drupal\ui_patterns_library\Controller\LibraryController::providerTitle'
+  requirements:
+    _permission: "access components page"
+  options:
+    _admin_route: FALSE
+ui_patterns_library.single:
+  path: "/admin/appearance/ui/components/{provider}/{machineName}"
+  defaults:
+    _controller: '\Drupal\ui_patterns_library\Controller\LibraryController::single'
+    _title_callback: '\Drupal\ui_patterns_library\Controller\LibraryController::title'
+  requirements:
+    _permission: "access components page"
+  options:
+    _admin_route: FALSE

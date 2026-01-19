@@ -1,0 +1,5 @@
+{% set base_id = base_id|default('ui-patterns-test-form') %}
+<form {{ attributes.addClass(['ui-patterns-test-form', base_id]) }}>
+    <textarea id="{{ base_id }}-textarea">{{ slot }}</textarea>
+    <input   id="{{ base_id }}-input" type="text" name="name" value="{{ string }}" />
+</form>

@@ -1,0 +1,15 @@
+field.formatter.settings.ui_patterns:
+  type: mapping
+  label: 'Component'
+  mapping:
+    ui_patterns:
+      type: ui_patterns_component
+      label: 'The component'
+
+field.formatter.settings.ui_patterns_component:
+  type: field.formatter.settings.ui_patterns
+  label: 'Component for all (UI Patterns)'
+
+field.formatter.settings.ui_patterns_component_per_item:
+  type: field.formatter.settings.ui_patterns
+  label: 'Component for each (UI Patterns)'

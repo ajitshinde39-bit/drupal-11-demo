@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * @file
+ * Contains ui_patterns.install.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function ui_patterns_update_last_removed(): int {
+  // The update in 1.x which enabled ui_patterns_library.
+  return 8101;
+}
+
+/**
+ * UI Patterns 2 upgrade, step 1.
+ *
+ * Before executing the update, convert your UI Patterns 1 patterns into UI
+ * Patterns 2 SDC components!
+ *
+ * @see https://project.pages.drupalcode.org/ui_patterns/2-authors/3-migration-from-UIP1/
+ */
+function ui_patterns_update_10201(): void {
+}
+
+/**
+ * UI Patterns 2 upgrade, step 2.
+ *
+ * Enable ui_patterns_legacy and ui_patterns_blocks modules.
+ */
+function ui_patterns_update_10202(): void {
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $module_installer->install([
+    // To execute update logic.
+    'ui_patterns_legacy',
+    // In case website uses a UI Patterns block contrib module.
+    'ui_patterns_blocks',
+  ]);
+}
+
+/**
+ * UI Patterns 2 upgrade, step 3.
+ *
+ * Update configuration from UIP1 to UIP2.
+ */
+function ui_patterns_update_10203(): void {
+  /** @var \Drupal\ui_patterns_legacy\Service\ConfigurationUpdaterInterface $config_updater */
+  $config_updater = \Drupal::service('ui_patterns_legacy.configuration_updater');
+  $config_updater->migrateConfiguration();
+}
+
+/**
+ * UI Patterns 2 upgrade, step 4.
+ *
+ * Uninstall UI Patterns 1 only modules.
+ */
+function ui_patterns_update_10204(): void {
+  /** @var \Drupal\Core\Extension\ModuleInstallerInterface $module_installer */
+  $module_installer = \Drupal::service('module_installer');
+  $module_handler = \Drupal::moduleHandler();
+
+  $legacyModules = [
+    'ui_patterns_entity_links',
+    'ui_patterns_layout_builder',
+    'ui_patterns_pattern_block',
+    'ui_patterns_views_style',
+  ];
+  foreach ($legacyModules as $legacyModule) {
+    if ($module_handler->moduleExists($legacyModule)) {
+      $module_installer->uninstall([$legacyModule]);
+    }
+  }
+}

@@ -1,0 +1,4 @@
+administer component_form_display:
+  title: "Access component form displays"
+access ui patterns component form:
+  title: "Access UIPatterns component form"

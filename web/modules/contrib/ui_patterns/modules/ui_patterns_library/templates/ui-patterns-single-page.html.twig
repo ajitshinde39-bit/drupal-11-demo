@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * UI Pattern library standalone page, override this in your theme.
+ */
+#}
+{% if component is not empty %}
+  <div class="ui_patterns_component">
+    {{ include('ui-patterns-component-metadata.html.twig', {component: component}, with_context: false) }}
+    {{ include('ui-patterns-component-table.html.twig', {component: component}, with_context: false) }}
+    {% if component.stories %}
+      {{ include('ui-patterns-stories-full.html.twig', {component: component}, with_context: false) }}
+    {% endif %}
+  </div>
+{% endif %}

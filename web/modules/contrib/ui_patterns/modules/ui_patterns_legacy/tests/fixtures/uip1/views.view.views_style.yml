@@ -1,0 +1,79 @@
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.album
+  module:
+    - node
+    - ui_patterns_views_style
+module: views
+display:
+  default:
+    display_options:
+      style:
+        type: pattern
+        options:
+          uses_fields: false
+          pattern: grid_row
+          variants:
+            accordion: default
+            alert: primary
+            button: default
+            button_group: sm
+            card: default
+            carousel: default
+            close_button: default
+            dropdown: dropdown
+            dropdown_item: dropdown_item
+            list: default
+            list_group: default
+            list_group_item: default
+            modal: sm
+            nav: default
+            navbar: default
+            navbar_nav: default
+            offcanvas: start
+            pagination: sm
+            progress: default
+            spinner: border__border_sm
+            table: default
+          pattern_mapping:
+            'view_style:rows':
+              destination: content
+              weight: 0
+              plugin: view_style
+              source: rows
+            'view_style:title':
+              destination: content
+              weight: 1
+              plugin: view_style
+              source: title
+          pattern_settings:
+            grid_row:
+              with_container: 0
+              with_container_token: ''
+              gutters: g-5
+              gutters_token: ''
+              gutters_horizontal: ''
+              gutters_horizontal_token: ''
+              gutters_vertical: ''
+              gutters_vertical_token: ''
+              col_xs: col-12
+              col_xs_token: ''
+              col_sm: ''
+              col_sm_token: ''
+              col_md: col-md-3
+              col_md_token: ''
+              col_lg: ''
+              col_lg_token: ''
+              col_xl: ''
+              col_xl_token: ''
+              col_xxl: ''
+              col_xxl_token: ''
+              spacing_margin_bottom: ''
+              spacing_margin_bottom_token: ''
+          variants_token:
+            alert: ''
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser

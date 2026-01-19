@@ -1,0 +1,38 @@
+dependencies:
+  config:
+    - field.field.node.page.layout_builder__layout
+  module:
+    - layout_builder
+    - ui_patterns
+    - ui_patterns_layouts
+    - ui_patterns_legacy_test
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: 'ui_patterns:ui_patterns_legacy_test:card'
+        layout_settings:
+          label: ''
+          context_mapping:
+            entity: layout_builder.entity
+          ui_patterns:
+            component_id: 'ui_patterns_legacy_test:card'
+            variant_id:
+              source_id: select
+              source:
+                value: default
+            props:
+              attributes:
+                source_id: attributes
+                source:
+                  value: ''
+              image_position:
+                source_id: select
+                source:
+                  value: top
+            slots: {  }
+        components: {  }
+        third_party_settings: {  }

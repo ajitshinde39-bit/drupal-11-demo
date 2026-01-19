@@ -1,0 +1,33 @@
+---
+# this test demonstrates a simple mapping  of a prop
+# from a field to a component
+# this fails if the field is not working (not saving)
+# or if the mapping is not working
+ui_patterns_source_mapping_simple_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:page:field_ui_patterns_source_1'
+          'field:node:page:field_ui_patterns_source_1':
+            value:
+              source_id: 'ui_patterns_source:node:field_ui_patterns_source_1'
+  entity:
+    field_ui_patterns_source_1:
+      source_id: 'component'
+      source:
+        component:
+          component_id: 'ui_patterns_test:test-component'
+          props:
+            string:
+              source_id: 'textfield'
+              source:
+                value: 'value_text_1'
+  contexts:
+    field_name: 'field_ui_patterns_source_1'
+  output:
+    props:
+      string:
+        value: 'value_text_1'

@@ -1,0 +1,4 @@
+name: "UI Patterns Test Ui component"
+props:
+  type: object
+  properties: {}

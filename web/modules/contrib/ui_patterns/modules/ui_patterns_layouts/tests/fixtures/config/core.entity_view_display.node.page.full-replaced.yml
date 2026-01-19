@@ -1,0 +1,29 @@
+langcode: en
+status: true
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: 'ui_patterns:ui_patterns_test:test_form_component'
+        layout_settings:
+          label: TestDemo
+          context_mapping: {  }
+          ui_patterns:
+            component_id: null
+            variant_id: null
+            slots: {  }
+            props: { }
+        components: {  }
+        third_party_settings: {  }
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: full
+hidden:
+  layout_builder__layout: true
+  field_text_1: true
+  title: true
+  body: true
+  links: true

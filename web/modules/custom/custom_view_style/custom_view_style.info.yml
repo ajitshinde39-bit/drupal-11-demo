@@ -1,0 +1,5 @@
+name: 'Custom View Style'
+type: module
+description: 'Provides a custom views style plugin.'
+core_version_requirement: ^10 || ^11
+package: Custom

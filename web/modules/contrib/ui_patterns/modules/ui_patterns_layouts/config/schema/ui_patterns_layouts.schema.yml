@@ -1,0 +1,9 @@
+layout_plugin.settings.*:
+  type: layout_plugin.settings
+  label: 'Layout component configuration'
+  constraints:
+    FullyValidatable: ~
+  mapping:
+    ui_patterns:
+      type: ui_patterns_component
+      label: 'The component configuration'

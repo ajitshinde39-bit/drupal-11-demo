@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * UI Patterns Field Formatters module.
+ */
+
+declare(strict_types=1);
+
+/**
+ * All field types to field formatters with hook_field_formatter_info_alter.
+ */
+function ui_patterns_field_formatters_field_formatter_info_alter(array &$info) : void {
+  /** @var \Drupal\Core\Field\FieldTypePluginManagerInterface $field_type_manager */
+  $field_type_manager = \Drupal::service('plugin.manager.field.field_type');
+  $field_types = array_keys($field_type_manager->getDefinitions());
+  // Allow any field to be formatted with ui patterns field formatters.
+  // Because it is impossible to assign a field formatter to every field types
+  // using the plugins attributes.
+  $info['ui_patterns_component']['field_types'] = $field_types;
+  $info['ui_patterns_component_per_item']['field_types'] = $field_types;
+}

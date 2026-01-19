@@ -1,0 +1,22 @@
+---
+wysiwyg_html:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          -
+            source_id: wysiwyg
+            source:
+              value:
+                value: '<div class="class"><h1 data-a="b">Test text</h1></div>'
+                format: html
+  output:
+    slots:
+      slot:
+        -
+          rendered_value: '<div class="class"><h1 data-a="b">Test text</h1></div>'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-slot')]//div[contains(@class, 'class')]//h1[contains(text(), 'Test text')]" ]

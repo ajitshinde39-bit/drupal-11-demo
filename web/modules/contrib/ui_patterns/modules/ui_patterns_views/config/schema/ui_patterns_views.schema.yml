@@ -1,0 +1,25 @@
+views.style.ui_patterns:
+  type: views_style
+  label: 'Views style'
+  mapping:
+    ui_patterns:
+      type:  views.ui_patterns_configuration
+      label: 'Views UI Patterns sub key'
+
+views.ui_patterns_configuration:
+  type: views_style
+  label: 'Views style'
+  mapping:
+    ui_patterns:
+      type:  ui_patterns_component
+      label: 'The component'
+
+views.row.ui_patterns:
+  type: views_row
+  label: 'Views row style'
+  mapping:
+    hide_empty:
+      type: boolean
+    ui_patterns:
+      type:  ui_patterns_component
+      label: 'The component'

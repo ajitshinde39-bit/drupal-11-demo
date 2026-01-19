@@ -1,0 +1,3 @@
+ui_patterns_ui.add_manage_display:
+  class: \Drupal\Core\Menu\LocalActionDefault
+  deriver: \Drupal\ui_patterns_ui\Plugin\Derivative\UiPatternsUiLocalAction

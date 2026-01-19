@@ -1,0 +1,11 @@
+[data-component-id="mexant_theme:calculator"] {
+  /* @todo Add your styles here. */
+  .calculator {
+    padding: 80px 0;
+  }
+
+  .calculator .left-image img {
+    max-width: 100%;
+  }
+
+}

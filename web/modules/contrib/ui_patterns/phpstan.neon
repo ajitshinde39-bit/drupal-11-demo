@@ -1,0 +1,65 @@
+parameters:
+  excludePaths:
+    - */bower_components/*
+    - */node_modules/*
+  # Ignore some type hint errors due to hooks that should not have typed hint
+  # parameters or return.
+  ignoreErrors:
+    - identifier: missingType.generics
+    - identifier: missingType.iterableValue
+    - identifier: function.alreadyNarrowedType
+    # new static() is a best practice in Drupal, so we cannot fix that.
+    - "#^Unsafe usage of new static#"
+    -
+      message: '#Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z0-9\\_]+ with no typehint specified\.#'
+      paths:
+        - *.inc
+        - *.install
+        - *.module
+        - *.profile
+        - *.theme
+    -
+      message: '#Function [a-zA-Z0-9\\_]+\(\) has parameter \$[a-zA-Z0-9\\_]+ with no value type specified in iterable type [a-zA-Z0-9\\_]+\.#'
+      paths:
+        - *.inc
+        - *.install
+        - *.module
+        - *.profile
+        - *.theme
+    -
+      message: '#Function [a-zA-Z0-9\\_]+\(\) has no return typehint specified\.#'
+      paths:
+        - *.inc
+        - *.install
+        - *.module
+        - *.profile
+        - *.theme
+    -
+      message: '#Parameter \#1 \$label of method Drupal\\Core\\TypedData\\DataDefinition\:\:setLabel\(\) expects string, Drupal\\Core\\StringTranslation\\TranslatableMarkup given\.#'
+      paths:
+        - *.inc
+        - *.install
+        - *.module
+        - *.profile
+        - *.theme
+    - '#expects string\|null, Drupal\\Core\\StringTranslation\\TranslatableMarkup given\.#'
+    - '#expects string, Drupal\\Core\\StringTranslation\\TranslatableMarkup given\.#'
+    - '#expects string, Drupal\\Core\\StringTranslation\\TranslatableMarkup\|string given\.#'
+    - '#should return array\<string\> but returns array\<int, Drupal\\Core\\StringTranslation\\TranslatableMarkup\>\.#'
+    - '#should return string but returns Drupal\\Core\\StringTranslation\\TranslatableMarkup\.#'
+    - '#Parameter \#1 \$field of method Drupal\\Core\\Entity\\Query\\QueryInterface::condition\(\) expects Drupal\\Core\\Condition\\ConditionInterface\|string, Drupal\\Core\\Entity\\Query\\ConditionInterface given\.#'
+    -
+      identifier: missingType.iterableValue
+    - '#Method Drupal\\ui_patterns_views\\Plugin\\views\\row\\ComponentRow::buildOptionsForm\(\) has parameter \$form with no type specified.#'
+    - '#Method Drupal\\ui_patterns_views\\Plugin\\views\\row\\ComponentRow::submitOptionsForm\(\) has parameter \$form with no type specified.#'
+    - '#Method Drupal\\ui_patterns_views\\Plugin\\views\\style\\ComponentStyle::buildOptionsForm\(\) has parameter \$form with no type specified.#'
+    - '#Method Drupal\\ui_patterns\\Element\\UiPatternsOperations::preRenderDropbutton\(\) has parameter \$element with no type specified.#'
+    - '#Method Drupal\\ui_patterns_views\\Plugin\\views\\row\\ComponentRow::render\(\) should return string but returns array.#'
+#    - '#Plugin definitions cannot be altered.#'
+    - '#Method Drupal\\Tests\\ui_patterns[a-zA-Z0-9:\\_]+\(\) has parameter \$[a-zA-Z0-9\\_]+ with no type specified.#'
+    - '#Method Drupal\\Tests\\ui_patterns[a-zA-Z0-9:\\_]+\(\) has no return type specified.#'
+    - '#Method Drupal\\ui_patterns\\ComponentPluginManager::processDefinitionCategory\(\) has parameter \$definition with no type specified.#'
+  treatPhpDocTypesAsCertain: false
+  inferPrivatePropertyTypeFromConstructor: true
+  level: 7
+  reportUnmatchedIgnoredErrors: false

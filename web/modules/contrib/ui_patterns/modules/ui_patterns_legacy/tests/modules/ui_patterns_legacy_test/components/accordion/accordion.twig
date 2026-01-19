@@ -1,0 +1,8 @@
+{% if variant and variant != 'default' %}
+  {% set attributes = attributes.addClass('accordion-' ~ variant) %}
+{% endif %}
+{% set accordion_id = accordion_id|default("accordion-" ~ random()) %}
+{% set keep_open = keep_open ? 'true' : 'false' %}
+<div{{ attributes.addClass('accordion').setAttribute('id', accordion_id).setAttribute('data-usb-keep-open', keep_open) }}>
+  {{ content }}
+</div>

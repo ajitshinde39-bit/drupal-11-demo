@@ -1,0 +1,46 @@
+dependencies:
+  config:
+    - field.field.node.page.field_accordion_items
+    - node.type.page
+  module:
+    # UI Patterns 1 did not set this dependency.
+    # - entity_reference_revisions
+    - ui_patterns
+    - ui_patterns_field_formatters
+    - ui_patterns_legacy_test
+targetEntityType: node
+bundle: page
+content:
+  field_accordion_items:
+    type: ui_patterns_component
+    label: hidden
+    settings:
+      ui_patterns:
+        component_id: 'ui_patterns_legacy_test:accordion'
+        variant_id:
+          source_id: select
+          source:
+            value: default
+        props:
+          attributes:
+            source_id: attributes
+            source:
+              value: ''
+          keep_open:
+            source_id: checkbox
+            source:
+              value: false
+        slots:
+          content:
+            sources:
+              -
+                source_id: 'field_formatter:node:page:field_accordion_items'
+                source:
+                  type: entity_reference_revisions_entity_view
+                  settings:
+                    view_mode: default
+                  third_party_settings: {  }
+                _weight: '0'
+    third_party_settings: {  }
+    weight: 0
+    region: content

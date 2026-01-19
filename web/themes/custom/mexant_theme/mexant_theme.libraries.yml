@@ -1,0 +1,31 @@
+global-styling:
+  css:
+    theme:
+      vendor/bootstrap/css/bootstrap.min.css: {}
+      css/fontawesome.css: {}
+      css/templatemo-574-mexant.css: {}
+      css/owl.css: {}
+      css/animate.css: {}
+      https://unpkg.com/swiper@7/swiper-bundle.min.css: 
+        type: external
+        minified: true
+
+global-scripts:
+  js:
+    https://unpkg.com/swiper@7/swiper-bundle.min.js:
+      type: external
+    vendor/jquery/jquery.min.js: {}
+    vendor/bootstrap/js/bootstrap.min.js: {}
+    js/scripts.js: {}
+    js/isotope.min.js: {}
+    js/owl-carousel.js: {}
+    js/tabs.js: {}
+    js/swiper.js: {}
+    js/custom.js: {}
+    components/article_view_sdc/article_view_sdc.js: {}
+
+  dependencies:
+    - core/once
+    - core/jquery
+    - core/drupal
+    - core/drupal.toolbar

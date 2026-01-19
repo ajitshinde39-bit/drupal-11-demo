@@ -1,0 +1,21 @@
+# Vendor directory
+/vendor/
+
+# Drupal files directory
+/web/sites/*/files/
+
+# Settings files
+/web/sites/*/settings.php
+/web/sites/*/settings.local.php
+/web/sites/*/services.yml
+
+# Composer temp
+/composer.phar
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+
+# Logs
+*.log

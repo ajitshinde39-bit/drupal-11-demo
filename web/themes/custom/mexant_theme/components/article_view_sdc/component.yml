@@ -1,0 +1,9 @@
+name: Article View SDC Card
+status: experimental
+props:
+  title:
+    type: string
+    label: Title
+  body:
+    type: string
+    label: Body

@@ -1,0 +1,61 @@
+{% if variant and variant == 'horizontal' %}
+  {% set row_attributes = create_attribute(row_attributes|default({})) %}
+  {% set image_col_attributes = create_attribute(image_col_attributes|default({})) %}
+  {% set content_col_attributes = create_attribute(content_col_attributes|default({})) %}
+
+  {# Default classes. #}
+  {% if not row_attributes.storage() %}
+    {% set row_attributes = row_attributes.addClass('g-0') %}
+  {% endif %}
+  {% if not image_col_attributes.storage() %}
+    {% set image_col_attributes = image_col_attributes.addClass('col-md-4') %}
+  {% endif %}
+  {% if not content_col_attributes.storage() %}
+    {% set content_col_attributes = content_col_attributes.addClass('col-md-8') %}
+  {% endif %}
+
+  <div{{ attributes.addClass('card') }}>
+    <div{{ row_attributes.addClass('row') }}>
+      <div{{ image_col_attributes }}>
+        {{ image|add_class('img-fluid rounded-start') }}
+      </div>
+      <div{{ content_col_attributes }}>
+        {% if header %}
+          {% set header_attributes = create_attribute(header_attributes|default({})) %}
+          <div{{ header_attributes.addClass('card-header') }}>
+            {{ header }}
+          </div>
+        {% endif %}
+        {{ content }}
+        {% if footer %}
+          {% set footer_attributes = create_attribute(footer_attributes|default({})) %}
+          <div{{ footer_attributes.addClass('card-footer') }}>
+            {{ footer }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% else %}
+  <div{{ attributes.addClass('card') }}>
+    {% if image and image_position != 'bottom' %}
+      {{ image|add_class('card-img-top') }}
+    {% endif %}
+    {% if header %}
+      {% set header_attributes = create_attribute(header_attributes|default({})) %}
+      <div{{ header_attributes.addClass('card-header') }}>
+        {{ header }}
+      </div>
+    {% endif %}
+    {{ content }}
+    {% if footer %}
+      {% set footer_attributes = create_attribute(footer_attributes|default({})) %}
+      <div{{ footer_attributes.addClass('card-footer') }}>
+        {{ footer }}
+      </div>
+    {% endif %}
+    {% if image and image_position == 'bottom' %}
+      {{ image|add_class('card-img-bottom') }}
+    {% endif %}
+  </div>
+{% endif %}

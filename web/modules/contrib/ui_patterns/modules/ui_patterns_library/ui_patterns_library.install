@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Contains ui_patterns_library.install.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Update permission.
+ */
+function ui_patterns_library_update_10201(): void {
+  if (\Drupal::moduleHandler()->moduleExists('user')) {
+    /** @var \Drupal\user\RoleInterface[] $roles */
+    $roles = \Drupal::entityTypeManager()->getStorage('user_role')
+      ->loadMultiple();
+
+    foreach ($roles as $role) {
+      if ($role->hasPermission('access patterns page')) {
+        $role->revokePermission('access patterns page');
+        $role->grantPermission('access components page');
+        $role->trustData()->save();
+      }
+    }
+  }
+}

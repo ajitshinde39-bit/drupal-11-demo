@@ -1,0 +1,13 @@
+name: UI Patterns Field
+type: module
+description: Use UI components and UI Patterns sources in fields.
+core_version_requirement: ^10.3 || ^11
+lifecycle: experimental
+package: "User interface (experimental)"
+dependencies:
+  - ui_patterns:ui_patterns
+
+# Information added by Drupal.org packaging script on 2025-11-13
+version: '2.0.13'
+project: 'ui_patterns'
+datestamp: 1763032762

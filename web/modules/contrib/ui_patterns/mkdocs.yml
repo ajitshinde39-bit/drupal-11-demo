@@ -1,0 +1,65 @@
+site_name: "UI Patterns 2"
+repo_url: https://git.drupalcode.org/project/ui_patterns
+repo_name: drupal/ui_patterns
+edit_uri: /-/edit/main/docs/
+
+theme:
+  name: material
+  language: en
+  logo: images/logo.webp
+  # favicon: favicon.ico
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      primary: indigo
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: indigo
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+  features:
+    # - navigation.tabs
+    # - navigation.tabs.sticky
+    - navigation.sections
+    # - navigation.expand
+
+nav:
+  - Introduction: "index.md"
+  - Using SDC components:
+      - The component form: "1-users/0-component-form.md"
+      - As a Drupal block: "1-users/1-as-block.md"
+      - As a layout: "1-users/2-as-layout.md"
+      - Field formatters: "1-users/3-in-field-formatter.md"
+      - Using a component with Views: "1-users/4-with-views.md"
+      - Presenter templates: "1-users/5-presenter-templates.md"
+  - Authoring a component:
+      - Authoring a component: 2-authors/0-authoring-a-component.md
+      - Library pages and stories: 2-authors/1-stories-and-library.md
+      - Best practices: 2-authors/2-best-practices.md
+      - Migration from UI Patterns 1: 2-authors/3-migration-from-UIP1.md
+  - Extends UI Patterns 2 API:
+      - Source plugins: "3-devs/1-source-plugins.md"
+      - Prop types: "3-devs/2-prop-type-plugins.md"
+      - Internals: "3-devs/3-internals.md"
+  - Frequently asked questions: "faq.md"
+
+plugins:
+  - search
+  - privacy:
+      enabled: !ENV [CI, false]
+
+markdown_extensions:
+  # - markdown.extensions.admonition
+  - pymdownx.extra

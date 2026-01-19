@@ -1,0 +1,99 @@
+---
+style_1:
+  component:
+    component_id: ui_patterns_test:test-wrapper-component
+    variant_id: null
+    slots:
+      wrapper:
+        sources:
+          - source:
+              ui_patterns_views_field: ''
+            source_id: view_rows
+  entity:
+    title:
+      value: 'title_entity_1'
+
+  assertSession:
+    elementExists:
+      - ['css', '.ui-patterns-wrapper']
+      - ['css', '.ui-patterns-slots-wrapper']
+    pageTextContains:
+      - ['title_entity_1']
+
+style_2:
+  component:
+    component_id: ui_patterns_test:test-wrapper-component
+    variant_id: null
+    slots:
+      wrapper:
+        sources:
+          - source:
+              ui_patterns_views_field: 'title'
+            source_id: view_rows
+  entity:
+    title:
+      value: 'title_entity_2'
+  assertSession:
+    elementExists:
+      - ['css', '.ui-patterns-wrapper']
+      - ['css', '.ui-patterns-slots-wrapper']
+    pageTextContains:
+      - ['title_entity_2']
+
+style_3:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: view_title
+  assertSession:
+    elementTextEquals:
+      - ['css', '.ui-patterns-props-string', 'custom view title']
+
+row_style_1:
+  component:
+    component_id: ui_patterns_test:test-wrapper-component
+    variant_id: null
+    slots:
+      wrapper:
+        sources:
+          - source:
+              ui_patterns_views_field: 'title'
+            source_id: view_field
+  entity:
+    title:
+      value: 'title_entity_3'
+  assertSession:
+    elementExists:
+      - ['css', '.ui-patterns-wrapper']
+      - ['css', '.ui-patterns-slots-wrapper']
+    pageTextContains:
+      - ['title_entity_3']
+
+row_style_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: view_title
+  assertSession:
+    elementTextEquals:
+      - ['css', '.ui-patterns-props-string', 'custom view title']
+
+field_1:
+  component:
+    component_id: ui_patterns_test:test-wrapper-component
+    variant_id: null
+    slots:
+      wrapper:
+        sources:
+          - source_id: 'field_property:node:title:value'
+  entity:
+    title:
+      value: 'title_entity_4'
+  assertSession:
+    elementExists:
+      - ['css', '.ui-patterns-wrapper']
+      - ['css', '.ui-patterns-slots-wrapper']
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-slots-wrapper', 'title_entity_4' ]

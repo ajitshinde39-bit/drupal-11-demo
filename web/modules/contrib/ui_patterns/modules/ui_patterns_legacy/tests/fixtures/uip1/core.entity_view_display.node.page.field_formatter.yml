@@ -1,0 +1,34 @@
+dependencies:
+  config:
+    - field.field.node.page.field_accordion_items
+    - node.type.page
+  module:
+    - ui_patterns_field_formatters
+targetEntityType: node
+bundle: page
+content:
+  field_accordion_items:
+    type: pattern_all_formatter
+    label: hidden
+    settings:
+      type: entity_reference_revisions_entity_view
+      settings:
+        view_mode: default
+      pattern: accordion
+      pattern_mapping:
+        'field_meta_properties:_formatted':
+          destination: content
+          weight: 0
+          plugin: field_meta_properties
+          source: _formatted
+      pattern_settings:
+        accordion:
+          heading_level: '3'
+          heading_level_token: ''
+          keep_open_token: ''
+          keep_open: 0
+      pattern_variant: default
+      variants_token: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content

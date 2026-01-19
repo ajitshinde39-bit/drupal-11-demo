@@ -1,0 +1,121 @@
+name: Button
+variants:
+  default:
+    title: Default
+  primary__sm:
+    title: "Primary small"
+  secondary__sm:
+    title: "Secondary small"
+  success__sm:
+    title: "Success small"
+  danger__sm:
+    title: "Danger small"
+  warning__sm:
+    title: "Warning small"
+  info__sm:
+    title: "Info small"
+  light__sm:
+    title: "Light small"
+  dark__sm:
+    title: "Dark small"
+  link__sm:
+    title: "Link small"
+  primary:
+    title: Primary
+  secondary:
+    title: Secondary
+  success:
+    title: Success
+  danger:
+    title: Danger
+  warning:
+    title: Warning
+  info:
+    title: Info
+  light:
+    title: Light
+  dark:
+    title: Dark
+  link:
+    title: Link
+  primary__lg:
+    title: "Primary large"
+  secondary__lg:
+    title: "Secondary large"
+  success__lg:
+    title: "Success large"
+  danger__lg:
+    title: "Danger large"
+  warning__lg:
+    title: "Warning large"
+  info__lg:
+    title: "Info large"
+  light__lg:
+    title: "Light large"
+  dark__lg:
+    title: "Dark large"
+  link__lg:
+    title: "Link large"
+  outline_primary__sm:
+    title: "Outline Primary small"
+  outline_secondary__sm:
+    title: "Outline Secondary small"
+  outline_success__sm:
+    title: "Outline Success small"
+  outline_danger__sm:
+    title: "Outline Danger small"
+  outline_warning__sm:
+    title: "Outline Warning small"
+  outline_info__sm:
+    title: "Outline Info small"
+  outline_light__sm:
+    title: "Outline Light small"
+  outline_dark__sm:
+    title: "Outline Dark small"
+  outline_primary:
+    title: "Outline Primary"
+  outline_secondary:
+    title: "Outline Secondary"
+  outline_success:
+    title: "Outline Success"
+  outline_danger:
+    title: "Outline Danger"
+  outline_warning:
+    title: "Outline Warning"
+  outline_info:
+    title: "Outline Info"
+  outline_light:
+    title: "Outline Light"
+  outline_dark:
+    title: "Outline Dark"
+  outline_primary__lg:
+    title: "Outline Primary large"
+  outline_secondary__lg:
+    title: "Outline Secondary large"
+  outline_success__lg:
+    title: "Outline Success large"
+  outline_danger__lg:
+    title: "Outline Danger large"
+  outline_warning__lg:
+    title: "Outline Warning large"
+  outline_info__lg:
+    title: "Outline Info large"
+  outline_light__lg:
+    title: "Outline Light large"
+  outline_dark__lg:
+    title: "Outline Dark large"
+slots:
+  label:
+    title: Label
+props:
+  type: object
+  properties:
+    disabled:
+      title: "Disabled?"
+      type: boolean
+    label_visually_hidden:
+      title: "Hide button label?"
+      type: boolean
+    url:
+      title: URL
+      $ref: "ui-patterns://url"

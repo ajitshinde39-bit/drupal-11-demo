@@ -1,0 +1,153 @@
+dependencies:
+  config:
+    - field.field.node.page.layout_builder__layout
+  module:
+    - layout_builder
+    - ui_patterns
+    - ui_patterns_layouts
+    - ui_patterns_legacy_test
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: 'ui_patterns:ui_patterns_legacy_test:card'
+        layout_settings:
+          label: ''
+          context_mapping:
+            entity: layout_builder.entity
+          ui_patterns:
+            component_id: 'ui_patterns_legacy_test:card'
+            variant_id:
+              source_id: select
+              source:
+                value: default
+            props:
+              attributes:
+                source_id: attributes
+                source:
+                  value: ''
+              image_position:
+                source_id: select
+                source:
+                  value: top
+            slots: {  }
+        components:
+          d71f647e-303d-446d-844a-6279b2f8b37f:
+            uuid: d71f647e-303d-446d-844a-6279b2f8b37f
+            region: header
+            configuration:
+              id: 'ui_patterns_entity:ui_patterns_legacy_test:text'
+              label: Text
+              label_display: '0'
+              provider: ui_patterns_blocks
+              context_mapping:
+                entity: layout_builder.entity
+              ui_patterns:
+                component_id: 'ui_patterns_legacy_test:text'
+                variant_id:
+                  source_id: select
+                  source:
+                    value: ''
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: ''
+                  text:
+                    source_id: textfield
+                    source:
+                      value: Information
+                slots: { }
+            weight: 0
+            additional: {  }
+          2b41af65-349b-4b66-88fb-fe4d886da3f0:
+            uuid: 2b41af65-349b-4b66-88fb-fe4d886da3f0
+            region: header
+            configuration:
+              id: 'field_block:node:my_bundle:field_foo'
+              label: Label
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: ui_patterns_component
+                label: hidden
+                settings:
+                  ui_patterns:
+                    component_id: 'ui_patterns_legacy_test:list_group'
+                    variant_id:
+                      source_id: select
+                      source:
+                        value: default
+                    props:
+                      attributes:
+                        source_id: attributes
+                        source:
+                          value: ''
+                    slots:
+                      items:
+                        sources:
+                          -
+                            source_id: 'field_formatter:node:my_bundle:field_foo'
+                            source:
+                              type: entity_reference_entity_view
+                              settings:
+                                view_mode: list_group_item
+                              third_party_settings: {  }
+                            _weight: '0'
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          85ee3dbb-2c45-405f-a53f-73831779b8d0:
+            uuid: 85ee3dbb-2c45-405f-a53f-73831779b8d0
+            region: header
+            configuration:
+              id: 'field_block:node:my_bundle:title'
+              label: Name
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: ui_patterns_component_per_item
+                label: hidden
+                settings:
+                  ui_patterns:
+                    component_id: 'ui_patterns_legacy_test:button'
+                    variant_id:
+                      source_id: select
+                      source:
+                        value: primary
+                    props:
+                      attributes:
+                        source_id: attributes
+                        source:
+                          value: ''
+                      disabled:
+                        source_id: checkbox
+                        source:
+                          value: false
+                      label_visually_hidden:
+                        source_id: checkbox
+                        source:
+                          value: false
+                      url:
+                        source_id: url
+                        source:
+                          value: '[node:url]'
+                    slots:
+                      label:
+                        sources:
+                          -
+                            source_id: 'field_property:node:title:value'
+                            _weight: '0'
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }

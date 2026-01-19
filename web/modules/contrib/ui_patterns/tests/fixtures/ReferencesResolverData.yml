@@ -1,0 +1,103 @@
+- schema:
+    $ref: "ui-patterns://enum"
+    enum:
+      - "A"
+      - "B"
+
+  expected:
+    id: "ui-patterns://enum"
+    type:
+      - string
+      - integer
+      - number
+    enum:
+      - "A"
+      - "B"
+- schema:
+    type: array
+    items:
+      type: object
+      properties:
+        links: { $ref: "ui-patterns://links" }
+  expected:
+    type: array
+    items:
+      type: object
+      properties:
+        links:
+          type: array
+          id: "ui-patterns://links"
+          items:
+            type: object
+            properties:
+              title: { type: string }
+              url:
+                type: string
+                format: "iri-reference"
+                id: "ui-patterns://url"
+              attributes:
+                type: object
+                id: "ui-patterns://attributes"
+                # Skip everything under patternProperties for simplicity.
+              link_attributes:
+                type: object
+                id: "ui-patterns://attributes"
+                # Skip everything under patternProperties for simplicity.
+              below:
+                type: array
+                items: { type: object }
+- schema:
+    $ref: "ui-patterns://enum_list"
+    type: "array"
+    items:
+      enum:
+        - A
+        - B
+        - C
+        - D
+        - E
+        - F
+      "meta:enum":
+        A: "Label A"
+        B: "Label B"
+        C: "Label C"
+        D: "Label D"
+        E: "Label E"
+        F: "Label F"
+
+  expected:
+    type: "array"
+    id: "ui-patterns://enum-list"
+    items:
+      enum:
+        - A
+        - B
+        - C
+        - D
+        - E
+        - F
+      "meta:enum":
+        A: "Label A"
+        B: "Label B"
+        C: "Label C"
+        D: "Label D"
+        E: "Label E"
+        F: "Label F"
+
+- schema:
+    type: array
+    $ref: "ui-patterns://enum_set"
+    uniqueItems: true
+    maxItems: 3
+    items:
+      type: integer
+      enum: [1, 2, 3, 4, 5, 6]
+
+  expected:
+    type: array
+    uniqueItems: true
+    maxItems: 3
+    id: "ui-patterns://enum-set"
+    items:
+      type: integer
+      enum: [1, 2, 3, 4, 5, 6]

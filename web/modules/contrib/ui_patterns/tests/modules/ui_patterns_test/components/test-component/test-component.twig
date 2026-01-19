@@ -1,0 +1,112 @@
+{% set variant = variant|default('') %}
+{% set my_attributes = create_attribute(attributes.storage()) %}
+<div{{ my_attributes.addClass(['ui-patterns-test-component', 'ui-patterns-test-component-variant-' ~ variant]) }}>
+  <div class="ui-patterns-props-attributes">
+    <div{{ attributes }}></div>
+  </div>
+  <div class="ui-patterns-props-string">
+    {{ string }}
+  </div>
+  <div class="ui-patterns-props-string_plain">
+    {{ string_plain }}
+  </div>
+  <div class="ui-patterns-props-integer">
+    {{ integer }}
+  </div>
+  <div class="ui-patterns-props-integer_with_min_max">
+    {{ integer_with_min_max }}
+  </div>
+  <div class="ui-patterns-props-number">
+    {{ number }}
+  </div>
+  <div class="ui-patterns-props-number_with_min_max">
+    {{ number_with_min_max }}
+  </div>
+  <div class="ui-patterns-props-url">
+    {{ url }}
+  </div>
+  <div class="ui-patterns-props-identifier">
+    {{ identifier }}
+  </div>
+  <div class="ui-patterns-props-boolean">
+    {{ boolean }}
+  </div>
+  <div class="ui-patterns-props-boolean_with_default_false">
+    {% if (boolean_with_default_false is not defined) or (boolean_with_default_false is null)  %}
+    {% set boolean_with_default_false = false %}
+    {% endif %}
+    {{ boolean_with_default_false }}
+  </div>
+  <div class="ui-patterns-props-boolean_with_default_true">
+    {% if (boolean_with_default_true is not defined) or (boolean_with_default_true is null)  %}
+    {% set boolean_with_default_true = true %}
+    {% endif %}
+    {{ boolean_with_default_true }}
+  </div>
+  <div class="ui-patterns-props-links">
+    {% for item in links %}
+      {% if item.url %}
+        <li>
+          <a href="{{ item.url }}">{{ item.title }}</a>
+        </li>
+      {% else %}
+        <li>
+          {{ item.title }}
+        </li>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-enum_integer">
+    {{ enum_integer }}
+  </div>
+  <div class="ui-patterns-props-enum_string">
+    {{ enum_string }}
+  </div>
+  <div class="ui-patterns-props-enum_list">
+    {% for item in enum_list %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-enum_list_multiple">
+      {% for item in enum_list_multiple %}
+        <span>{{ item }}</span>
+      {% endfor %}
+  </div>
+  <div class="ui-patterns-props-enum_set">
+      {% for item in enum_set %}
+        <span>{{ item }}</span>
+      {% endfor %}
+  </div>
+  <div class="ui-patterns-props-list_string">
+    {% for item in list_string %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-list_integer">
+    {% for item in list_integer %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-list_mixed">
+    {% for item in list_mixed %}
+      <span>{{ item }}</span>
+    {% endfor %}
+  </div>
+  <div class="ui-patterns-props-attributes_implicit">
+    <div{{ attributes_implicit }}></div>
+  </div>
+  <div class="ui-patterns-props-attributes_ui_patterns">
+    <div{{ attributes_ui_patterns }}></div>
+  </div>
+  <div class="ui-patterns-props-attributes_class">
+    <div{{ attributes_class }}></div>
+  </div>
+  <div class="ui-patterns-slots-slot">
+    {{ slot }}
+  </div>
+  <div class="ui-patterns-slots-empty-slot">
+    {% if slot is empty %}
+    EMPTY SLOT
+    {% endif %}
+  </div>
+</div>

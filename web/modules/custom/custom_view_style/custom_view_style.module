@@ -1,0 +1,81 @@
+<?php
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
+use Drupal\Core\Render\Markup;
+
+
+/**
+ * Preprocess for our custom views style.
+ */
+function template_preprocess_views_view_custom_style(&$variables) {
+
+  $view = $variables['view'];
+  $style_plugin_id = $view->style_plugin->getPluginId();
+  $view_name = $view->storage->id();
+  $display_id = $view->current_display;
+
+  // Only act on the article view + block_1 display + custom style.
+  if ($view_name == 'article_view' && $display_id == 'block_1' && $style_plugin_id == 'custom_style') {
+
+    // Add custom variables.
+    $variables['custom_variable'] = 'This came from preprocess custom hook';
+    $variables['view_name'] = $view_name;
+    $variables['display_id'] = $display_id;
+
+    // Build raw rows data.
+    $variables['my_rows'] = [];
+
+    foreach ($view->result as $index => $row) {
+      $node = $row->_entity;
+
+      $variables['my_rows'][] = [
+        'nid' => $node->id(),
+        'title' => $node->label(),
+        'body' => $node->body->value,
+        'article_class' => $node->field_article_class->value,
+      ];
+    }
+  }
+}
+
+/**
+ * Preprocess for our custom views style.
+ */
+function template_preprocess_views_view_custom_testimonials_style(&$variables) {
+
+  $view = $variables['view'];
+  $style_plugin_id = $view->style_plugin->getPluginId();
+  $view_name = $view->storage->id();
+  $display_id = $view->current_display;
+
+  // Only act on the article view + block_1 display + custom style.
+  if ($view_name == 'testimonials_view' && $display_id == 'block_1' && $style_plugin_id == 'custom_testimonials_style') {
+
+    // Add custom variables.
+    $variables['custom_variable'] = 'This came from testimonials preprocess custom hook';
+    $variables['view_name'] = $view_name;
+    $variables['display_id'] = $display_id;
+
+    // Build raw rows data.
+    $variables['my_rows'] = [];
+
+    foreach ($view->result as $index => $row) {
+      $node = $row->_entity;
+      $image_url = '';
+      if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
+        $file = $node->get('field_image')->entity;
+        $image_url = \Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+      }
+
+      $variables['my_rows'][] = [
+        'nid' => $node->id(),
+        'title' => $node->label(),
+        'body' => $node->body->value,
+        'field_author_name' => $node->field_author_name->value,
+        'field_author_designation' => $node->field_author_designation->value,
+        'image_url' => $image_url,
+      ];
+    }
+  }
+}
+

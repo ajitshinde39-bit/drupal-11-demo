@@ -1,0 +1,51 @@
+<?php
+
+/**
+ * @file
+ * UI Patterns Blocks custom add-ons.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Plugin\Context\EntityContext;
+
+/**
+ * Implements hook_plugin_filter_TYPE__CONSUMER_alter().
+ */
+function ui_patterns_blocks_plugin_filter_block__layout_builder_alter(array &$definitions, array $extra) : void {
+  /** @var \Drupal\layout_builder\SectionStorageInterface $section_storage */
+  $section_storage = $extra['section_storage'] ?? NULL;
+  $sectionStorageContexts = $section_storage ? $section_storage->getContexts() : NULL;
+  $display = ($sectionStorageContexts) ? $sectionStorageContexts["display"] ?? NULL : NULL;
+  $entity_context_exists = ($display && $display instanceof EntityContext);
+  _ui_patterns_blocks_remove_unsuitable_blocks($definitions, !$entity_context_exists);
+}
+
+/**
+ * Implements hook_plugin_filter_TYPE_alter().
+ */
+function ui_patterns_blocks_plugin_filter_block_alter(array &$definitions, array $extra, ?string $consumer)  : void {
+  if ($consumer !== 'layout_builder') {
+    // In all User interfaces except Layout builder,
+    // we remove blocks defined by ui_patterns_blocks
+    // which declare entity in context_definitions.
+    _ui_patterns_blocks_remove_unsuitable_blocks($definitions, TRUE);
+  }
+}
+
+/**
+ * Remove entity SDC component blocks with or without entity context.
+ */
+function _ui_patterns_blocks_remove_unsuitable_blocks(array &$definitions, bool $remove_blocks_with_contexts = TRUE) : void {
+  foreach ($definitions as $id => $definition) {
+    if ($definition['provider'] !== 'ui_patterns_blocks') {
+      continue;
+    }
+    $block_has_entity_context = isset($definition["context_definitions"]) &&
+      is_array($definition['context_definitions']) &&
+      isset($definition['context_definitions']['entity']);
+    if (($remove_blocks_with_contexts && $block_has_entity_context) || (!$remove_blocks_with_contexts && !$block_has_entity_context)) {
+      unset($definitions[$id]);
+    }
+  }
+}

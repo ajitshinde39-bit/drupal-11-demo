@@ -1,0 +1,18 @@
+name: Calculator Section
+status: stable
+description: Financial calculator form section
+props:
+  type: object
+  properties:
+    image:
+      type: string
+    heading_small:
+      type: string
+    heading_large:
+      type: string
+    form_action:
+      type: string
+    reasons:
+      type: array
+      items:
+        type: string

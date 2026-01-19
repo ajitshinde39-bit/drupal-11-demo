@@ -1,0 +1,176 @@
+ui_patterns_source.checkbox:
+  type: mapping
+  label: 'Source: checkbox'
+  mapping:
+    value:
+      type: boolean
+      label: 'Checkbox value'
+
+ui_patterns_source.attribute:
+  type: mapping
+  label: 'Source: attribute'
+  mapping:
+    value:
+      type: boolean
+      label: 'Attribute value'
+
+ui_patterns_source.path:
+  type: mapping
+  label: 'Source: Path'
+  mapping:
+    value:
+      type: ignore
+      label: 'Path value'
+
+ui_patterns_source.url:
+  type: mapping
+  label: 'Source: URL'
+  mapping:
+    value:
+      type: uri
+      label: 'URL value'
+
+ui_patterns_source.textfield:
+  type: mapping
+  label: 'Source: Textfield'
+  mapping:
+    value:
+      type: string
+      label: 'String value'
+
+ui_patterns_source.select:
+  type: mapping
+  label: 'Source: Select'
+  mapping:
+    value:
+      type: string
+      label: 'Select value'
+
+ui_patterns_source.selects:
+  type: mapping
+  label: 'Source: Selects'
+  mapping:
+    value:
+      type: sequence
+      label: 'Selects value'
+      sequence:
+        type: string
+        label: 'Values'
+
+ui_patterns_source.attributes:
+  type: mapping
+  label: 'Source: Attributes'
+  mapping:
+    value:
+      type: string
+      label: 'Attribute value'
+
+ui_patterns_source.attributes_class:
+  type: mapping
+  label: 'Source: Attributes Class'
+  mapping:
+    value:
+      type: string
+      label: 'Attributes Class value'
+
+ui_patterns_source.list_textarea:
+  type: mapping
+  label: 'Source: List Text area'
+  mapping:
+    value:
+      type: string
+      label: 'Source List Text area values'
+
+ui_patterns_source.number:
+  type: mapping
+  label: 'Source: Number'
+  mapping:
+    value:
+      type: string
+      label: 'Number value'
+
+ui_patterns_source.wysiwyg:
+  type: mapping
+  label: 'Source: WYSIWYG'
+  mapping:
+    value:
+      type: text_format
+      label: 'WYSIWYG value'
+
+ui_patterns_source.component:
+  type: mapping
+  label: 'Source: Component'
+  mapping:
+    component:
+      type: ui_patterns_component
+
+ui_patterns_source.checkboxes:
+  type: mapping
+  label: 'Source: Checkboxes'
+  mapping:
+    value:
+      type: sequence
+      label: 'Selects value'
+      sequence:
+        type: string
+        label: 'Select Item Value'
+
+ui_patterns_source.entity_link:
+  type: mapping
+  label: 'Source: Entity Link'
+  mapping:
+    template:
+      type: string
+
+ui_patterns_source.menu:
+  type: mapping
+  label: 'Source: Menu'
+  mapping:
+    menu:
+      type: string
+      label: 'Menu Name'
+    level:
+      type: string
+      label: 'Entry Level'
+    depth:
+      type: string
+      label: 'Menu depth'
+
+ui_patterns_source.token:
+  type: mapping
+  label: 'Source: Token'
+  mapping:
+    value:
+      type: string
+      label: 'Token value'
+
+ui_patterns_source.field_property:*:*:*:
+  type: mapping
+  label: 'Source: Field Property'
+  mapping:
+    type:
+      type: string
+      label: 'Field Property type'
+
+# block uses dynamic subkeys not under a specific key.
+# The configuration looks like:
+# plugin_id: block_id
+# block_id:
+#  config_1: #
+# I cant find a solution to handle this correct. Sequences would work
+# if the the block_id key would be under an extra key. Something like config.block_id
+ui_patterns_source.block:
+  type: ignore
+
+# Same here ui_patterns_source.block
+ui_patterns_source.entity_field:
+  type: ignore
+
+# This source uses a dynamic subkey.
+# The configuration looks like:
+# source_id: entity_reference
+# source:
+#   derivable_context: 'context:id'
+#   'context:id':
+ui_patterns_source.entity_reference:
+  type: ignore

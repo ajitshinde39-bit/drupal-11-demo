@@ -1,0 +1,110 @@
+dependencies:
+  config:
+    - field.field.node.page.layout_builder__layout
+  module:
+    - layout_builder
+    - ui_patterns_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: pattern_card
+        layout_settings:
+          label: ''
+          pattern:
+            field_templates: default
+            variant: default
+            settings:
+              image_position: top
+              image_position_token: ''
+          context_mapping: {  }
+        components:
+          d71f647e-303d-446d-844a-6279b2f8b37f:
+            uuid: d71f647e-303d-446d-844a-6279b2f8b37f
+            region: header
+            configuration:
+              id: 'pattern_block:text'
+              label: Text
+              label_display: '0'
+              provider: ui_patterns_pattern_block
+              context_mapping: { }
+              pattern:
+                settings:
+                  text: Information
+                  text_token: ''
+                variant: ''
+            weight: 0
+            additional: {  }
+          2b41af65-349b-4b66-88fb-fe4d886da3f0:
+            uuid: 2b41af65-349b-4b66-88fb-fe4d886da3f0
+            region: header
+            configuration:
+              id: 'field_block:node:my_bundle:field_foo'
+              label: Label
+              label_display: visible
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: pattern_all_formatter
+                label: hidden
+                settings:
+                  type: entity_reference_entity_view
+                  settings:
+                    view_mode: list_group_item
+                  pattern: list_group
+                  pattern_mapping:
+                    'field_meta_properties:_formatted':
+                      destination: items
+                      weight: 0
+                      plugin: field_meta_properties
+                      source: _formatted
+                  pattern_settings: { }
+                  pattern_variant: default
+                third_party_settings: { }
+            weight: 3
+            additional: {  }
+          85ee3dbb-2c45-405f-a53f-73831779b8d0:
+            uuid: 85ee3dbb-2c45-405f-a53f-73831779b8d0
+            region: header
+            configuration:
+              id: 'field_block:node:my_bundle:title'
+              label: Name
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: pattern_all_formatter
+                label: hidden
+                settings:
+                  type: string
+                  settings:
+                    link_to_entity: 0
+                  pattern: button
+                  pattern_mapping:
+                    'field_raw_properties:value':
+                      destination: label
+                      weight: 0
+                      plugin: field_raw_properties
+                      source: value
+                  pattern_settings:
+                    button:
+                      disabled: 0
+                      disabled_token: ''
+                      label_visually_hidden: 0
+                      label_visually_hidden_token: ''
+                      url:
+                        input: '[node:url]'
+                  variants_token:
+                    alert: ''
+                  pattern_variant: primary
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+        third_party_settings: {  }

@@ -1,0 +1,82 @@
+dependencies:
+  config:
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - field_group
+    - text
+    - ui_patterns
+    - ui_patterns_field_group
+    - ui_patterns_legacy_test
+    - user
+third_party_settings:
+  field_group:
+    group_field_group:
+      children:
+        - body
+      label: 'Field group'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: component_formatter
+      format_settings:
+        ui_patterns:
+          component_id: 'ui_patterns_legacy_test:grid_row'
+          variant_id:
+            source_id: select
+            source:
+              value: ''
+          props:
+            attributes:
+              source_id: attributes
+              source:
+                value: ''
+            gutters:
+              source_id: select
+              source:
+                value: g-1
+            gutters_horizontal:
+              source_id: select
+              source:
+                value: gx-2
+            gutters_vertical:
+              source_id: select
+              source:
+                value: gy-3
+            col_xs:
+              source_id: select
+              source:
+                value: 'col-1'
+            col_sm:
+              source_id: select
+              source:
+                value: 'col-sm-2'
+            col_md:
+              source_id: select
+              source:
+                value: 'col-md-3'
+            col_lg:
+              source_id: select
+              source:
+                value: 'col-lg-4'
+            col_xl:
+              source_id: select
+              source:
+                value: 'col-xl-5'
+            col_xxl:
+              source_id: select
+              source:
+                value: 'col-xxl-6'
+          slots:
+            content:
+              sources:
+                -
+                  source_id: field_group_child
+                  source:
+                    field_group_child: body
+                  _weight: '0'
+                -
+                  source_id: field_group_label
+                  _weight: '1'
+        show_empty_fields: 0
+        label_as_html: 0

@@ -1,0 +1,18 @@
+name: Accordion
+variants:
+  default:
+    title: Default
+  flush:
+    title: Flush
+slots:
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    keep_open:
+      title: "Keep open?"
+      type: boolean
+    accordion_id:
+      title: ID
+      $ref: "ui-patterns://identifier"

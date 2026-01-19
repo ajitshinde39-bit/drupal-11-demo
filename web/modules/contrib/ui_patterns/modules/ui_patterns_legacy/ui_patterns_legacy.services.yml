@@ -1,0 +1,53 @@
+services:
+  ui_patterns_legacy.twig.extension:
+    class: Drupal\ui_patterns_legacy\Template\TwigExtension
+    tags:
+      - { name: twig.extension }
+  ui_patterns_legacy.discovery:
+    class: Drupal\ui_patterns_legacy\ComponentDiscovery
+    arguments:
+      - "@extension.path.resolver"
+      - "@module_handler"
+      - "@theme_handler"
+      - "@file_system"
+  ui_patterns_legacy.renderable_converter:
+    class: Drupal\ui_patterns_legacy\RenderableConverter
+    arguments:
+      - "@plugin.manager.sdc"
+  ui_patterns_legacy.component_converter:
+    class: Drupal\ui_patterns_legacy\ComponentConverter
+    arguments:
+      - "@renderer"
+  ui_patterns_legacy.component_writer:
+    class: Drupal\ui_patterns_legacy\ComponentWriter
+  ui_patterns_legacy.configuration_converter:
+    class: Drupal\ui_patterns_legacy\ConfigurationConverter
+    arguments:
+      - "@ui_patterns_legacy.renderable_converter"
+      - "@plugin.manager.sdc"
+      - "@module_handler"
+      - "@theme_handler"
+      - "@entity_field.manager"
+  ui_patterns_legacy.story_extractor:
+    class: Drupal\ui_patterns_legacy\StoryExtractor
+    arguments:
+      - "@ui_patterns_legacy.renderable_converter"
+  ui_patterns_legacy.component_element_alter:
+    class: Drupal\ui_patterns_legacy\Element\ComponentElementAlter
+    arguments:
+      - "@theme.manager"
+      - "@plugin.manager.sdc"
+      - "@plugin.manager.component_story"
+      - "@ui_patterns_library.stories_syntax_converter"
+      - "@ui_patterns_legacy.renderable_converter"
+  ui_patterns_legacy.configuration_updater:
+    class: Drupal\ui_patterns_legacy\Service\ConfigurationUpdater
+    arguments:
+      - "@config.manager"
+      - "@config.factory"
+      - "@ui_patterns_legacy.configuration_converter"
+      - "@messenger"
+  ui_patterns_legacy.layout_builder_updater:
+    class: Drupal\ui_patterns_legacy\Service\LayoutBuilderUpdater
+    arguments:
+      - "@plugin.manager.sdc"

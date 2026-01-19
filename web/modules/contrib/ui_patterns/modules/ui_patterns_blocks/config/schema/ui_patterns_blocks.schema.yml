@@ -1,0 +1,15 @@
+block.settings.ui_patterns:*:*:
+  type: block_settings
+  label: 'Component block'
+  mapping:
+    ui_patterns:
+      type: ui_patterns_component
+      label: 'The component configuration'
+
+block.settings.ui_patterns_entity:*:*:
+  type: block_settings
+  label: 'Entity Component block'
+  mapping:
+    ui_patterns:
+      type: ui_patterns_component
+      label: 'The component configuration'

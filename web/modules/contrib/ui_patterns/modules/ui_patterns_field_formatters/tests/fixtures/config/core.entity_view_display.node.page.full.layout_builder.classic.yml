@@ -1,0 +1,52 @@
+uuid: a9e67581-da30-4331-8fb0-397e185541f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - layout_builder
+    - layout_discovery
+    - ui_patterns
+    - ui_patterns_field_formatters
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          b1fbf76f-1430-4a9c-8397-e060f3893142:
+            uuid: b1fbf76f-1430-4a9c-8397-e060f3893142
+            region: content
+            configuration:
+              id: 'field_block:node:page:body'
+              label: Body
+              label_display: '0'
+              provider: layout_builder
+              context_mapping:
+                entity: layout_builder.entity
+                view_mode: view_mode
+              formatter:
+                type: ui_patterns_component_per_item
+                label: above
+                settings:
+                  ui_patterns: {}
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: full
+content: {}

@@ -1,0 +1,6 @@
+name: "UI Patterns Test replaces the Ui component"
+noUi: true
+replaces: ui_patterns_test:ui-component
+props:
+  type: object
+  properties: {}

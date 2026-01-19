@@ -1,0 +1,24 @@
+services:
+  ui_patterns_library.component_element_alter:
+    class: Drupal\ui_patterns_library\Element\ComponentElementAlter
+    arguments:
+      - "@plugin.manager.sdc"
+      - "@plugin.manager.component_story"
+      - "@ui_patterns_library.stories_syntax_converter"
+  ui_patterns_library.stories_syntax_converter:
+    class: Drupal\ui_patterns_library\StoriesSyntaxConverter
+  ui_patterns_library.twig.extension:
+    class: Drupal\ui_patterns_library\Template\TwigExtension
+    arguments:
+      - "@plugin.manager.component_story"
+    tags:
+      - { name: twig.extension }
+  plugin.manager.component_story:
+    class: Drupal\ui_patterns_library\StoryPluginManager
+    arguments:
+      - "@module_handler"
+      - "@theme_handler"
+      - "@cache.discovery"
+      - "@file_system"
+      - "@messenger"
+      - "@plugin.manager.sdc"

@@ -1,0 +1,870 @@
+---
+func_attributes_empty:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      attributes_implicit:
+        source_id: attributes
+        source:
+          value: ''
+      attributes_ui_patterns:
+        source_id: attributes
+        source:
+          value: ''
+      attributes_class:
+        source_id: attributes
+        source:
+          value: ''
+  output:
+    props:
+      attributes_implicit:
+        normalized_value: ''
+  entity: {}
+
+func_attributes_default:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      attributes_implicit:
+        source_id: attributes
+        source:
+          value: 'ui_patterns="foo"'
+      attributes_ui_patterns:
+        source_id: attributes
+        source:
+          value: 'ui_patterns="foo"'
+      attributes_class:
+        source_id: attributes
+        source:
+          value: 'ui_patterns="foo"'
+  output:
+    props:
+      attributes_implicit:
+        value: 'ui_patterns="foo"'
+      attributes_ui_patterns:
+        value: 'ui_patterns="foo"'
+      attributes_class:
+        value: 'ui_patterns="foo"'
+  entity: {}
+
+field_property_default:
+  # we configure a component
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          -
+            source_id: field_property:node:field_text_1:value
+            source:
+              type: string
+  # we add some data to the entity
+  entity:
+    field_text_1:
+      value: 'value_text_1'
+  # contexts are injected into the source for Kernel source tests
+  # the field_name in context will also be used in field formatter for example
+  # to decide on which field to apply the formatter
+  contexts:
+    field_name: 'field_text_1'
+    bundle: 'page'
+  # output is reserved for the raw data returned by each source configured
+  # on a slot or a prop.
+  output:
+    slots:
+      slot:
+        -
+          rendered_value: "value_text_1"
+  # those tests will be done in functional tests
+  # typically, the component is rendered entirely in a specific situation
+  # We assert if the output generated verifies some conditions
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-slot') and contains(text(), 'value_text_1')]" ]
+select_integer:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_integer:
+        source_id: select
+        source:
+          value: '2'
+  output:
+    props:
+      enum_integer:
+        same: 2
+  entity: {}
+
+
+select_integer_token:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_integer:
+        source_id: select
+        source:
+          value: '[node:title]'
+  output:
+    props:
+      enum_integer:
+        same: 2
+  entity:
+    title:
+      value: '2'
+
+textfield_slot:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          -
+            source_id: textfield
+            source:
+              value: 'test input'
+  entity: {}
+  output:
+    slots:
+      slot:
+        -
+          rendered_value: "test input"
+
+textfield_slot_token:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          -
+            source_id: textfield
+            source:
+              value: '[node:title]'
+  entity:
+    title:
+      value: 'test input'
+  output:
+    slots:
+      slot:
+        -
+          rendered_value: "test input"
+
+textfield_default_token:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: textfield
+        source:
+          value: '[node:title]'
+  output:
+    props:
+      string:
+        value: test input
+  entity:
+    title:
+      value: 'test input'
+  assertSession:
+    #pageTextContains:
+    #  - [ 'title_entity_1' ]
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-string', 'test input' ]
+
+textfield_default:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: textfield
+        source:
+          value: 'test input'
+  output:
+    props:
+      string:
+        value: test input
+  entity: {}
+  assertSession:
+    #pageTextContains:
+    #  - [ 'title_entity_1' ]
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-string', 'test input' ]
+
+textfield_identifier:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      identifier:
+        source_id: textfield
+        source:
+          value: 'my identifier'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-identifier', 'my-identifier' ]
+
+
+select_string:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_string:
+        source_id: select
+        source:
+          value: '2'
+  output:
+    props:
+      enum_string:
+        normalized_value: '2'
+  entity: {}
+
+selects_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_list_multiple:
+        source_id: selects
+        source:
+          value:
+            - "2"
+      enum_set:
+        source_id: selects
+        source:
+          value:
+            - "2"
+  output:
+    props:
+      enum_list_multiple:
+        same:
+          - '2'
+      enum_set:
+        same:
+          - '2'
+  entity: {}
+
+
+selects_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_list_multiple:
+        source_id: selects
+        source:
+          value:
+            - "2"
+      enum_set:
+        source_id: selects
+        source:
+          value:
+            - "2"
+  output:
+    props:
+      enum_list_multiple:
+        same:
+          - "2"
+      enum_set:
+        same:
+          - "2"
+selects_token:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_list_multiple:
+        source_id: selects
+        source:
+          value:
+            - "[node:title]"
+      enum_set:
+        source_id: selects
+        source:
+          value:
+            - "[node:title]"
+  entity:
+    title:
+      value: '2'
+  output:
+    props:
+      enum_list_multiple:
+        same:
+          - "2"
+      enum_set:
+        same:
+          - "2"
+
+selects_3:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_list_multiple:
+        source_id: selects
+        source:
+          value: ["2"]
+      enum_set:
+        source_id: selects
+        source:
+          value: ["2"]
+  output:
+    props:
+      enum_list_multiple:
+        same:
+          - '2'
+      enum_set:
+        same:
+          - '2'
+
+selects_4:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_list_multiple:
+        source_id: selects
+        source:
+          value: ["2", "2", "2"]
+      enum_set:
+        source_id: selects
+        source:
+          value:
+            - "2"
+  output:
+    props:
+      enum_list_multiple:
+        same:
+          - '2'
+          - '2'
+          - '2'
+      enum_set:
+        same:
+          - '2'
+
+
+
+token_default:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: token
+        source:
+          value: '[node:id]'
+  entity:
+    body:
+      value: 'value_text_token_1' # we just set a value to indicate the test requires an entity
+  output:
+    props:
+      string:
+        regEx: /[0-9]/
+token_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: token
+        source:
+          value: '[node:body]'
+  entity:
+    body:
+      value: 'value_text_token_2'
+  output:
+    props:
+      string:
+        value: 'value_text_token_2'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'xpath', "//div[@class='ui-patterns-props-string']/text()",'value_text_token_2']
+
+token_3:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      url:
+        source_id: token
+        source:
+          value: 'http://localhost/[node:body]'
+  entity:
+    body:
+      value: 'value_text_token_2'
+  output:
+    props:
+      url:
+        value: 'http://localhost/value_text_token_2'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'xpath', "//div[@class='ui-patterns-props-url']/text()",'http://localhost/value_text_token_2']
+
+context_exists_default:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: context_exists
+  output:
+    props:
+      string:
+        value: 'entity exists: 1'
+  entity:
+    body:
+      value: 'value_something' # we just set a value to indicate the test requires an entity
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'xpath', "//div[@class='ui-patterns-props-string']/text()",'entity exists: 1' ]
+
+checkboxes_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_list:
+        source_id: checkboxes
+        source:
+          value:
+            D: D
+  entity:
+    body:
+      value: 'value_text_1'
+  output:
+    props:
+      enum_list:
+        same:
+          D: "D"
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-enum_list')]//span[contains(text(), 'D')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[@class='ui-patterns-props-enum_list']//span", 1 ]
+checkboxes_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      enum_list:
+        source_id: checkboxes
+        source:
+          value:
+            A: A
+            E: E
+  entity:
+    body:
+      value: 'value_text_1'
+  output:
+    props:
+      enum_list:
+        same:
+          A: A
+          E: E
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-enum_list')]//span[contains(text(), 'A')]" ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-enum_list')]//span[contains(text(), 'E')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[@class='ui-patterns-props-enum_list']//span", 2 ]
+
+component_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          - source_id: component
+            source:
+              component:
+                component_id: 'ui_patterns_test:test-wrapper-component'
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: ''
+  output:
+    slots:
+      slot:
+        - rendered_value: '<div class="ui-patterns-wrapper"><div class="ui-patterns-slots-wrapper"></div></div>'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-wrapper' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-wrapper')]//div[contains(@class, 'ui-patterns-slots-wrapper')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[@class='ui-patterns-wrapper']//div[contains(@class, 'ui-patterns-slots-wrapper')]", 1]
+
+entity_field_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:page:title'
+          'field:node:page:title':
+            value:
+              source_id: 'field_property:node:title:value'
+              type: string
+  entity:
+    title:
+      value: 'title_entity_1'
+    field_text:
+      - value: "1"
+  contexts:
+    field_name: 'field_text'
+  output:
+    props:
+      string:
+        value: "title_entity_1"
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-string') and contains(text(), 'title_entity_1')]" ]
+
+entity_field_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      integer:
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:page:nid'
+          'field:node:page:nid':
+            value:
+              source_id: 'field_property:node:nid:value'
+  entity:
+    body:
+      value: 'value_something' # we just set a value to indicate the test requires an entity
+  output:
+    props:
+      integer:
+        regEx: /[0-9]+/
+
+
+entity_field_3:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:page:field_email'
+          'field:node:page:field_email':
+            value:
+              source_id: 'field_property:node:field_email:value'
+  entity:
+    title:
+      value: 'title_entity_1'
+    field_text:
+      - value: "1"
+    field_email:
+      - value: 'test@example.net'
+  contexts:
+    field_name: 'field_email'
+  output:
+    props:
+      string:
+        same: "test@example.net"
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-string') and contains(text(), 'test@example.net')]" ]
+
+
+entity_field_4:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      integer:
+        source_id: entity_field
+        source:
+          derivable_context: 'field:node:page:field_timestamp'
+          'field:node:page:field_timestamp':
+            value:
+              source_id: 'field_property:node:field_timestamp:value'
+  entity:
+    title:
+      value: 'title_entity_1'
+    field_text:
+      - value: "1"
+    field_timestamp:
+      - value: 173287136
+  contexts:
+    field_name: 'field_timestamp'
+  output:
+    props:
+      integer:
+        same: 173287136
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-integer') and contains(text(), '173287136')]" ]
+
+
+entity_links_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: entity_link
+        source:
+          template: edit-form
+  entity:
+    body:
+      value: 'value_something' # we just set a value to indicate the test requires an entity
+  output:
+    props:
+      string:
+        regEx: '/\/node\/\d+\/edit/'
+
+list_textarea_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      list_string:
+        source_id: list_textarea
+        source:
+          value: "A\r\nF"
+  entity: {}
+  output:
+    props:
+      list_string:
+        same:
+          - 'A'
+          - 'F'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-list_string')]//span[contains(text(), 'A')]" ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-list_string')]//span[contains(text(), 'F')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[@class='ui-patterns-props-list_string']//span", 2 ]
+list_textarea_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      list_integer:
+        source_id: list_textarea
+        source:
+          value: "1\r\n-1"
+  entity: {}
+  output:
+    props:
+      list_integer:
+        same:
+          - 1
+          - -1
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-list_integer')]//span[contains(text(), '1')]" ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-list_integer')]//span[contains(text(), '-1')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[@class='ui-patterns-props-list_integer']//span", 2 ]
+
+
+list_textarea_3:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      list_mixed:
+        source_id: list_textarea
+        source:
+          value: "1\r\nA"
+  entity: {}
+  output:
+    props:
+      list_mixed:
+        same:
+          - "1"
+          - "A"
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-list_mixed')]//span[contains(text(), '1')]" ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-list_mixed')]//span[contains(text(), 'A')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[@class='ui-patterns-props-list_mixed']//span", 2 ]
+
+list_textarea_4:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      list_mixed:
+        source_id: list_textarea
+        source:
+          value: "[node:title]"
+  entity:
+    title:
+      value: 'title_entity_1'
+  output:
+    props:
+      list_mixed:
+        same:
+          - "title_entity_1"
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-list_mixed')]//span[contains(text(), 'title_entity_1')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[@class='ui-patterns-props-list_mixed']//span", 1 ]
+
+
+number_default:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      number:
+        source_id: number
+        source:
+          value: '2'
+  output:
+    props:
+      number:
+        same: 2
+  entity: {}
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-number', '2' ]
+
+
+
+number_with_token:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      number:
+        source_id: number
+        source:
+          value: '[node:title]'
+  output:
+    props:
+      number:
+        same: 2
+  entity:
+    title:
+      value: '2'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-number', '2' ]
+
+path_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      url:
+        source_id: path
+        source:
+          value: '/user'
+  output:
+    props:
+      url:
+        value: '/user'
+  entity: {}
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-url', '/user' ]
+path_2:
+  skip_schema_check: true
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      url:
+        source_id: path
+        source:
+          value:
+            route_name: 'node.add_page'
+  output:
+    props:
+      url:
+        value: '/node/add'
+
+path_token:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      url:
+        source_id: path
+        source:
+          value: '[node:title]'
+  output:
+    props:
+      url:
+        value: '/user'
+  entity:
+    title:
+      value: '/user'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-url', '/user' ]
+url_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      url:
+        source_id: url
+        source:
+          value: 'https://drupal.org?k=v#anchor'
+  output:
+    props:
+      url:
+        value: 'https://drupal.org?k=v#anchor'
+  entity: {}
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-url', 'https://drupal.org?k=v#anchor' ]
+
+url_token:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      url:
+        source_id: url
+        source:
+          value: '[node:title]'
+  output:
+    props:
+      url:
+        value: 'https://drupal.org?k=v#anchor'
+  entity:
+    title:
+      value: 'https://drupal.org?k=v#anchor'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-url', 'https://drupal.org?k=v#anchor' ]
+
+
+wysiwyg_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          -
+            source_id: wysiwyg
+            source:
+              value:
+                value: 'Test text'
+                format: plain_text
+  output:
+    slots:
+      slot:
+        -
+          rendered_value: "<p>Test text</p>"
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-slot')]//p[contains(text(), 'Test text')]" ]

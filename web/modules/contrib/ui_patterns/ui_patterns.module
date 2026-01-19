@@ -1,0 +1,75 @@
+<?php
+
+/**
+ * @file
+ * Adds UI Patterns themes and UI Elements.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Field\FieldConfigInterface;
+use Drupal\ui_patterns\Plugin\UiPatterns\Source\WysiwygWidget;
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function ui_patterns_element_info_alter(array &$types): void {
+  if (isset($types['component'])) {
+    array_unshift($types['component']['#pre_render'], 'ui_patterns.component_element_alter:alter');
+    array_unshift($types['component']['#pre_render'], 'ui_patterns.component_element_builder:build');
+  }
+  if (isset($types['text_format'])) {
+    $types['text_format']['#pre_render'][] = [WysiwygWidget::class, 'textFormat'];
+  }
+}
+
+/**
+ * Prepare list of block plugins returned when using consumer 'ui_patterns'.
+ *
+ * @see \Drupal\ui_patterns\Plugin\UiPatterns\Source\BlockSource::listBlockDefinitions()
+ *
+ * Implements hook_plugin_filter_TYPE__CONSUMER_alter().
+ */
+function ui_patterns_plugin_filter_block__ui_patterns_alter(array &$definitions, array $extra): void {
+  // We are not allowing 'inline_block' blocks to avoid dependencies from config
+  // entities to content entities.
+  $definitions = array_filter($definitions, function ($definition) {
+    return $definition['id'] !== 'inline_block';
+  });
+  // Those blocks are not allowed in layout builder. Let's do the same.
+  unset($definitions['system_main_block']);
+  unset($definitions['page_title_block']);
+  // Add a boolean marker '_ui_patterns_compatible' to all remaining definitions
+  // Other modules can use the same hook to modify this value.
+  // This allows to add or remove blocks.
+  $forbidden_blocks = [
+    "provider" => ["layout_builder", "ui_patterns_blocks"],
+  ];
+  foreach ($definitions as $id => &$definition) {
+    if (isset($definitions[$id]['_ui_patterns_compatible'])) {
+      // When a block plugin already has '_ui_patterns_compatible'
+      // It probably means it has been marked by another code.
+      // Honor what the other code has done and do not override.
+      continue;
+    }
+    $compatibilityFlag = TRUE;
+    if (in_array($definition['provider'], $forbidden_blocks["provider"])) {
+      $compatibilityFlag = FALSE;
+    }
+    // Filter out blocks with _block_ui_hidden ?
+    $definitions[$id]['_ui_patterns_compatible'] = $compatibilityFlag;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete().
+ */
+function ui_patterns_field_config_delete(FieldConfigInterface $field_config): void {
+  $sample_entity_generator = \Drupal::service('ui_patterns.sample_entity_generator');
+  $entity_type = $field_config->getTargetEntityTypeId();
+  $bundle = $field_config->getTargetBundle();
+  $sample_entity_generator->delete($entity_type, $bundle);
+  // @todo trigger an event and do this logic in UiPatternsEntitySchemaSubscriber
+  \Drupal::service('plugin.manager.ui_patterns_source')->clearCachedDefinitions();
+  \Drupal::service('plugin.manager.ui_patterns_derivable_context')->clearCachedDefinitions();
+}

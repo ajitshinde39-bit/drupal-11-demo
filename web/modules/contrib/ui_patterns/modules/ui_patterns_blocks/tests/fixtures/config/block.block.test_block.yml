@@ -1,0 +1,109 @@
+uuid: 19aa8adc-ffbe-4c7d-9b5f-9b872c5e26ec
+langcode: en
+status: true
+dependencies:
+  module:
+    - ui_patterns
+    - ui_patterns_blocks
+    - ui_patterns_test
+  theme:
+    - ui_patterns_test_theme
+id: test_block
+theme: ui_patterns_test_theme
+region: content
+weight: 0
+provider: null
+plugin: 'ui_patterns:ui_patterns_test:test-component'
+settings:
+  id: 'ui_patterns:ui_patterns_test:test-component'
+  label: 'UI Patterns Test component'
+  label_display: visible
+  provider: ui_patterns_blocks
+  ui_patterns:
+    component_id: null
+    variant_id:
+      source_id: select
+      source:
+        value: ''
+    props:
+      attributes:
+        source_id: attributes
+        source:
+          value: ''
+      string:
+        source_id: textfield
+        source:
+          value: 'test input'
+      integer:
+        source_id: number
+        source:
+          value: ''
+      number:
+        source_id: number
+        source:
+          value: ''
+      url:
+        source_id: url
+        source:
+          value: ''
+      identifier:
+        source_id: textfield
+        source:
+          value: ''
+      boolean:
+        source_id: checkbox
+      links:
+        source_id: menu
+        source:
+          menu: ''
+          level: '1'
+          depth: '0'
+      enum_integer:
+        source_id: select
+        source:
+          value: ''
+      enum_string:
+        source_id: select
+        source:
+          value: ''
+      enum_list:
+        source_id: selects
+        source:
+          value:
+            - ''
+      enum_list_multiple:
+        source_id: selects
+        source:
+          value:
+            - ''
+            - ''
+            - ''
+      enum_set:
+        source_id: checkboxes
+      list_string:
+        source_id: list_textarea
+        source:
+          value: ''
+      list_integer:
+        source_id: list_textarea
+        source:
+          value: ''
+      list_mixed:
+        source_id: list_textarea
+        source:
+          value: ''
+      attributes_implicit:
+        source_id: attributes
+        source:
+          value: ''
+      attributes_ui_patterns:
+        source_id: attributes
+        source:
+          value: ''
+      attributes_class:
+        source_id: attributes
+        source:
+          value: ''
+    slots:
+      slots: {  }
+visibility: {  }

@@ -1,0 +1,234 @@
+name: "Grid Row"
+slots:
+  content:
+    title: Content
+props:
+  type: object
+  properties:
+    container:
+      title: Container
+      type: string
+      enum:
+        - container
+        - container-sm
+        - container-md
+        - container-lg
+        - container-xl
+        - container-xxl
+        - container-fluid
+      "meta:enum":
+        container: Container
+        container-sm: "Container small"
+        container-md: "Container medium"
+        container-lg: "Container large"
+        container-xl: "Container x-large"
+        container-xxl: "Container xx-large"
+        container-fluid: "Container fluid"
+    container_attributes:
+      title: "Container attributes"
+      $ref: "ui-patterns://attributes"
+    container_wrapper_attributes:
+      title: "Container wrapper attributes"
+      $ref: "ui-patterns://attributes"
+    gutters:
+      title: Gutters
+      type: string
+      enum:
+        - g-0
+        - g-1
+        - g-2
+        - g-3
+        - g-4
+        - g-5
+      "meta:enum":
+        g-0: "0"
+        g-1: "1"
+        g-2: "2"
+        g-3: "3"
+        g-4: "4"
+        g-5: "5"
+    gutters_horizontal:
+      title: "Horizontal gutters"
+      type: string
+      enum:
+        - gx-0
+        - gx-1
+        - gx-2
+        - gx-3
+        - gx-4
+        - gx-5
+      "meta:enum":
+        gx-0: "0"
+        gx-1: "1"
+        gx-2: "2"
+        gx-3: "3"
+        gx-4: "4"
+        gx-5: "5"
+    gutters_vertical:
+      title: "Vertical gutters"
+      type: string
+      enum:
+        - gy-0
+        - gy-1
+        - gy-2
+        - gy-3
+        - gy-4
+        - gy-5
+      "meta:enum":
+        gy-0: "0"
+        gy-1: "1"
+        gy-2: "2"
+        gy-3: "3"
+        gy-4: "4"
+        gy-5: "5"
+    row_cols:
+      title: "Row columns"
+      type: string
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "auto"
+      "meta:enum":
+        auto: "Auto"
+    col_xs:
+      title: "All (Extra small)"
+      type: string
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "auto"
+      "meta:enum":
+        auto: "Auto"
+    col_sm:
+      title: Small
+      type: string
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "auto"
+      "meta:enum":
+        auto: "Auto"
+    col_md:
+      title: Medium
+      type: string
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "auto"
+      "meta:enum":
+        auto: "Auto"
+    col_lg:
+      title: Large
+      type: string
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "auto"
+      "meta:enum":
+        auto: "Auto"
+    col_xl:
+      title: "Extra large"
+      type: string
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "auto"
+      "meta:enum":
+        auto: "Auto"
+    col_xxl:
+      title: "Extra extra large"
+      type: string
+      enum:
+        - "1"
+        - "2"
+        - "3"
+        - "4"
+        - "5"
+        - "6"
+        - "7"
+        - "8"
+        - "9"
+        - "10"
+        - "11"
+        - "12"
+        - "auto"
+      "meta:enum":
+        auto: "Auto"
+    col_offset:
+      title: "Offset"
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+    col_attributes:
+      title: "Column attributes"
+      $ref: "ui-patterns://attributes"

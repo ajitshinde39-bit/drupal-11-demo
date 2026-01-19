@@ -1,0 +1,59 @@
+- label: "resolveQuirks"
+  tests:
+    - label: "propertiesToItems"
+      schema:
+        type: array
+        properties:
+          type: object
+          properties:
+            title: { type: string }
+      expected:
+        type: array
+        items:
+          type: object
+          properties:
+            title: { type: string }
+    - label: "checkRecursivity"
+      schema:
+        type: object
+        properties:
+          foo:
+            type: array
+            properties: { type: string }
+      expected:
+        type: object
+        properties:
+          foo:
+            type: array
+            items: { type: string }
+- label: "keepOnlyUsefulProperties"
+  tests:
+    - label: "boolean"
+      schema:
+        type: boolean
+        enum: []
+        pattern: "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+        maximum: 5
+      expected:
+        type: boolean
+        enum: []
+    - label: "string"
+      schema:
+        type: string
+        enum: []
+        pattern: "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+        maximum: 5
+      expected:
+        type: string
+        enum: []
+        pattern: "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+    - label: "number"
+      schema:
+        type: number
+        enum: []
+        pattern: "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$"
+        maximum: 5
+      expected:
+        type: number
+        enum: []
+        maximum: 5

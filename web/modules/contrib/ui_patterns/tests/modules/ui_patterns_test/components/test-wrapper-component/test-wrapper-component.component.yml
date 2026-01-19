@@ -1,0 +1,8 @@
+name: "UI Patterns Test wrapper component"
+props:
+  type: object
+  properties: {}
+slots:
+  wrapper:
+    title: "Wrapper"
+    description: "Wrapper"

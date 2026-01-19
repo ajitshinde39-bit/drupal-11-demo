@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * @file
+ * Contains module file.
+ */
+
+declare(strict_types=1);
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Render\BubbleableMetadata;
+use Drupal\ui_patterns_ui\ComponentFormDisplayInterface;
+use Drupal\ui_patterns_ui\Entity\ComponentFormDisplay;
+
+/**
+ * Refresh component form displays.
+ */
+function ui_patterns_ui_component_form_display_cache_refresh(): void {
+  \Drupal::service('router.builder')->rebuild();
+  \Drupal::service('plugin.manager.menu.local_action')->clearCachedDefinitions();
+  \Drupal::service('plugin.manager.menu.local_task')->clearCachedDefinitions();
+}
+
+/**
+ * Implements hook_component_form_display_insert().
+ */
+function ui_patterns_ui_component_form_display_insert(ComponentFormDisplayInterface $component_form_display): void {
+  ui_patterns_ui_component_form_display_cache_refresh();
+}
+
+/**
+ * Implements hook_patterns_ui_component_form_display_delete().
+ */
+function ui_patterns_ui_component_form_display_delete(ComponentFormDisplayInterface $component_form_display): void {
+  ui_patterns_ui_component_form_display_cache_refresh();
+}
+
+/**
+ * Implements hook_patterns_ui_component_form_display_update().
+ */
+function ui_patterns_ui_component_form_display_update(ComponentFormDisplayInterface $component_form_display): void {
+  ui_patterns_ui_component_form_display_cache_refresh();
+}
+
+/**
+ * Implements hook_ui_patterns_form_alter().
+ */
+function ui_patterns_ui_ui_patterns_form_alter(array &$form, FormStateInterface $form_state): void {
+  if ($form['#allow_override'] ?? TRUE) {
+    $form['#type'] = 'uip_displays_form';
+  }
+}
+
+/**
+ * Implements hook_config_schema_info_alter().
+ */
+function ui_patterns_ui_config_schema_info_alter(array &$definitions): void {
+  $definitions['ui_patterns_component']['mapping']['display_id'] = [
+    "type" => "string",
+    "label" => "UI Patterns UI Display ID",
+  ];
+}
+
+/**
+ * Implements hook_config_schema_info_alter().
+ */
+function ui_patterns_ui_ui_patterns_component_pre_build_alter(array &$element): void {
+  if (!isset($element['#ui_patterns']['display_id']) || !isset($element['#component'])) {
+    return;
+  }
+  $display_id = $element['#ui_patterns']['display_id'];
+  $display = ComponentFormDisplay::load($display_id);
+  if ($display !== NULL) {
+    $elementMetadata = BubbleableMetadata::createFromRenderArray($element);
+    $elementMetadata->merge(BubbleableMetadata::createFromObject($display));
+    $elementMetadata->addCacheTags(['config:' . $display->getConfigDependencyName()]);
+    $elementMetadata->applyTo($element);
+    $options = $display->getPropSlotOptions();
+    foreach ($options as $prop_slot_id => $option) {
+      if (isset($option['source_id'])) {
+        if ($option['region'] === 'configure') {
+          if ($prop_slot_id === 'variant') {
+            $element['#ui_patterns']['variant_id'] = [
+              'source' => $option['source'] ?? [],
+              'source_id' => $option['source_id'],
+            ];
+            continue;
+          }
+          if ($display->isSlot($prop_slot_id)) {
+            $element['#ui_patterns']['slots'][$prop_slot_id] = [
+              'sources' => [[
+                'source' => $option['source'] ?? [],
+                'source_id' => $option['source_id'],
+              ],
+              ],
+            ];
+          }
+          else {
+            $element['#ui_patterns']['props'][$prop_slot_id] = [
+              'source' => $option['source'] ?? [],
+              'source_id' => $option['source_id'],
+            ];
+          }
+        }
+      }
+    }
+  }
+}

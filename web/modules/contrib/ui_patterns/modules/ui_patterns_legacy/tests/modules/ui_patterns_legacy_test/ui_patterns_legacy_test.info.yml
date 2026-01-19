@@ -1,0 +1,11 @@
+name: "UI Patterns Legacy Test"
+type: module
+description: "Provides test plugin."
+package: "Testing"
+dependencies:
+  - ui_patterns:ui_patterns_legacy
+
+# Information added by Drupal.org packaging script on 2025-11-13
+version: '2.0.13'
+project: 'ui_patterns'
+datestamp: 1763032762

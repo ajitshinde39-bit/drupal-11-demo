@@ -1,0 +1,36 @@
+<section class="calculator">
+   {% if messages %}
+    <div class="calculator-messages">
+      {% for type, message_list in messages %}
+        {% for message in message_list %}
+          <div class="alert alert-{{ type }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endfor %}
+    </div>
+   {% endif %}
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-7">
+        <div class="left-image">
+          <img src="{{ image }}" alt="">
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="section-heading">
+          <h6>{{ heading_small }}</h6>
+          <h4>{{ heading_large }}</h4>
+        </div>
+        <div class="calculator-form">
+             {{ form }} 
+            {# {{ calculator_form }} #}
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>

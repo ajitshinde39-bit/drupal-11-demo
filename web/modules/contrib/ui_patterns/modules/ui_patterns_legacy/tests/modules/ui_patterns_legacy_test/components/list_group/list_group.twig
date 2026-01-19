@@ -1,0 +1,8 @@
+{% if variant and variant != 'default' %}
+  {% set variants = variant|split('__')|map(v => v|replace({(v): 'list-group-' ~ v})|replace({'_': '-'})) %}
+  {% set attributes = attributes.addClass(variants) %}
+{% endif %}
+
+<div{{ attributes.addClass('list-group') }}>
+  {{ items }}
+</div>

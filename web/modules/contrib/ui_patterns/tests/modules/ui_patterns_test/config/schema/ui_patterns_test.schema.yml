@@ -1,0 +1,15 @@
+block.settings.uip_schema_test_block:
+  type: block_settings
+  label: 'Schema Test Sample Block'
+  mapping:
+    ui_patterns:
+      type: ui_patterns_component
+      label: 'The component'
+
+block.settings.ui_patterns_test_block:
+  type: block_settings
+  label: 'Schema Test Sample Block'
+  mapping:
+    display_message:
+      type: string
+      label: 'The display message'

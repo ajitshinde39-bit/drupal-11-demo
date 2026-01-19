@@ -1,0 +1,92 @@
+ui_patterns_ui.component_display.*.*.*:
+  label: Component display
+  type: config_entity
+  mapping:
+    id:
+      type: string
+      label: ID
+    label:
+      type: label
+      label: Label
+    status:
+      type: integer
+      label: Status
+    uuid:
+      type: string
+    component_id:
+      type: string
+      label: Component Id
+    form_mode_name:
+      type: string
+      label: Form Mode Name
+    content:
+      type: sequence
+      label: 'Slot or prop Configuration'
+      sequence:
+        type: ui_patterns_ui.component_display
+    hidden:
+      type: sequence
+      label: 'Component display setting'
+      sequence:
+        type: boolean
+        label: 'Value'
+
+ui_patterns_ui.component_display:
+  type: ui_patterns_widget_settings
+  mapping:
+    source_id:
+      type: string
+      label: 'source'
+    source:
+      label: 'source'
+      type: ui_patterns_source.[%parent.source_id]
+    parent:
+      type: string
+      label: 'Parent'
+    widget_settings:
+      type: ui_patterns_ui.widget_settings.[%parent.type]
+      label: 'Component Display'
+    weight:
+      type: string
+      label: 'Weight'
+    region:
+      type: string
+      label: 'Region'
+    third_party_settings:
+      type: sequence
+      label: 'List of third party settings'
+      sequence:
+        type: mixed
+ui_patterns_widget_settings:
+  type: mapping
+  label: 'Widget settings'
+  mapping:
+    type:
+      type: string
+      label: 'Format type machine name'
+    label:
+      type: label
+      label: 'Label setting machine name'
+    widget_settings:
+      type: ui_patterns_ui.widget_settings.[%parent.type]
+      label: 'Widget Settings'
+
+# Default schema for entity display field with undefined type.
+ui_patterns_ui.widget_settings.*:
+  type: mapping
+  mapping:
+    title:
+      type: label
+      label: 'Title'
+    title_display:
+      type: string
+      label: 'Title display'
+    description:
+      type: text
+      label: 'Description'
+    description_display:
+      type: string
+      label: 'Description display'
+    required:
+      type: integer
+      label: 'Widget is required'

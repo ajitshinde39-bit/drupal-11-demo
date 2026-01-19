@@ -1,0 +1,14 @@
+name: "UI Patterns Test form component"
+props:
+  type: object
+  properties:
+    string:
+      title: "String"
+      type: "string"
+    base_id:
+      title: "base id"
+      $ref: "ui-patterns://identifier"
+slots:
+  slot:
+    title: "slot"
+    description: "slot"

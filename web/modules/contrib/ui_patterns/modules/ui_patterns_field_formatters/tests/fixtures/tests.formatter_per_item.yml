@@ -1,0 +1,189 @@
+---
+
+nesting_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          - source_id: field_formatter:node:page:field_text
+            source:
+              type: "ui_patterns_component_per_item"
+              settings:
+                ui_patterns:
+                  component_id: "ui_patterns_test:test-wrapper-component"
+                  props: []
+                  slots:
+                    wrapper:
+                      sources:
+                        - source_id: field_property:node:field_text:value
+  entity:
+    field_text:
+      - value: "1"
+      - value: "2"
+      - value: "3"
+  contexts:
+    field_name: 'field_text'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-wrapper') and contains(text(), '1')]" ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-wrapper') and contains(text(), '2')]" ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-wrapper') and contains(text(), '3')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-slots-wrapper')]", 3]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]", 3]
+
+
+nesting_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          - source_id: field_formatter:node:page:field_text
+            source:
+              type: "ui_patterns_component"
+              settings:
+                ui_patterns:
+                  component_id: "ui_patterns_test:test-wrapper-component"
+                  variant_id: NULL
+                  props: []
+                  slots:
+                    wrapper:
+                      sources:
+                        - source_id: field_property:node:field_text:value
+  entity:
+    field_text:
+      - value: "1"
+      - value: "2"
+      - value: "3"
+  contexts:
+    field_name: 'field_text'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-wrapper') and contains(text(), '1')]" ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-wrapper') and contains(text(), '2')]" ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-slots-wrapper') and contains(text(), '3')]" ]
+    elementsCount:
+      - [ 'xpath', "//div[contains(@class,'ui-patterns-slots-wrapper')]", 3]
+      - [ 'xpath', "//div[contains(@class,'ui-patterns-test-component')]", 3]
+
+ui_patterns_component_per_item__multiple_items_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: field_property:node:field_text_with_summary:value
+  entity:
+    field_text_with_summary:
+      - value: 'this is first body3'
+      - value: 'this is second body3'
+  contexts:
+    field_name: 'field_text_with_summary'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-string') and contains(text(), 'this is first body3')]"]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-string') and contains(text(), 'this is second body3')]"]
+    elementsCount:
+      - [ 'xpath', "//div[@class='ui-patterns-props-string']", 2 ]
+
+ui_patterns_component_per_item__multiple_items:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          - source_id: field_formatter:node:page:field_text_1
+            source:
+              type: "text_default"
+  entity:
+    body:
+      - value: "value_text_1"
+      - value: "value_text_2"
+  contexts:
+    field_name: 'body'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+
+
+field_formatter_default_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          -
+            source_id: field_formatter:node:page:field_text_1
+            source:
+              type: 'string'
+  entity:
+    field_text_1:
+      value: 'value_text_1'
+  contexts:
+    field_name: 'field_text_1'
+  output:
+    slots:
+      slot:
+        -
+          rendered_value: "<p>value_text_1</p>"
+          rendered_value_plain: "value_text_1"
+# this case is not supposed to exist...
+# because field_formatter cannot be used
+# as a source for a string prop
+# we discard from running automatically
+# with FieldFormatterSourceTest
+_field_formatter_default_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: field_formatter:node:page:field_text_1
+        source:
+          type: 'string'
+  entity:
+    field_text_1:
+      value: 'value_text_2'
+  contexts:
+    field_name: 'field_text_1'
+  output:
+    props:
+      string:
+        rendered_value: "<p>value_text_2</p>"
+        rendered_value_plain: "value_text_2"
+field_label_default_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          -
+            source_id: field_label
+  contexts:
+    field_name: 'field_text_1'
+  entity:
+    field_text_1:
+      value: 'value_text_1'
+  output:
+    slots:
+      slot:
+        -
+          rendered_value: "Text (formatted)"
+field_label_default_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: field_label
+  contexts:
+    field_name: 'field_text_1'
+  entity:
+    field_text_1:
+      value: 'value_text_1'
+  output:
+    props:
+      string:
+        value: "Text (formatted)"

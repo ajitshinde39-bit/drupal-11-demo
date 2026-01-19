@@ -1,0 +1,33 @@
+---
+attributes_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      attributes:
+        source_id: attributes
+        source:
+          value: 'key="value"'
+  entity:
+    body:
+      value: 'value_text_1'
+  output:
+    props:
+      attributes:
+        same:
+          key: value
+
+attributes_2:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      attributes_with_default:
+        source_id: attributes
+  entity:
+    body:
+      value: 'value_text_1'
+  output:
+    props:
+      attributes_with_default:
+        same:
+          data-hello: "world"
+          class: "hello-world-class hello-world-class-2"

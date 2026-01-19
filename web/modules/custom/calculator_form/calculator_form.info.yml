@@ -1,0 +1,4 @@
+name: Calculator Form
+type: module
+core_version_requirement: ^10 || ^11
+package: Custom

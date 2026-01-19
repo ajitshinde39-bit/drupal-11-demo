@@ -1,0 +1,7 @@
+name: Text
+props:
+  type: object
+  properties:
+    text:
+      title: Text
+      type: string

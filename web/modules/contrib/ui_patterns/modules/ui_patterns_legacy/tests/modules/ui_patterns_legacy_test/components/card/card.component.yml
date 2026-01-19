@@ -1,0 +1,51 @@
+name: Card
+variants:
+  default:
+    title: Default
+  horizontal:
+    title: Horizontal
+slots:
+  image:
+    title: Image
+  header:
+    title: Header
+  content:
+    title: Content
+  footer:
+    title: Footer
+props:
+  type: object
+  properties:
+    image_position:
+      title: "Image position"
+      type: string
+      enum:
+        - top
+        - bottom
+      "meta:enum":
+        top: "Top (Default)"
+        bottom: Bottom
+    header_attributes:
+      title: "Header attributes"
+      $ref: "ui-patterns://attributes"
+    footer_attributes:
+      title: "Footer attributes"
+      $ref: "ui-patterns://attributes"
+    row_attributes:
+      title: "Row attributes"
+      $ref: "ui-patterns://attributes"
+      default:
+        class:
+          - g-0
+    image_col_attributes:
+      title: "Image column attributes"
+      $ref: "ui-patterns://attributes"
+      default:
+        class:
+          - col-md-4
+    content_col_attributes:
+      title: "Content column attributes"
+      $ref: "ui-patterns://attributes"
+      default:
+        class:
+          - col-md-8

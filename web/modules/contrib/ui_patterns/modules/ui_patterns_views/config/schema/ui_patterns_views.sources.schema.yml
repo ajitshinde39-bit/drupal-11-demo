@@ -1,0 +1,15 @@
+ui_patterns_source.view_field:
+  type: mapping
+  label: 'Source: Token'
+  mapping:
+    ui_patterns_views_field:
+      type: string
+      label: 'Token value'
+
+ui_patterns_source.view_rows:
+  type: mapping
+  label: 'Source: view_rows'
+  mapping:
+    ui_patterns_views_field:
+      type: string
+      label: 'Field name'

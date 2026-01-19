@@ -1,0 +1,19 @@
+---
+block_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    slots:
+      slot:
+        sources:
+          -
+            source_id: 'block'
+            source:
+              plugin_id: 'ui_patterns_test_block'
+              'ui_patterns_test_block':
+                display_message: "value_text_X"
+  entity: {}
+  output:
+    slots:
+      slot:
+        -
+          rendered_value: "value_text_X"

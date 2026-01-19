@@ -1,0 +1,25 @@
+dependencies:
+  config:
+    - field.field.node.page.layout_builder__layout
+  module:
+    - layout_builder
+    - ui_patterns_library
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: pattern_card
+        layout_settings:
+          label: ''
+          pattern:
+            field_templates: default
+            variant: default
+            settings:
+              image_position: top
+              image_position_token: ''
+          context_mapping: {  }
+        components: {  }
+        third_party_settings: {  }

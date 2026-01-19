@@ -1,0 +1,56 @@
+langcode: en
+status: 1
+dependencies: {  }
+id: ui_patterns_test.test-component.test
+label: Test
+component_id: 'ui_patterns_test:test-component'
+form_mode_name: test
+content:
+  variant:
+    widget_settings: { }
+    source_id: select
+    source:
+      value: primary
+    parent: ''
+    weight: '2'
+    region: configure
+    third_party_settings: { }
+  string:
+    source_id: textfield
+    weight: '1'
+    region: configure
+    parent: ''
+    third_party_settings: {  }
+    source:
+      value: demo
+  string_plain:
+    source_id: textfield
+    weight: '0'
+    region: content
+    parent: ''
+    third_party_settings: {  }
+    widget_settings:
+      title: 'UIP String PLAIN'
+      required: 0
+hidden:
+  attributes: true
+  integer: true
+  number: true
+  url: true
+  identifier: true
+  boolean: true
+  links: true
+  enum_integer: true
+  enum_string: true
+  enum_list: true
+  enum_list_multiple: true
+  enum_set: true
+  list_string: true
+  list_integer: true
+  list_mixed: true
+  attributes_implicit: true
+  attributes_ui_patterns: true
+  attributes_class: true
+  attributes_with_default: true
+  variant: true
+  slot: true

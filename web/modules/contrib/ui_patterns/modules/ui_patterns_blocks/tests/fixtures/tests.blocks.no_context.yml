@@ -1,0 +1,19 @@
+---
+test_prop_string:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      string:
+        source_id: textfield
+        source:
+          value: 'test input'
+  output:
+    props:
+      string:
+        normalized_value: 'test input'
+  assertSession:
+    elementTextEquals:
+      - [ 'css', '.ui-patterns-props-string', 'test input' ]
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'xpath', "//div[contains(@class, 'ui-patterns-test-component')]//div[contains(@class, 'ui-patterns-props-string') and contains(text(), 'test input')]" ]

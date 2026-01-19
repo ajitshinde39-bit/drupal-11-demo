@@ -1,0 +1,79 @@
+dependencies:
+  config:
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - field_group
+    - text
+    - user
+third_party_settings:
+  field_group:
+    group_field_group:
+      children:
+        - body
+      label: 'Field group'
+      parent_name: ''
+      region: content
+      weight: 0
+      format_type: pattern_formatter
+      format_settings:
+        pattern: grid_row
+        variants:
+          accordion: default
+          alert: primary
+          button: default
+          button_group: sm
+          card: default
+          carousel: default
+          close_button: default
+          dropdown: dropdown
+          dropdown_item: dropdown_item
+          list: default
+          list_group: default
+          list_group_item: default
+          modal: sm
+          nav: default
+          navbar: default
+          navbar_nav: default
+          offcanvas: start
+          pagination: sm
+          progress: default
+          spinner: border__border_sm
+          table: default
+        pattern_mapping:
+          'fields:body':
+            destination: content
+            weight: 0
+            plugin: fields
+            source: body
+          'fieldgroup:_label':
+            destination: content
+            weight: 1
+            plugin: fieldgroup
+            source: _label
+        pattern_settings:
+          grid_row:
+            with_container_token: ''
+            gutters: g-1
+            gutters_token: ''
+            gutters_horizontal: gx-2
+            gutters_horizontal_token: ''
+            gutters_vertical: gy-3
+            gutters_vertical_token: ''
+            col_xs: col-1
+            col_xs_token: ''
+            col_sm: col-sm-2
+            col_sm_token: ''
+            col_md: col-md-3
+            col_md_token: ''
+            col_lg: col-lg-4
+            col_lg_token: ''
+            col_xl: col-xl-5
+            col_xl_token: ''
+            col_xxl: col-xxl-6
+            col_xxl_token: ''
+            spacing_margin_bottom: mb-1
+            spacing_margin_bottom_token: ''
+            with_container: 0
+        show_empty_fields: 0
+        label_as_html: 0

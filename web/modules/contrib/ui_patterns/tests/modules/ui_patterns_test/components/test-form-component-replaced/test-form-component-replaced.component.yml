@@ -1,0 +1,18 @@
+name: "UI Patterns Test form component: replaced"
+replaces: ui_patterns_test:test-form-component
+props:
+  type: object
+  properties:
+    string:
+      title: "String"
+      type: "string"
+    base_id:
+      title: "base id"
+      $ref: "ui-patterns://identifier"
+slots:
+  slot:
+    title: "slot"
+    description: "slot"
+  slot_replaced:
+    title: "slot replaced"
+    description: "slot replaced"

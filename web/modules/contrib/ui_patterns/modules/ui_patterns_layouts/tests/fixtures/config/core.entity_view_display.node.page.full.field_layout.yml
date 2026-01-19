@@ -1,0 +1,106 @@
+uuid: 8c6d8afa-58a4-4702-8078-d56aad9370cc
+langcode: en
+status: true
+dependencies:
+  module:
+    - field_layout
+    - text
+    - ui_patterns
+    - ui_patterns_layouts
+    - ui_patterns_test
+    - user
+third_party_settings:
+  field_layout:
+    id: 'ui_patterns:ui_patterns_test:test_component'
+    settings:
+      label: ''
+      ui_patterns:
+        component_id: null
+        variant_id: null
+        slots: {  }
+        props:
+          attributes:
+            source_id: attributes
+            source:
+              value: ''
+          string:
+            source_id: textfield
+            source:
+              value: asdf
+          integer:
+            source_id: number
+            source:
+              value: ''
+          number:
+            source_id: number
+            source:
+              value: ''
+          url:
+            source_id: url
+            source:
+              value: ''
+          machine_name:
+            source_id: textfield
+            source:
+              value: ''
+          boolean:
+            source_id: checkbox
+          links:
+            source_id: menu
+            source:
+              menu: ''
+              level: '1'
+              depth: '0'
+          enum_integer:
+            source_id: select
+            source:
+              value: ''
+          enum_string:
+            source_id: select
+            source:
+              value: ''
+          enum_list:
+            source_id: checkboxes
+          list_string:
+            source_id: list_textarea
+            source:
+              value: ''
+          list_integer:
+            source_id: list_textarea
+            source:
+              value: ''
+          list_mixed:
+            source_id: list_textarea
+            source:
+              value: ''
+          attributes_implicit:
+            source_id: attributes
+            source:
+              value: ''
+          attributes_ui_patterns:
+            source_id: attributes
+            source:
+              value: ''
+          attributes_class:
+            source_id: attributes
+            source:
+              value: ''
+_core:
+  default_config_hash: br6izr-iGEu--JvNbCJNtOBpRnxpFLXfoV5y61U9Nqc
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  field_text_1:
+    type: text_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: slot
+hidden:
+  comment: true
+  field_image: true
+  field_tags: true
+  links: true

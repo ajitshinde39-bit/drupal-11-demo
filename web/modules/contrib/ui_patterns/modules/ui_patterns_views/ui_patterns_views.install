@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains ui_patterns_views.install.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function ui_patterns_views_update_last_removed(): int {
+  // The update in 1.x with the try to merge ui_patterns_views_style.
+  return 9101;
+}

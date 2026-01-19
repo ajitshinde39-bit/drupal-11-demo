@@ -1,0 +1,11 @@
+---
+menu_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    props:
+      links:
+        source_id: "menu"
+        source:
+          menu: main
+          level: '1'
+          depth: '0'

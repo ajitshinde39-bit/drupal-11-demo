@@ -1,0 +1,143 @@
+uuid: a9e67581-da30-4331-8fb0-397e185541f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - layout_builder
+    - layout_discovery
+    - ui_patterns
+    - ui_patterns_blocks
+    - ui_patterns_test
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          e35dd171-c69c-451f-a035-88dcb7a80af5:
+            uuid: e35dd171-c69c-451f-a035-88dcb7a80af5
+            region: content
+            configuration:
+              id: 'ui_patterns_entity:ui_patterns_test:test-component'
+              label: 'UI Patterns Test component'
+              label_display: '0'
+              provider: ui_patterns_blocks
+              context_mapping:
+                entity: layout_builder.entity
+              ui_patterns:
+                component_id: null
+                variant_id:
+                  source_id: select
+                  source:
+                    value: ''
+                slots:
+                  slot:
+                    sources:
+                      -
+                        source:
+                          derivable_context: 'field:node:page:title'
+                          'field:node:page:title':
+                            value:
+                              sources:
+                                -
+                                  source_id: 'field_property:node:title:value'
+                                  _weight: '0'
+                        source_id: entity_field
+                        _weight: '0'
+                props:
+                  attributes:
+                    source_id: attributes
+                    source:
+                      value: ''
+                  string:
+                    source_id: context_exists
+                    source:
+                      context_type: entity
+                  integer:
+                    source_id: number
+                    source:
+                      value: ''
+                  number:
+                    source_id: number
+                    source:
+                      value: ''
+                  url:
+                    source_id: url
+                    source:
+                      value: ''
+                  identifier:
+                    source_id: textfield
+                    source:
+                      value: ''
+                  boolean:
+                    source_id: checkbox
+                  links:
+                    source_id: menu
+                    source:
+                      menu: ''
+                      level: '1'
+                      depth: '0'
+                  enum_integer:
+                    source_id: select
+                    source:
+                      value: ''
+                  enum_string:
+                    source_id: select
+                    source:
+                      value: ''
+                  enum_list:
+                    source_id: selects
+                    source:
+                      value:
+                        - ''
+                  enum_list_multiple:
+                    source_id: selects
+                    source:
+                      value:
+                        - ''
+                        - ''
+                        - ''
+                  enum_set:
+                    source_id: checkboxes
+                  list_string:
+                    source_id: list_textarea
+                    source:
+                      value: ''
+                  list_integer:
+                    source_id: list_textarea
+                    source:
+                      value: ''
+                  list_mixed:
+                    source_id: list_textarea
+                    source:
+                      value: ''
+                  attributes_implicit:
+                    source_id: attributes
+                    source:
+                      value: ''
+                  attributes_ui_patterns:
+                    source_id: attributes
+                    source:
+                      value: ''
+                  attributes_class:
+                    source_id: attributes
+                    source:
+                      value: ''
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: full
+content: {}

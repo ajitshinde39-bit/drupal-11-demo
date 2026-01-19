@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * Contains ui_patterns_layouts.install.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_update_last_removed().
+ */
+function ui_patterns_layouts_update_last_removed(): int {
+  // The update in 1.x which replaced layout_plugin with layout_discovery.
+  return 8101;
+}

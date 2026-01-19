@@ -1,0 +1,65 @@
+{% if col_xs %}
+  {% set col_xs = 'col-' ~ col_xs %}
+{% endif %}
+{% if col_sm %}
+  {% set col_sm = 'col-sm-' ~ col_sm %}
+{% endif %}
+{% if col_md %}
+  {% set col_md = 'col-md-' ~ col_md %}
+{% endif %}
+{% if col_lg %}
+  {% set col_lg = 'col-lg-' ~ col_lg %}
+{% endif %}
+{% if col_xl %}
+  {% set col_xl = 'col-xl-' ~ col_xl %}
+{% endif %}
+{% if col_xxl %}
+  {% set col_xxl = 'col-xxl-' ~ col_xxl %}
+{% endif %}
+
+{% set attributes = attributes.addClass([
+  'row',
+  gutters,
+  gutters_horizontal,
+  gutters_vertical,
+  row_cols ? 'row-cols-' ~ row_cols,
+]) %}
+
+{% set col_attributes = create_attribute(col_attributes|default({})) %}
+{% set col_attributes = col_attributes.addClass([
+  'col',
+  col_xs,
+  col_sm,
+  col_md,
+  col_lg,
+  col_xl,
+  col_xxl,
+  col_offset ? 'offset-' ~ col_offset,
+]) %}
+
+{% set content = content and content is not sequence ? [content] : content %}
+
+{% if container %}
+  {% set container_wrapper_attributes = create_attribute(container_wrapper_attributes|default({})) %}
+  {% if container_wrapper_attributes.storage() %}
+  <div{{ container_wrapper_attributes }}>
+  {% endif %}
+
+  {% set container_attributes = create_attribute(container_attributes|default({})) %}
+  <div{{ container_attributes.addClass(container) }}>
+{% endif %}
+
+  <div{{ attributes }}>
+    {% for item in content %}
+      <div{{ col_attributes }}>
+        {{ item }}
+      </div>
+    {% endfor %}
+  </div>
+
+{% if container %}
+  </div>
+  {% if container_wrapper_attributes.storage() %}
+  </div>
+  {% endif %}
+{% endif %}

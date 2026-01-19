@@ -1,0 +1,35 @@
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_title
+    - node.type.page
+  module:
+    - ds
+    - user
+third_party_settings:
+  ds:
+    layout:
+      id: pattern_card
+      library: null
+      disable_css: false
+      entity_classes: all_classes
+      settings:
+        pattern:
+          field_templates: default
+          variant: default
+          settings:
+            image_position: bottom
+            image_position_token: ''
+            image_col_classes: col-md-4
+            image_col_classes_token: ''
+            content_col_classes: col-md-8
+            content_col_classes_token: ''
+    regions:
+      header:
+        - node_title
+    fields:
+      node_title:
+        plugin_id: node_title
+        weight: 0
+        label: hidden
+        formatter: default

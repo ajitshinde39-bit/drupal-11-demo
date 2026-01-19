@@ -1,0 +1,101 @@
+services:
+  logger.channel.ui_patterns:
+    parent: logger.channel_base
+    arguments:
+      - 'ui_patterns'
+
+  # Plugins managers.
+
+  Drupal\ui_patterns\ComponentPluginManager:
+    decorates: plugin.manager.sdc
+    parent: plugin.manager.sdc
+    decoration_priority: 0
+    calls:
+      - [ setPropTypePluginManager, [ '@plugin.manager.ui_patterns_prop_type' ] ]
+      - [ setPropTypePluginAdapter, [ '@plugin.manager.ui_patterns_prop_type_adapter' ] ]
+      - [ setReferenceSolver, [ '@ui_patterns.schema_reference_solver' ] ]
+      - [ setModuleExtensionList, [ '@extension.list.module' ] ]
+
+  plugin.manager.ui_patterns_prop_type:
+    class: Drupal\ui_patterns\PropTypePluginManager
+    parent: default_plugin_manager
+    arguments:
+      - "@ui_patterns.schema_compatibility_checker"
+      - "@typed_data_manager"
+  plugin.manager.ui_patterns_prop_type_adapter:
+    class: Drupal\ui_patterns\PropTypeAdapterPluginManager
+    parent: default_plugin_manager
+    arguments:
+      - "@ui_patterns.schema_compatibility_checker"
+  plugin.manager.ui_patterns_source:
+    class: Drupal\ui_patterns\SourcePluginManager
+    parent: default_plugin_manager
+    arguments:
+      - "@plugin.manager.ui_patterns_prop_type"
+      - "@context.handler"
+      - "@entity_type.manager"
+  plugin.manager.ui_patterns_derivable_context:
+    class: Drupal\ui_patterns\DerivableContextPluginManager
+    parent: default_plugin_manager
+    arguments:
+      - "@entity_type.manager"
+  # Render elements management.
+  ui_patterns.component_element_builder:
+    class: Drupal\ui_patterns\Element\ComponentElementBuilder
+    arguments:
+      - "@plugin.manager.ui_patterns_source"
+      - "@plugin.manager.sdc"
+      - "@module_handler"
+      - "@logger.channel.ui_patterns"
+  ui_patterns.component_element_alter:
+    class: Drupal\ui_patterns\Element\ComponentElementAlter
+    arguments:
+      - "@plugin.manager.sdc"
+      - "@plugin.manager.ui_patterns_prop_type_adapter"
+
+  # JSON schema management.
+  ui_patterns.schema_stream_wrapper:
+    class: Drupal\ui_patterns\SchemaManager\StreamWrapper
+    arguments:
+      - "@plugin.manager.ui_patterns_prop_type"
+    tags:
+      - { name: stream_wrapper, scheme: ui-patterns }
+  ui_patterns.schema_compatibility_checker:
+    class: Drupal\ui_patterns\SchemaManager\CompatibilityChecker
+    arguments:
+      - "@ui_patterns.schema_canonicalizer"
+  ui_patterns.schema_canonicalizer:
+    class: Drupal\ui_patterns\SchemaManager\Canonicalizer
+  ui_patterns.schema_reference_solver:
+    class: Drupal\ui_patterns\SchemaManager\ReferencesResolver
+    arguments:
+      - "@logger.channel.ui_patterns"
+
+  # Others.
+  ui_patterns.twig.extension:
+    class: Drupal\ui_patterns\Template\TwigExtension
+    tags:
+      - { name: twig.extension }
+    arguments:
+      - "@plugin.manager.sdc"
+      - "@plugin.manager.ui_patterns_prop_type_adapter"
+      - '@messenger'
+
+  ui_patterns.sample_entity_generator:
+    class: Drupal\ui_patterns\Entity\SampleEntityGenerator
+    arguments: ["@tempstore.shared", "@entity_type.manager"]
+
+  ui_patterns.entity_schema_subscriber:
+    class: Drupal\ui_patterns\EventSubscriber\UiPatternsEntitySchemaSubscriber
+    arguments: ["@plugin.manager.ui_patterns_source", "@plugin.manager.ui_patterns_derivable_context"]
+    tags:
+      - { name: "event_subscriber" }
+
+  ui_patterns.chain_context_entity_resolver:
+    class: Drupal\ui_patterns\Resolver\ChainContextEntityResolver
+    tags:
+      - { name: service_collector, call: addResolver, tag: ui_patterns.context_entity_resolver }
+
+  ui_patterns.normalizer:
+    class: Drupal\ui_patterns\UiPatternsNormalizer
+    arguments: ["@renderer"]

@@ -1,0 +1,13 @@
+---
+display_test_1:
+  component:
+    component_id: ui_patterns_test:test-component
+    display_id: ui_patterns_test.test-component.test
+  output:
+    props:
+      string:
+        value: 'demo'
+  assertSession:
+    elementExists:
+      - [ 'css', '.ui-patterns-test-component' ]
+      - [ 'css', '.ui-patterns-test-component-variant-primary']

@@ -1,0 +1,5 @@
+services:
+  ui_patterns_test.test_context_entity_resolver:
+    class: Drupal\ui_patterns_test\Resolver\TestContextEntityResolver
+    tags:
+      - { name: ui_patterns.context_entity_resolver }

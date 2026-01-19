@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * @file
+ * UI Patterns tests module.
+ */
+
+/**
+ * Implements hook_component_definition_alter().
+ */
+function ui_patterns_test_component_info_alter(array &$definitions): void {
+  if (isset($definitions['ui_patterns_test:test-component'])) {
+    $definitions['ui_patterns_test:test-component']['variants']['hook'] = ['title' => 'Hook altered'];
+  }
+
+}

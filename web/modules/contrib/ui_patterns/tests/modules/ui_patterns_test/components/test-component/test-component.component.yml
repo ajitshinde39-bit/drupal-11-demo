@@ -1,0 +1,143 @@
+name: "UI Patterns Test component"
+variants:
+  default:
+    title: "Default"
+  other:
+    title: "Other"
+props:
+  type: object
+  properties:
+    string:
+      title: "String"
+      type: "string"
+    string_plain:
+      title: "String Plain"
+      type: "string"
+      contentMediaType: "text/plain"
+    integer:
+      title: "Integer"
+      type: "integer"
+    integer_with_min_max:
+      title: "Integer with Min/Max"
+      type: "integer"
+      minimum: 5
+      maximum: 10
+    number:
+      title: "Number"
+      type: "number"
+    number_with_min_max:
+      title: "Number with Min/Max"
+      type: "number"
+      minimum: 5.0
+      maximum: 10.0
+    url:
+      title: "URL"
+      $ref: "ui-patterns://url"
+    identifier:
+      title: "Machine Name"
+      $ref: "ui-patterns://identifier"
+    boolean:
+      title: "Boolean"
+      $ref: "ui-patterns://boolean"
+    boolean_with_default_false:
+      title: "Boolean"
+      $ref: "ui-patterns://boolean"
+    boolean_with_default_true:
+      title: "Boolean"
+      $ref: "ui-patterns://boolean"
+    links:
+      title: "Links"
+      $ref: "ui-patterns://links"
+    enum_integer:
+      title: "Enum Integer"
+      type: "integer"
+      $ref: "ui-patterns://enum"
+      enum:
+        - 2
+        - 3
+    enum_string:
+      title: "Enum String"
+      type: "string"
+      $ref: "ui-patterns://enum"
+      enum:
+        - "2"
+        - "3"
+    enum_list:
+      title: "Enum List"
+      $ref: "ui-patterns://enum_list"
+      items:
+        enum:
+          - A
+          - B
+          - C
+          - D
+          - E
+          - F
+        "meta:enum":
+          A: "Label A"
+          B: "Label B"
+          C: "Label C"
+          D: "Label D"
+          E: "Label E"
+          F: "Label F"
+    enum_list_multiple:
+      title: "Enum List Multiple"
+      type: array
+      maxItems: 3
+      items:
+        type: integer
+        enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    enum_set:
+      title: "Enum Set"
+      type: array
+      uniqueItems: true
+      maxItems: 3
+      items:
+        type: integer
+        enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    list_string:
+      title: "List String"
+      type: "array"
+      items:
+        type: "string"
+    list_integer:
+      title: "List Integer"
+      type: "array"
+      items:
+        type: "integer"
+    list_mixed:
+      title: "List Mixed"
+      type: "array"
+      items:
+        type: ["string", "integer"]
+    attributes_implicit:
+      title: "Attributes (implicit typing)"
+      type: object
+      patternProperties:
+        ".+":
+          anyOf:
+            - type:
+                - string
+                - number
+            - type: array
+              items:
+                anyOf:
+                  - type: number
+                  - type: string
+    attributes_ui_patterns:
+      title: "Attributes (explicit typing)"
+      "$ref": "ui-patterns://attributes"
+    attributes_class:
+      title: "Attributes when type is a PHP namespace"
+      type: 'Drupal\Core\Template\Attribute'
+    attributes_with_default:
+      title: "Attributes (with default value)"
+      "$ref": "ui-patterns://attributes"
+      default:
+        data-hello: "world"
+        class:
+          - "hello-world-class"
+          - "hello-world-class-2"
+slots:
+  slot:
+    title: "Slot"

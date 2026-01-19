@@ -1,0 +1,15 @@
+component.collection:
+  path: '/admin/structure/component'
+  defaults:
+    _controller: 'Drupal\ui_patterns_ui\Controller\ComponentController:render'
+    _title: 'Components'
+  requirements:
+    _permission: 'administer component_form_display'
+
+entity.component_form_display.delete_form:
+  path: '/admin/structure/component/{component_id}/form-display/{form_mode_name}/delete'
+  defaults:
+    _entity_form: 'component_form_display.delete'
+    _title: 'Delete a component display'
+  requirements:
+    _permission: 'administer component_form_display'

@@ -1,0 +1,35 @@
+name: "List Group"
+variants:
+  default:
+    title: Default
+  flush:
+    title: Flush
+  numbered:
+    title: Numbered
+  horizontal:
+    title: Horizontal
+  horizontal_sm:
+    title: "Horizontal Small"
+  horizontal_md:
+    title: "Horizontal Medium"
+  horizontal_lg:
+    title: "Horizontal Large"
+  horizontal_xl:
+    title: "Horizontal Extra large"
+  horizontal_xxl:
+    title: "Horizontal Extra extra large"
+  numbered__horizontal:
+    title: "Numbered Horizontal"
+  numbered__horizontal_sm:
+    title: "Numbered Horizontal Small"
+  numbered__horizontal_md:
+    title: "Numbered Horizontal Medium"
+  numbered__horizontal_lg:
+    title: "Numbered Horizontal Large"
+  numbered__horizontal_xl:
+    title: "Numbered Horizontal Extra large"
+  numbered__horizontal_xxl:
+    title: "Numbered Horizontal Extra extra large"
+slots:
+  items:
+    title: Items

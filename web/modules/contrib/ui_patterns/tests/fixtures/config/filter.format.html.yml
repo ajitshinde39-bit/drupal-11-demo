@@ -1,0 +1,27 @@
+uuid: c8f1581f-e499-46a7-aba7-3c6209c9599c
+langcode: en
+status: true
+_core:
+  default_config_hash: vpZysv3RHJjhYzq7O_q5q8mVlHdrSzKELmXyiX6RtV0
+name: 'HTML'
+format: html
+weight: 2
+filters:
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: false
+    weight: 8
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: false
+    weight: 9
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }

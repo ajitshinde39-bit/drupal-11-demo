@@ -1,0 +1,26 @@
+
+<h2>{{ sdctitle }}</h2>
+<p>{{ sdcbody }}</p>
+<hr>
+<h4>The following content is coming from component js file there we called view rest api</h4>
+<br><br>
+<!-- Note 1:  following html we used for display title and body in normal html format -->
+
+<!-- <div class="article-list" data-article-list>
+  {# {{page.services}} #}
+    <h2>{{ title }}</h2>
+    <p>{{ body }}</p>
+</div> -->
+
+<!-- Note 2:  following html we used for display title and body in bootstrap tabs format -->
+
+<div class="article-tabs" data-article-tabs>
+  <ul class="nav nav-tabs" role="tablist" data-tab-titles>
+    {# JS will inject titles here #}
+  </ul>
+
+  <div class="tab-content" data-tab-content>
+    {# JS will inject bodies here #}
+  </div>
+</div>
+

@@ -1,0 +1,43 @@
+uuid: a9e67581-da30-4331-8fb0-397e185541f3
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - field_layout
+    - ui_patterns
+    - ui_patterns_layouts
+    - ui_patterns_field_formatters
+    - user
+third_party_settings:
+  field_layout:
+    id: ''
+    settings:
+      label: ''
+      ui_patterns: {}
+_core:
+  default_config_hash: M_Y8L5tfmhx7DR143E05YyZSpvgil6VFvqcfBWykalg
+id: node.page.full
+targetEntityType: node
+bundle: page
+mode: full
+content:
+  body:
+    type: ui_patterns_component_per_item
+    label: hidden
+    settings:
+      ui_patterns:
+        component_id: ui_patterns_test:test-wrapper-component
+        slots:
+          wrapper:
+            sources:
+              -
+                source_id: context_exists
+    third_party_settings: {  }
+    weight: 0
+    region: my_slot
+hidden:
+  links: true

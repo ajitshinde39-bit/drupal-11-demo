@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * UI Patterns components menu.
+ */
+#}
+{% if groups %}
+  <div class="ui_patterns_quicklinks">
+    <h2 class="ui_patterns_quicklinks__title">{{ 'Available components'|t }}</h2>
+    {% if groups|length > 1 %}
+      {% for group_name, components in groups %}
+        <h3 class="ui_patterns_quicklinks__group">{{ group_name }}</h3>
+        <ul class="ui_patterns_quicklinks__links">
+          {% for component in components %}
+            <li>
+              <a class="ui_patterns_quicklinks__link" href="#{{ component.id }}">{{ component.name }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endfor %}
+    {% else %}
+      <ul class="ui_patterns_quicklinks__links">
+        {% for component in components %}
+          <li>
+            <a class="ui_patterns_quicklinks__link" href="#{{ component.id }}">{{ component.name }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+{% endif %}

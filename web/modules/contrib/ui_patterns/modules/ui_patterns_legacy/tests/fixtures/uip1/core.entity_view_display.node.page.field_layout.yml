@@ -1,0 +1,35 @@
+dependencies:
+  config:
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - field_layout
+    - text
+    - user
+third_party_settings:
+  field_layout:
+    id: pattern_card
+    settings:
+      label: ''
+      pattern:
+        field_templates: default
+        variant: default
+        settings:
+          image_position: ''
+          image_position_token: ''
+          image_col_classes: col-md-4
+          image_col_classes_token: ''
+          content_col_classes: col-md-8
+          content_col_classes_token: ''
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: image
