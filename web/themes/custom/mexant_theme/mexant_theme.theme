@@ -4,29 +4,7 @@
  * Functions to support the mexant_theme theme.
  */
 
-//use Drupal\Core\Render\Markup;
 
-/**
- * Implements hook_preprocess_HOOK() for page--front.html.twig.
- */
-// function mexant_theme_preprocess_page__front(&$variables) {
-//   // Define the properties/props for your SDC component.
-//   $component_props = [
-//     'title' => 'Welcome to Drupal 11!',
-//     'body' => 'This card is rendered as a Single Directory Component using a render array.',
-//   ];
-
-//   // Create a render array that points to your SDC component definition.
-//   // The structure matches the format defined in your component's YAML file.
-//   $component_render_array = [
-//     '#type' => 'component',
-//     '#component_id' => 'mexant_theme:article_view_sdc', // Matches your component ID
-//     '#props' => $component_props,
-//   ];
-
-//   // Pass this render array to your Twig template via a new variable called 'article_card'.
-//   $variables['article_card'] = $component_render_array;
-// }
 
 use Drupal\block\BlockPluginInterface;
 
@@ -34,18 +12,18 @@ use Drupal\block\BlockPluginInterface;
  * Implements hook_preprocess_block().
  */
 function mexant_theme_preprocess_block(array &$variables) {
+  if (
+    isset($variables['elements']['#id']) &&
+    $variables['elements']['#id'] === 'mexant_theme_copyright'
+  ) {
+    $rendered_content = \Drupal::service('renderer')
+      ->renderPlain($variables['content']);
 
-  // Target only the 'mexant-theme-copyright' block
-
-    // Render the content to string first.
-    $rendered_content = \Drupal::service('renderer')->renderPlain($variables['content']);
-
-    // Replace placeholder {{year}} with actual current year.
     $rendered_content = str_replace('{{year}}', date('Y'), $rendered_content);
 
-    // Set the processed content back to the render array.
     $variables['content'] = [
       '#markup' => $rendered_content,
     ];
-
+  }
 }
+

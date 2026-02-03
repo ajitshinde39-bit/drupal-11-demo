@@ -1,0 +1,64 @@
+<!-- ***** Main Navigation Start ***** -->
+<nav class="main-nav" role="navigation" aria-labelledby="main-menu">
+
+  <!-- Logo -->
+  <a href="{{ path('<front>') }}" class="logo">
+    <img src="{{ directory }}/images/logo.png" alt="Logo">
+  </a>
+
+  <!-- Menu Items -->
+<ul class="nav">
+  {% for item in items %}
+
+    {# Compute classes #}
+    {% set classes = [
+      'scroll-to-section',
+      item.below ? 'has-sub',
+      (item.is_active or item.in_active_trail) ? 'active'
+    ] %}
+
+    <li{{ item.attributes.addClass(classes) }}>
+      <a href="{{ item.url }}" style="color: #f94a08 !important;">{{ item.title }}</a>
+
+      {% if item.below %}
+        <ul class="sub-menu">
+          {% for child in item.below %}
+            {% set child_classes = [
+              (child.is_active or child.in_active_trail) ? 'active'
+            ] %}
+            <li{{ child.attributes.addClass(child_classes) }}>
+              <a href="{{ child.url }}" style="color: #f94a08 !important;">{{ child.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+
+  {% endfor %}
+</ul>
+<!-- Mobile menu trigger -->
+  <a class='menu-trigger'><span>Menu</span></a>
+
+</nav>
+<!-- ***** Main Navigation End ***** -->
+
+{#
+    <ul class="nav">
+  {% for item in items %}
+    <li{{ item.attributes.addClass(item.below ? 'has-sub' : '') }} class="scroll-to-section">
+      <a href="{{ item.url }}" class="active">{{ item.title }}</a>
+
+      {% if item.below %}
+        <ul class="sub-menu">
+          {% for child in item.below %}
+            <li>
+              <a href="{{ child.url }}">{{ child.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
+<a class='menu-trigger'><span>Menu</span></a>
+#}

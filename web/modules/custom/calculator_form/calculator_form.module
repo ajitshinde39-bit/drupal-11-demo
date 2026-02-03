@@ -1,19 +1,19 @@
 <?php
 
 function calculator_form_theme() {
-  return [
+   return [
     'calculator_block_wrapper' => [
       'variables' => [
+        'image' => NULL,
+        'heading_small' => NULL,
+        'heading_large' => NULL,
         'form' => NULL,
       ],
     ],
+
+    'form__calculator_form' => [
+      'render element' => 'form',
+    ],
+
   ];
 }
-
-// function calculator_form_theme() {
-//   return [
-//     'calculate' => [
-//       'render element' => 'form',
-//     ],
-//   ];
-// }

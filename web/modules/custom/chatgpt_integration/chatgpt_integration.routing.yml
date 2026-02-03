@@ -1,0 +1,6 @@
+chatgpt.chat:
+  path: '/chatgpt/chat'
+  defaults:
+    _controller: '\Drupal\chatgpt_integration\Controller\ChatController::chat'
+  requirements:
+    _access: 'TRUE'

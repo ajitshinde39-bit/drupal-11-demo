@@ -8,7 +8,8 @@ use Drupal\Core\Form\FormStateInterface;
 class CalculatorForm extends FormBase {
 
   public function getFormId() {
-    return 'calculate';
+    //return 'calculate';
+    return 'calculator_form';
   }
 
   public function buildForm(array $form, FormStateInterface $form_state) {
@@ -49,6 +50,21 @@ class CalculatorForm extends FormBase {
         'class' => ['orange-button'],
         ],
     ];
+
+$form['#attributes']['class'][] = 'calculator-form';
+
+$form['#attributes']['id'] = 'calculate';
+$form['#attributes']['method'] = 'get';
+
+$form['name']['#attributes']['placeholder'] = '';
+$form['email']['#attributes']['placeholder'] = '';
+$form['subject']['#attributes']['placeholder'] = '';
+
+$form['category']['#attributes']['id'] = 'chooseOption';
+
+$form['actions']['submit']['#attributes']['id'] = 'form-submit';
+
+
 
     return $form;
   }

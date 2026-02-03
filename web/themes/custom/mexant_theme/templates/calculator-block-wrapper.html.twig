@@ -1,17 +1,26 @@
+<pre>{# {{ dump(form) }} #}</pre>
 
-  {{ include('@mexant_theme/components/calculator/calculator.twig', {
-  image: '/themes/custom/mexant_theme/images/calculator-image.png',
-  heading_small: 'Your Freedom',
-  heading_large: 'Get a Financial Plan',
-  form: form
-}) }}
+<section class="calculator">
+  <div class="container">
+    <div class="row">
 
-{#
-<div class="calculator">
-  <img src="{{ image }}" alt="">
-  <h5>{{ heading_small }}</h5>
-  <h2>{{ heading_large }}</h2>
+      <div class="col-lg-7">
+        <div class="left-image">
+          <img src="{{ image }}" alt="">
+        </div>
+      </div>
 
-  {{ form }}
-</div>
-#}
+      <div class="col-lg-5">
+        <div class="section-heading">
+          <h6>{{ heading_small }}</h6>
+          <h4>{{ heading_large }}</h4>
+        </div>
+
+        {{ form }}
+
+      </div>
+
+    </div>
+  </div>
+</section>
+

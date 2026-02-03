@@ -1,0 +1,6 @@
+chatgpt:
+  js:
+    js/chat.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
