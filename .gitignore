@@ -1,5 +1,16 @@
-# Vendor directory
+# Archives
+*.zip
+*.rar
+
+# OS junk
+*Zone.Identifier
+
+# DDEV
+.ddev/
+
+# Vendor & contrib directory
 /vendor/
+/web/modules/contrib/
 
 # Drupal files directory
 /web/sites/*/files/
