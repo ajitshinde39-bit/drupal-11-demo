@@ -1,5 +1,4 @@
 <?php
-
 namespace Drupal\chatgpt_integration\Controller;
 
 use Drupal\Core\Controller\ControllerBase;

@@ -22,6 +22,8 @@
         "drupal/core-recipe-unpack": "^11.2",
         "drupal/core-recommended": "^11.2",
         "drupal/devel": "^5",
+        "drupal/jsonapi_extras": "^3.28",
+        "drupal/jwt": "^2.3",
         "drupal/restui": "^1.22",
         "drupal/token": "^1.16",
         "drupal/ui_patterns": "^2.0",

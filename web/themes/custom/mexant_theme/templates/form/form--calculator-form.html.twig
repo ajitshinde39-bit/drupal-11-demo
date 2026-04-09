@@ -29,11 +29,11 @@
   <div class="col-lg-12">
     <fieldset>
       {{ form.actions.submit }}
+
     </fieldset>
   </div>
 
 </div>
-
 {# 🔑 THIS IS THE FIX #}
 {{ form|without(
   'name',
