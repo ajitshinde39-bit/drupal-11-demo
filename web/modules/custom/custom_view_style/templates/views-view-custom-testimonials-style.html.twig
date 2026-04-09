@@ -12,8 +12,9 @@
         <div class="item">
           <i class="fa fa-quote-left"></i>
           <p>{{ item.body|striptags }}</p>
-          <h4>{{ item.field_author_name }}</h4>
+          <h4>{{ item.field_author_name | uppercase_custom}}</h4>
           <span>{{ item.field_author_designation }}</span>
+          <span>{{ current_user_name() }}</span>
           <div class="right-image">
             <img src="{{ item.image_url }}" alt="{{ item.title }}">
           </div>
