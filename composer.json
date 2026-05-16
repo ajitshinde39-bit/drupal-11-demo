@@ -24,7 +24,13 @@
         "drupal/devel": "^5",
         "drupal/jsonapi_extras": "^3.28",
         "drupal/jwt": "^2.3",
+        "drupal/openapi": "^2.3",
+        "drupal/openapi_jsonapi": "^3.0",
+        "drupal/openapi_rest": "^2.0",
+        "drupal/openapi_ui": "^1.0@rc",
+        "drupal/openapi_ui_swagger": "@rc",
         "drupal/restui": "^1.22",
+        "drupal/tmgmt": "^1.18",
         "drupal/token": "^1.16",
         "drupal/ui_patterns": "^2.0",
         "drush/drush": "^13.7"
