@@ -1,0 +1,28 @@
+uuid: a4740742-f454-4777-bab1-434107c0e92b
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.student.student_info
+    - field.storage.student.field_age
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: student.student_info.field_age
+field_name: field_age
+entity_type: student
+bundle: student_info
+label: Age
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

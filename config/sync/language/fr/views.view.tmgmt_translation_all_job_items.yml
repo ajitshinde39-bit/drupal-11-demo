@@ -1,0 +1,10 @@
+display:
+  default:
+    display_options:
+      fields:
+        label:
+          label: Libellé
+        type:
+          label: Type
+        changed:
+          label: Modifié

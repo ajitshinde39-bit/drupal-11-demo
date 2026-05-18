@@ -1,0 +1,10 @@
+display:
+  default:
+    display_options:
+      fields:
+        status:
+          label: État
+        label:
+          label: Libellé
+        item_type:
+          label: Type

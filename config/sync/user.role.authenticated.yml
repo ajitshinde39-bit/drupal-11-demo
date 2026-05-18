@@ -1,0 +1,37 @@
+uuid: 7c3f7003-8f95-4305-a740-ccd61cc0e938
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.basic_html
+  module:
+    - comment
+    - contact
+    - file
+    - filter
+    - rest
+    - search
+    - shortcut
+    - system
+    - tmgmt_local
+    - toolbar
+_core:
+  default_config_hash: cFrlqjtkTfvY3RGccjJkPf1SGIfJ942IrxTLWAO4mgA
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access toolbar'
+  - 'administer rest resources'
+  - 'delete own files'
+  - 'post comments'
+  - 'provide translation services'
+  - 'search content'
+  - 'skip comment approval'
+  - 'use text format basic_html'
+  - 'view the administration theme'

@@ -1,0 +1,26 @@
+uuid: b454f137-21ca-48b2-991f-6d4401f6ceaf
+langcode: en
+status: true
+dependencies:
+  module:
+    - tmgmt_file
+name: demo_translator
+label: 'Demo translator'
+description: ''
+auto_accept: true
+weight: null
+plugin: file
+settings:
+  export_format: xlf
+  allow_override: true
+  scheme: public
+  xliff_processing: false
+  xliff_cdata: false
+  format_configuration:
+    target: ''
+remote_languages_mappings:
+  en: en
+  de: de
+  hi: hi
+  fr: fr
+  mr: mr

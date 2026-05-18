@@ -1,0 +1,11 @@
+display:
+  default:
+    display_options:
+      fields:
+        name:
+          label: Autor
+  page_unapproved:
+    display_options:
+      fields:
+        name:
+          label: Autor

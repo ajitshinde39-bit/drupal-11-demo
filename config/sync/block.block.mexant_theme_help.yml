@@ -1,0 +1,22 @@
+uuid: 1f6f9f43-c433-4e3b-bb9c-9d2dcc2e606f
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - mexant_theme
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: mexant_theme_help
+theme: mexant_theme
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

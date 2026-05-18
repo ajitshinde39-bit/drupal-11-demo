@@ -1,0 +1,24 @@
+uuid: 06b8c6bb-4d2d-49ce-8c8d-5056d5aeeeaf
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.student.student_info
+    - field.storage.student.field_name
+  module:
+    - tmgmt_content
+third_party_settings:
+  tmgmt_content:
+    excluded: false
+id: student.student_info.field_name
+field_name: field_name
+entity_type: student
+bundle: student_info
+label: Name
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

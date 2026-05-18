@@ -1,0 +1,105 @@
+display:
+  default:
+    display_options:
+      fields:
+        title:
+          label: Libellé
+      filters:
+        status:
+          expose:
+            label: État
+  closed:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Libellé
+      filters:
+        status:
+          expose:
+            label: État
+        title:
+          expose:
+            label: Libellé
+  completed:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Libellé
+      filters:
+        status:
+          expose:
+            label: État
+        title:
+          expose:
+            label: Libellé
+  eligible:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Libellé
+      filters:
+        status:
+          expose:
+            label: État
+        title:
+          expose:
+            label: Libellé
+  my_tasks:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Libellé
+      filters:
+        status:
+          expose:
+            label: État
+        title:
+          expose:
+            label: Libellé
+  pending:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Libellé
+      filters:
+        status:
+          expose:
+            label: État
+        title:
+          expose:
+            label: Libellé
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Libellé
+      filters:
+        status:
+          expose:
+            label: État
+        title:
+          expose:
+            label: Libellé
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Libellé
+      filters:
+        status:
+          expose:
+            label: État

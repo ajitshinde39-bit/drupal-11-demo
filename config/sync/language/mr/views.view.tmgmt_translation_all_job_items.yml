@@ -1,0 +1,39 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: पुर्ववत
+          exposed_sorts_label: 'क्रमवारी नुसार लावा'
+      fields:
+        state:
+          label: राज्य
+        label:
+          label: खूणचिठ्ठी
+        type:
+          label: प्रकार
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        word_count:
+          separator: ', '
+        tags_count:
+          separator: ', '
+        changed:
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        state:
+          group_info:
+            label: राज्य
+        job_type:
+          group_info:
+            group_items:
+              1:
+                title: साधारण
+  page_1:
+    display_title: पान

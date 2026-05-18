@@ -1,0 +1,22 @@
+uuid: b2b27f08-4585-474c-865e-967614c13208
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - mexant_theme
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: mexant_theme_content
+theme: mexant_theme
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

@@ -1,0 +1,24 @@
+uuid: e0083689-10e6-43b0-8508-a5ddabb5d033
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.article_view
+  module:
+    - views
+  theme:
+    - mexant_theme
+id: mexant_theme_views_block__article_view_block_1
+theme: mexant_theme
+region: services
+weight: 0
+provider: null
+plugin: 'views_block:article_view-block_1'
+settings:
+  id: 'views_block:article_view-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility: {  }

@@ -1,0 +1,177 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: गाळणी
+          reset_button_label: पुर्ववत
+          exposed_sorts_label: 'क्रमवारी नुसार लावा'
+      fields:
+        title:
+          label: खूणचिठ्ठी
+          separator: ', '
+      filters:
+        status:
+          expose:
+            label: वर्तमानस्थिती
+  closed:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        title:
+          label: खूणचिठ्ठी
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        status:
+          expose:
+            label: वर्तमानस्थिती
+        title:
+          expose:
+            label: खूणचिठ्ठी
+      menu:
+        title: बंद
+  completed:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        title:
+          label: खूणचिठ्ठी
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        status:
+          expose:
+            label: वर्तमानस्थिती
+        title:
+          expose:
+            label: खूणचिठ्ठी
+  eligible:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        title:
+          label: खूणचिठ्ठी
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        status:
+          expose:
+            label: वर्तमानस्थिती
+        title:
+          expose:
+            label: खूणचिठ्ठी
+  my_tasks:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        title:
+          label: खूणचिठ्ठी
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        status:
+          expose:
+            label: वर्तमानस्थिती
+        title:
+          expose:
+            label: खूणचिठ्ठी
+  pending:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+          separator: ', '
+        title:
+          label: खूणचिठ्ठी
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        status:
+          expose:
+            label: वर्तमानस्थिती
+        title:
+          expose:
+            label: खूणचिठ्ठी
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        title:
+          label: खूणचिठ्ठी
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        status:
+          expose:
+            label: वर्तमानस्थिती
+        title:
+          expose:
+            label: खूणचिठ्ठी
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        title:
+          label: खूणचिठ्ठी
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        status:
+          expose:
+            label: वर्तमानस्थिती

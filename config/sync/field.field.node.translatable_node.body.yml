@@ -1,0 +1,29 @@
+uuid: 3102d211-afd7-415f-8f77-97d15fe8120c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.translatable_node
+  module:
+    - text
+  enforced:
+    module:
+      - tmgmt_demo
+_core:
+  default_config_hash: FPoR7gxV4oYZ4VLkNytudoYCCeFenuF0EP3rCEegjEE
+id: node.translatable_node.body
+field_name: body
+entity_type: node
+bundle: translatable_node
+label: 'Demo body'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

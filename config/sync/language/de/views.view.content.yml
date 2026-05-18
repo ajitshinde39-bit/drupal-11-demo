@@ -1,0 +1,31 @@
+label: Inhalt
+display:
+  default:
+    display_options:
+      title: Inhalt
+      fields:
+        title:
+          label: Titel
+        name:
+          label: Autor
+        status:
+          label: Status
+          settings:
+            format_custom_true: Veröffentlicht
+      filters:
+        title:
+          expose:
+            label: Titel
+        status:
+          expose:
+            label: Status
+          group_info:
+            group_items:
+              1:
+                title: Veröffentlicht
+  page_1:
+    display_options:
+      menu:
+        title: Inhalt
+      tab_options:
+        title: Inhalt

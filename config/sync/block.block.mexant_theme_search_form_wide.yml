@@ -1,0 +1,23 @@
+uuid: d5b2b2a7-b97b-4e32-ae20-a2d4c61e138b
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - mexant_theme
+_core:
+  default_config_hash: pbbed0hdqGDF-_QWVVTWRAwgDIotFuAvWH5mWUZu0fA
+id: mexant_theme_search_form_wide
+theme: mexant_theme
+region: header
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

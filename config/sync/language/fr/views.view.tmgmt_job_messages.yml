@@ -1,0 +1,8 @@
+display:
+  default:
+    display_options:
+      fields:
+        created:
+          label: Créé
+        name:
+          label: Nom

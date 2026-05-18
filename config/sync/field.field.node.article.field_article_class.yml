@@ -1,0 +1,19 @@
+uuid: 2abe520f-0fca-4eae-aa03-889f62a43a6b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_article_class
+    - node.type.article
+id: node.article.field_article_class
+field_name: field_article_class
+entity_type: node
+bundle: article
+label: 'article class'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

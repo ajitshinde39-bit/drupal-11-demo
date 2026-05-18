@@ -1,0 +1,20 @@
+uuid: 8df5d1f7-cac5-4243-9d1b-156d4750a4c9
+langcode: en
+status: true
+dependencies:
+  module:
+    - chatgpt_integration
+  theme:
+    - claro
+id: claro_chatgptchatblock
+theme: claro
+region: content
+weight: 0
+provider: null
+plugin: chatgpt_chat_block
+settings:
+  id: chatgpt_chat_block
+  label: 'ChatGPT Chat Block'
+  label_display: visible
+  provider: chatgpt_integration
+visibility: {  }

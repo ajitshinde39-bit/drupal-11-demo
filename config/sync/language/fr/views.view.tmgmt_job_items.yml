@@ -1,0 +1,19 @@
+display:
+  default:
+    display_options:
+      fields:
+        label:
+          label: Libellé
+        type:
+          label: Type
+        changed:
+          label: Modifié
+  checkout:
+    display_options:
+      fields:
+        label:
+          label: Libellé
+        type:
+          label: Type
+        changed:
+          label: Modifié

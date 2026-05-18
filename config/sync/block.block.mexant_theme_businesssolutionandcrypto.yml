@@ -1,0 +1,25 @@
+uuid: e472861d-fd49-4ef5-8428-80a237015207
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:9017907c-a034-4609-b090-a757e008997a'
+  module:
+    - block_content
+  theme:
+    - mexant_theme
+id: mexant_theme_businesssolutionandcrypto
+theme: mexant_theme
+region: simple_cta
+weight: 0
+provider: null
+plugin: 'block_content:9017907c-a034-4609-b090-a757e008997a'
+settings:
+  id: 'block_content:9017907c-a034-4609-b090-a757e008997a'
+  label: 'business solution and crypto'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

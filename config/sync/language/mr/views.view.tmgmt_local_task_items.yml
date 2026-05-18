@@ -1,0 +1,25 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: पुर्ववत
+          exposed_sorts_label: 'क्रमवारी नुसार लावा'
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        label:
+          label: खूणचिठ्ठी
+        item_type:
+          label: प्रकार
+          separator: ', '
+        word_count:
+          separator: ', '
+        operations:
+          label: कृती
+      arguments:
+        tltid:
+          exception:
+            title: सर्व
+  block_1:
+    display_title: भाग

@@ -1,0 +1,9 @@
+uuid: 5b7e4607-7ef0-425c-9d82-4133dd571d84
+langcode: en
+status: true
+dependencies: {  }
+id: mr
+label: Marathi
+direction: ltr
+weight: 2
+locked: false

@@ -1,0 +1,22 @@
+uuid: e83415c8-3980-4e5b-80f5-9b1c754c25df
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - mexant_theme
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: mexant_theme_powered
+theme: mexant_theme
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

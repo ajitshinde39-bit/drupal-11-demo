@@ -1,0 +1,20 @@
+uuid: 7f760b52-3f6e-49a5-aba3-48833f84a2a0
+langcode: en
+status: true
+dependencies:
+  module:
+    - chatgpt_integration
+  theme:
+    - mexant_theme
+id: mexant_theme_chatgptchatblock
+theme: mexant_theme
+region: testimonials
+weight: 0
+provider: null
+plugin: chatgpt_chat_block
+settings:
+  id: chatgpt_chat_block
+  label: 'ChatGPT Chat Block'
+  label_display: visible
+  provider: chatgpt_integration
+visibility: {  }

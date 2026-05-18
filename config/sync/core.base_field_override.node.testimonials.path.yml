@@ -1,0 +1,20 @@
+uuid: 28e1cbcf-266f-4bda-8f4a-8f352c8fab6a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.testimonials
+  module:
+    - path
+id: node.testimonials.path
+field_name: path
+entity_type: node
+bundle: testimonials
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

@@ -1,0 +1,24 @@
+uuid: 542472a9-cf5b-4dea-a229-e085be941420
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.testimonials_view
+  module:
+    - views
+  theme:
+    - mexant_theme
+id: mexant_theme_views_block__testimonials_view_block_1
+theme: mexant_theme
+region: testimonials
+weight: 0
+provider: null
+plugin: 'views_block:testimonials_view-block_1'
+settings:
+  id: 'views_block:testimonials_view-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: null
+visibility: {  }

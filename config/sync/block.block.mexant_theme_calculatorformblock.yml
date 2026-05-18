@@ -1,0 +1,20 @@
+uuid: dd727287-d00b-455b-a78c-119f12313e07
+langcode: en
+status: true
+dependencies:
+  module:
+    - calculator_form
+  theme:
+    - mexant_theme
+id: mexant_theme_calculatorformblock
+theme: mexant_theme
+region: calculator
+weight: 0
+provider: null
+plugin: calculator_block
+settings:
+  id: calculator_block
+  label: 'Calculator Form Block'
+  label_display: visible
+  provider: calculator_form
+visibility: {  }

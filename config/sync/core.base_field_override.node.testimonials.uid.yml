@@ -1,0 +1,20 @@
+uuid: ef7b32b5-4161-44d3-8b6e-31c196e4f0ae
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.testimonials
+id: node.testimonials.uid
+field_name: uid
+entity_type: node
+bundle: testimonials
+label: 'Authored by'
+description: 'The username of the content author.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: 'Drupal\node\Entity\Node::getDefaultEntityOwner'
+settings:
+  handler: default
+  handler_settings: {  }
+field_type: entity_reference

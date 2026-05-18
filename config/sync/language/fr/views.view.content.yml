@@ -1,0 +1,31 @@
+label: Contenu
+display:
+  default:
+    display_options:
+      title: Contenu
+      fields:
+        title:
+          label: Titre
+        name:
+          label: Auteur
+        status:
+          label: État
+          settings:
+            format_custom_true: Publié
+      filters:
+        title:
+          expose:
+            label: Titre
+        status:
+          expose:
+            label: État
+          group_info:
+            group_items:
+              1:
+                title: Publié
+  page_1:
+    display_options:
+      menu:
+        title: Contenu
+      tab_options:
+        title: Contenu

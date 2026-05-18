@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      fields:
+        filename:
+          label: Nom
+        status:
+          label: État
+      filters:
+        status:
+          expose:
+            label: État

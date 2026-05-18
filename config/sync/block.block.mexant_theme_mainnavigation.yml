@@ -1,0 +1,25 @@
+uuid: 35d5555d-9a6c-40dc-a2bd-719fae0f14f7
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - mexant_theme
+id: mexant_theme_mainnavigation
+theme: mexant_theme
+region: navigation
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Main navigation'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

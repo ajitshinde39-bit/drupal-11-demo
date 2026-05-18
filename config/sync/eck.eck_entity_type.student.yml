@@ -1,0 +1,12 @@
+uuid: 179fd40c-e461-4df9-abe2-1ce806bfb640
+langcode: en
+status: false
+dependencies: {  }
+id: student
+label: Student
+description: 'Student Sample Entity'
+uid: false
+created: false
+changed: false
+title: false
+standalone_url: true

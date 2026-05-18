@@ -1,0 +1,74 @@
+display:
+  default:
+    display_options:
+      fields:
+        title:
+          label: Titre
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Titre
+      filters:
+        title:
+          expose:
+            label: Titre
+  closed:
+    display_options:
+      fields:
+        status:
+          label: État
+        created:
+          label: Créé
+        title:
+          label: Titre
+      filters:
+        title:
+          expose:
+            label: Titre
+  completed:
+    display_options:
+      fields:
+        status:
+          label: État
+        created:
+          label: Créé
+        title:
+          label: Titre
+      filters:
+        title:
+          expose:
+            label: Titre
+  pending:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Titre
+      filters:
+        title:
+          expose:
+            label: Titre
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: État
+        created:
+          label: Créé
+        title:
+          label: Titre
+      filters:
+        title:
+          expose:
+            label: Titre
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: État
+        title:
+          label: Titre

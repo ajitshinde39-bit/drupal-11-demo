@@ -1,0 +1,21 @@
+uuid: 24287108-9df9-4d9f-9a25-48f07b6e5c0a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.translatable_node
+  module:
+    - content_translation
+  enforced:
+    module:
+      - tmgmt_demo
+third_party_settings:
+  content_translation:
+    enabled: true
+_core:
+  default_config_hash: XeR_FaaDzIYlZHNVh0_ZD18beVMeM3MXzZAlUh1Z2GI
+id: node.translatable_node
+target_entity_type_id: node
+target_bundle: translatable_node
+default_langcode: site_default
+language_alterable: true

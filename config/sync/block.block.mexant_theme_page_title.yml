@@ -1,0 +1,20 @@
+uuid: 1183296f-d2ff-473b-a37d-54e24aaccad0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - mexant_theme
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: mexant_theme_page_title
+theme: mexant_theme
+region: header
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

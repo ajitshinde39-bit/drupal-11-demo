@@ -1,0 +1,180 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          submit_button: गाळणी
+          reset_button_label: पुर्ववत
+          exposed_sorts_label: 'क्रमवारी नुसार लावा'
+      fields:
+        title:
+          label: शीर्षक
+          separator: ', '
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+          separator: ', '
+        tuid:
+          separator: ', '
+        title:
+          label: शीर्षक
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        loop_count:
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        uid:
+          expose:
+            label: प्रदाता
+        title:
+          expose:
+            label: शीर्षक
+  closed:
+    display_title: बंद
+    display_options:
+      menu:
+        title: बंद
+      fields:
+        status:
+          label: वर्तमानस्थिती
+          separator: ', '
+        created:
+          label: प्रकाशन
+          separator: ', '
+        tuid:
+          separator: ', '
+        title:
+          label: शीर्षक
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        loop_count:
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        uid:
+          expose:
+            label: प्रदाता
+        title:
+          expose:
+            label: शीर्षक
+  completed:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+          separator: ', '
+        created:
+          label: प्रकाशन
+          separator: ', '
+        tuid:
+          separator: ', '
+        title:
+          label: शीर्षक
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        loop_count:
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        uid:
+          expose:
+            label: प्रदाता
+        title:
+          expose:
+            label: शीर्षक
+  pending:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        tuid:
+          separator: ', '
+        title:
+          label: शीर्षक
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        loop_count:
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        uid:
+          expose:
+            label: प्रदाता
+        title:
+          expose:
+            label: शीर्षक
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        created:
+          label: प्रकाशन
+          separator: ', '
+        tuid:
+          separator: ', '
+        title:
+          label: शीर्षक
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        loop_count:
+          separator: ', '
+        operations:
+          label: कृती
+      filters:
+        uid:
+          expose:
+            label: प्रदाता
+        title:
+          expose:
+            label: शीर्षक
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: वर्तमानस्थिती
+        title:
+          label: शीर्षक
+          separator: ', '
+        source_language:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        loop_count:
+          separator: ', '
+        operations:
+          label: कृती

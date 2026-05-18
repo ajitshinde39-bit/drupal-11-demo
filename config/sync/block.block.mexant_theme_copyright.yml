@@ -1,0 +1,25 @@
+uuid: 68c187ff-4ac6-44fb-91e7-1d40f4787871
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:08d838a9-8351-4c3c-ad75-7ffe6d65f762'
+  module:
+    - block_content
+  theme:
+    - mexant_theme
+id: mexant_theme_copyright
+theme: mexant_theme
+region: copy_right
+weight: 0
+provider: null
+plugin: 'block_content:08d838a9-8351-4c3c-ad75-7ffe6d65f762'
+settings:
+  id: 'block_content:08d838a9-8351-4c3c-ad75-7ffe6d65f762'
+  label: 'copy right'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

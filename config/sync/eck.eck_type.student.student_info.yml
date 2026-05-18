@@ -1,0 +1,9 @@
+uuid: 4c1a5860-fba5-4b3d-92a4-ee66fd9a6637
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_entity_type.student
+name: 'Student Info'
+type: student_info
+description: ''

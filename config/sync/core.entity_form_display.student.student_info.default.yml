@@ -1,0 +1,45 @@
+uuid: b42231d4-156b-48bf-be42-b0c6728972fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - eck.eck_type.student.student_info
+    - field.field.student.student_info.field_age
+    - field.field.student.student_info.field_email
+    - field.field.student.student_info.field_name
+id: student.student_info.default
+targetEntityType: student
+bundle: student_info
+mode: default
+content:
+  field_age:
+    type: number
+    weight: 5
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_email:
+    type: email_default
+    weight: 4
+    region: content
+    settings:
+      placeholder: ''
+      size: 60
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 3
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+hidden: {  }

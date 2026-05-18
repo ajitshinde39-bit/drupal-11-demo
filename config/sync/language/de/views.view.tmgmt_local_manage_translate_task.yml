@@ -1,0 +1,74 @@
+display:
+  default:
+    display_options:
+      fields:
+        title:
+          label: Titel
+  assigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Titel
+      filters:
+        title:
+          expose:
+            label: Titel
+  closed:
+    display_options:
+      fields:
+        status:
+          label: Status
+        created:
+          label: Erstellt
+        title:
+          label: Titel
+      filters:
+        title:
+          expose:
+            label: Titel
+  completed:
+    display_options:
+      fields:
+        status:
+          label: Status
+        created:
+          label: Erstellt
+        title:
+          label: Titel
+      filters:
+        title:
+          expose:
+            label: Titel
+  pending:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Titel
+      filters:
+        title:
+          expose:
+            label: Titel
+  rejected:
+    display_options:
+      fields:
+        status:
+          label: Status
+        created:
+          label: Erstellt
+        title:
+          label: Titel
+      filters:
+        title:
+          expose:
+            label: Titel
+  unassigned:
+    display_options:
+      fields:
+        status:
+          label: Status
+        title:
+          label: Titel

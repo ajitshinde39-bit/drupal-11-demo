@@ -1,0 +1,41 @@
+display:
+  default:
+    display_options:
+      fields:
+        state:
+          label: राज्य
+          separator: ', '
+        label:
+          label: खूणचिठ्ठी
+        source_language_1:
+          label: कडून
+          separator: ', '
+        target_language:
+          label: 'प्रति:'
+          separator: ', '
+        translator:
+          label: प्रदाता
+        file_count:
+          label: फाईल्स
+        operations:
+          label: कृती
+      pager:
+        options:
+          tags:
+            next: 'पुढे ›'
+            previous: '‹ मागे'
+            first: '« प्रथम'
+            last: 'अंतिम »'
+      exposed_form:
+        options:
+          reset_button_label: पुर्ववत
+          exposed_sorts_label: 'क्रमवारी नुसार लावा'
+      filters:
+        state:
+          expose:
+            label: राज्य
+        translator:
+          expose:
+            label: प्रदाता
+  page_1:
+    display_title: पान

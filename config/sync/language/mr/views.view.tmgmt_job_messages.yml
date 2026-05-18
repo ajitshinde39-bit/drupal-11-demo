@@ -1,0 +1,24 @@
+display:
+  default:
+    display_options:
+      exposed_form:
+        options:
+          reset_button_label: पुर्ववत
+          exposed_sorts_label: 'क्रमवारी नुसार लावा'
+      pager:
+        options:
+          tags:
+            previous: '‹ मागे'
+            next: 'पुढे ›'
+            first: '« प्रथम'
+            last: 'अंतिम »'
+      fields:
+        created:
+          label: प्रकाशन
+        name:
+          label: नाव
+          separator: ', '
+      arguments:
+        tjid:
+          exception:
+            title: सर्व

@@ -1,0 +1,18 @@
+uuid: 334d6962-603f-4fca-9b7f-0568dabff8a4
+langcode: en
+status: true
+dependencies:
+  module:
+    - jwt
+    - serialization
+    - student_api
+id: student_resource
+plugin_id: student_resource
+granularity: resource
+configuration:
+  methods:
+    - GET
+  formats:
+    - json
+  authentication:
+    - jwt_auth

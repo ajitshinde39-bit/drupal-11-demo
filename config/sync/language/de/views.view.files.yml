@@ -1,0 +1,12 @@
+display:
+  default:
+    display_options:
+      fields:
+        filename:
+          label: Name
+        status:
+          label: Status
+      filters:
+        status:
+          expose:
+            label: Status

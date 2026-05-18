@@ -1,0 +1,22 @@
+uuid: aaba1332-7495-4bed-acee-53da74dffa90
+langcode: en
+status: true
+dependencies:
+  theme:
+    - mexant_theme
+_core:
+  default_config_hash: ydSxdq7R66I8UMC460rOzlfzvlUL4VRbdwc6z9DWaUI
+id: mexant_theme_secondary_local_tasks
+theme: mexant_theme
+region: header
+weight: -2
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Secondary tabs'
+  label_display: '0'
+  provider: core
+  primary: false
+  secondary: true
+visibility: {  }
