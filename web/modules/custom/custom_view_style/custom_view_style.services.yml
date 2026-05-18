@@ -7,4 +7,4 @@ services:
   custom_view_style.twig_function_extension:
     class: Drupal\custom_view_style\Twig\MyTwigFunction
     tags:
-      - { name: twig.extension }
+      - { name: twig.extension } 
