@@ -25,6 +25,7 @@ module:
   dynamic_page_cache: 0
   eck: 0
   editor: 0
+  employee_api: 0
   field: 0
   field_ui: 0
   file: 0
