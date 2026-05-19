@@ -23,30 +23,30 @@ class StudentController extends ControllerBase {
     );
   }
 
-//   public function getStudents() {
+  public function getStudentsData() {
 
-//     $storage = $this->entityTypeManager->getStorage('student');
+    $storage = $this->entityTypeManager->getStorage('student');
 
-//     $ids = $storage->getQuery()
-//       ->accessCheck(FALSE)
-//       ->execute();
+    $ids = $storage->getQuery()
+      ->accessCheck(FALSE)
+      ->execute();
 
-//     $entities = $storage->loadMultiple($ids);
+    $entities = $storage->loadMultiple($ids);
 
-//     $data = [];
+    $data = [];
 
-//     foreach ($entities as $entity) {
+    foreach ($entities as $entity) {
 
-//       $data[] = [
-//         'id' => $entity->id(),
-//         'name' => $entity->get('field_name')->value,
-//         'email' => $entity->get('field_email')->value,
-//         'age' => $entity->get('field_age')->value,
-//       ];
-//     }
+      $data[] = [
+        'id' => $entity->id(),
+        'name' => $entity->get('field_name')->value,
+        'email' => $entity->get('field_email')->value,
+        'age' => $entity->get('field_age')->value,
+      ];
+    }
 
-//     return new JsonResponse($data);
-//   }
+    return new JsonResponse($data);
+  }
  
     public function getStudent($id) {
         $storage = $this->entityTypeManager->getStorage('student');

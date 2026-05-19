@@ -4,9 +4,6 @@ namespace Drupal\student_api\Plugin\openapi\OpenApiGenerator;
 
 use Drupal\openapi\Annotation\OpenApiGenerator;
 use Drupal\openapi\Plugin\openapi\OpenApiGeneratorBase;
-//use Drupal\Core\Routing\RouteProviderInterface;
-//use Symfony\Component\DependencyInjection\ContainerInterface;
-//use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 
 /**
  * @OpenApiGenerator(
@@ -14,47 +11,14 @@ use Drupal\openapi\Plugin\openapi\OpenApiGeneratorBase;
  *   label = @Translation("Student OpenAPI")
  * )
  */
-//class StudentOpenApi extends OpenApiGeneratorBase implements ContainerFactoryPluginInterface {
+
 class StudentOpenApi extends OpenApiGeneratorBase {
-
-  //protected $routeProvider;
-
-//   public function __construct(
-//     array $configuration,
-//     $plugin_id,
-//     $plugin_definition,
-//     RouteProviderInterface $route_provider
-//   ) {
-
-//     parent::__construct(
-//       $configuration,
-//       $plugin_id,
-//       $plugin_definition
-//     );
-
-//     $this->routeProvider = $route_provider;
-//   }
-
-//   public static function create(
-//     ContainerInterface $container,
-//     array $configuration,
-//     $plugin_id,
-//     $plugin_definition
-//   ) {
-
-//     return new static(
-//       $configuration,
-//       $plugin_id,
-//       $plugin_definition,
-//       $container->get('router.route_provider')
-//     );
-//   }
 
   public function getSpecification() {
 
     $spec = parent::getSpecification();
     unset($spec['swagger']);
-    
+
     $spec['openapi'] = '3.0.0';
 
     $spec['info'] = [
@@ -65,17 +29,6 @@ class StudentOpenApi extends OpenApiGeneratorBase {
     $spec['paths'] = [];
 
     // Controller API.
-    // $spec['paths']['/api/student-controller'] = [
-    //   'get' => [
-    //     'summary' => 'Student Controller API',
-    //     'responses' => [
-    //       '200' => [
-    //         'description' => 'Successful response',
-    //       ],
-    //     ],
-    //   ],
-    // ];
-
     $spec['paths']['/api/student/{id}'] = [
 
         'get' => [
@@ -87,7 +40,7 @@ class StudentOpenApi extends OpenApiGeneratorBase {
             [
                 'name' => 'id',
                 'in' => 'path',
-                'required' => TRUE,
+                'required' =    > TRUE,
 
                 'schema' => [
                 'type' => 'integer',
@@ -157,8 +110,8 @@ class StudentOpenApi extends OpenApiGeneratorBase {
           ],
         ],
         'responses' => [
-          '200' => [
             'description' => 'Successful response',
+            '200' => [
           ],
         ],
       ],

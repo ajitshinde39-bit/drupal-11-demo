@@ -1,11 +1,11 @@
-# student_api.students:
-#   path: '/api/student-controller'
-#   defaults:
-#     _controller: '\Drupal\student_api\Controller\StudentController::getStudents'
-#     _title: 'Student Controller API'
-#   requirements:
-#     _permission: 'access content'
-#   methods: [GET]
+student_api.students:
+  path: '/api/student-controller'
+  defaults:
+    _controller: '\Drupal\student_api\Controller\StudentController::getStudentsData'
+    _title: 'Student Controller API'
+  requirements:
+    _permission: 'access content'
+  methods: [GET]
 
 student_api.swagger:
   path: '/api/swagger.json'
