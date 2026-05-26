@@ -1,5 +1,6 @@
   <!-- ***** Header Area Start ***** -->
-  <header class="header-area header-sticky">
+  {# <header class="header-area header-sticky"> #}
+  <header class="header-area {% if is_front %}header-sticky{% else %}header-inner{% endif %}">
       <div class="container">
           <div class="row">
               <div class="col-12">

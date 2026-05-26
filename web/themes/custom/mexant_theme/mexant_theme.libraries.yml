@@ -3,12 +3,23 @@ global-styling:
     theme:
       vendor/bootstrap/css/bootstrap.min.css: {}
       css/fontawesome.css: {}
-      css/templatemo-574-mexant.css: {}
+      #css/templatemo-574-mexant.css: {}
       css/owl.css: {}
       css/animate.css: {}
+      css/internal-pages.css: {}
       https://unpkg.com/swiper@7/swiper-bundle.min.css: 
         type: external
         minified: true
+
+homepage:
+  css:
+    theme:
+      css/templatemo-574-mexant.css: {}
+
+search-page:
+  css:
+    theme:
+      css/search-page.css: {}
 
 global-scripts:
   js:

@@ -48,7 +48,9 @@
 <main class="site-content">
   {% if page.content %}
     {% block content %}
-      {{ page.content }}
+      <div class="container">
+        {{ page.content }}
+      </div>
     {% endblock %}
   {% endif %}
 </main>

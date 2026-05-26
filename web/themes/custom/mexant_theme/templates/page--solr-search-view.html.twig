@@ -1,0 +1,23 @@
+{{ attach_library('mexant_theme/search-page') }}
+
+{% include '@mexant_theme/layout/header.html.twig' %}
+
+<div class="container search-page-wrapper">
+  <div class="row">
+
+    <div class="col-lg-3">
+      <aside class="search-sidebar">
+        {{ page.sidebar }}
+      </aside>
+    </div>
+
+    <div class="col-lg-9">
+      <main class="search-content">
+        {{ page.content }}
+      </main>
+    </div>
+
+  </div>
+</div>
+
+{% include '@mexant_theme/layout/footer.html.twig' %}

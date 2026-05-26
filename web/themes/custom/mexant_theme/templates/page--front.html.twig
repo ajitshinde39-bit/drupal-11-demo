@@ -43,11 +43,12 @@
  * @see html.html.twig
  */
 #}
-
-  {% extends "page.html.twig" %}
+{{ attach_library('mexant_theme/homepage') }}
+  {# {% extends "page.html.twig" %} #}
+  {% include '@mexant_theme/layout/header.html.twig' %}
 
     {% block content %}
-      <!-- ***** Main Banner Area Start ***** -->
+      <!-- ***** Main Banner Area Start *****-->
       <div class="swiper-container" id="top">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
@@ -369,5 +370,6 @@
         </section>
     {% endblock %}
   
+{% include '@mexant_theme/layout/footer.html.twig' %}
 
  
