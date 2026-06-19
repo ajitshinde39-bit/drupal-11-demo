@@ -4,5 +4,11 @@ display:
       fields:
         label:
           label: Libellé
+        tags_count:
+          label: Étiquettes
+        file_count:
+          label: Fichiers
         changed:
           label: Modifié
+        operations:
+          label: Actions

@@ -2,6 +2,8 @@ display:
   default:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         title:
           label: Libellé
       filters:
@@ -11,10 +13,14 @@ display:
   closed:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Libellé
+        operations:
+          label: Actions
       filters:
         status:
           expose:
@@ -25,10 +31,14 @@ display:
   completed:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Libellé
+        operations:
+          label: Actions
       filters:
         status:
           expose:
@@ -39,10 +49,14 @@ display:
   eligible:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Libellé
+        operations:
+          label: Actions
       filters:
         status:
           expose:
@@ -53,10 +67,14 @@ display:
   my_tasks:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Libellé
+        operations:
+          label: Actions
       filters:
         status:
           expose:
@@ -67,10 +85,14 @@ display:
   pending:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Libellé
+        operations:
+          label: Actions
       filters:
         status:
           expose:
@@ -81,10 +103,14 @@ display:
   rejected:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Libellé
+        operations:
+          label: Actions
       filters:
         status:
           expose:
@@ -95,10 +121,14 @@ display:
   unassigned:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Libellé
+        operations:
+          label: Actions
       filters:
         status:
           expose:

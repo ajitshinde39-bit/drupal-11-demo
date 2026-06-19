@@ -1,16 +1,35 @@
 display:
   default:
+    display_title: Master
     display_options:
+      exposed_form:
+        options:
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: Sortierung
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      pager:
+        options:
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
       fields:
+        tmgmt_local_task_bulk_form:
+          label: Massenaktualisierung
         title:
           label: Titel
   assigned:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: Massenaktualisierung
         status:
           label: Status
         title:
           label: Titel
+        operations:
+          label: Aktionen
       filters:
         title:
           expose:
@@ -18,12 +37,16 @@ display:
   closed:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: Massenaktualisierung
         status:
           label: Status
         created:
           label: Erstellt
         title:
           label: Titel
+        operations:
+          label: Aktionen
       filters:
         title:
           expose:
@@ -31,12 +54,16 @@ display:
   completed:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: Massenaktualisierung
         status:
           label: Status
         created:
           label: Erstellt
         title:
           label: Titel
+        operations:
+          label: Aktionen
       filters:
         title:
           expose:
@@ -44,10 +71,14 @@ display:
   pending:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: Massenaktualisierung
         status:
           label: Status
         title:
           label: Titel
+        operations:
+          label: Aktionen
       filters:
         title:
           expose:
@@ -55,12 +86,16 @@ display:
   rejected:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: Massenaktualisierung
         status:
           label: Status
         created:
           label: Erstellt
         title:
           label: Titel
+        operations:
+          label: Aktionen
       filters:
         title:
           expose:
@@ -68,7 +103,11 @@ display:
   unassigned:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: Massenaktualisierung
         status:
           label: Status
         title:
           label: Titel
+        operations:
+          label: Aktionen

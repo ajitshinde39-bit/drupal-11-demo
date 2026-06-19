@@ -6,5 +6,9 @@ display:
           label: Libellé
         type:
           label: Type
+        tags_count:
+          label: Étiquettes
         changed:
           label: Modifié
+        operations:
+          label: Actions

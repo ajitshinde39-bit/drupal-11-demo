@@ -1,6 +1,7 @@
 label: Contenu
 display:
   default:
+    display_title: 'Par défaut'
     display_options:
       title: Contenu
       fields:
@@ -12,6 +13,10 @@ display:
           label: État
           settings:
             format_custom_true: Publié
+        langcode:
+          label: Langue
+        operations:
+          label: Actions
       filters:
         title:
           expose:
@@ -23,6 +28,9 @@ display:
             group_items:
               1:
                 title: Publié
+        langcode:
+          expose:
+            label: Langue
   page_1:
     display_options:
       menu:

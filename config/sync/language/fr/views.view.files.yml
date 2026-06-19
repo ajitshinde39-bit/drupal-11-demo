@@ -1,12 +1,26 @@
+label: Fichiers
 display:
   default:
+    display_title: 'Par défaut'
     display_options:
+      title: Fichiers
       fields:
         filename:
           label: Nom
         status:
           label: État
+        operations:
+          label: Actions
       filters:
         status:
           expose:
             label: État
+  page_1:
+    display_options:
+      menu:
+        title: Fichiers
+  page_2:
+    display_options:
+      fields:
+        type:
+          label: "Type d'entité"

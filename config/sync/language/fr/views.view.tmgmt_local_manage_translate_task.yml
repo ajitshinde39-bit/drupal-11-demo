@@ -2,15 +2,21 @@ display:
   default:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         title:
           label: Titre
   assigned:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Titre
+        operations:
+          label: Actions
       filters:
         title:
           expose:
@@ -18,12 +24,16 @@ display:
   closed:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         created:
           label: Créé
         title:
           label: Titre
+        operations:
+          label: Actions
       filters:
         title:
           expose:
@@ -31,12 +41,16 @@ display:
   completed:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         created:
           label: Créé
         title:
           label: Titre
+        operations:
+          label: Actions
       filters:
         title:
           expose:
@@ -44,10 +58,14 @@ display:
   pending:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Titre
+        operations:
+          label: Actions
       filters:
         title:
           expose:
@@ -55,12 +73,16 @@ display:
   rejected:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         created:
           label: Créé
         title:
           label: Titre
+        operations:
+          label: Actions
       filters:
         title:
           expose:
@@ -68,7 +90,11 @@ display:
   unassigned:
     display_options:
       fields:
+        tmgmt_local_task_bulk_form:
+          label: 'Mise à jour en masse'
         status:
           label: État
         title:
           label: Titre
+        operations:
+          label: Actions

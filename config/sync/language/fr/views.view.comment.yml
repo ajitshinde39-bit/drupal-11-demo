@@ -1,11 +1,24 @@
 display:
   default:
+    display_title: 'Par défaut'
     display_options:
       fields:
         name:
           label: Auteur
+        operations:
+          label: Actions
+      filters:
+        langcode:
+          expose:
+            label: Langue
   page_unapproved:
     display_options:
       fields:
         name:
           label: Auteur
+        operations:
+          label: Actions
+      filters:
+        langcode:
+          expose:
+            label: Langue

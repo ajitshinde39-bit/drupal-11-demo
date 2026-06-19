@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - calculator_form
+    - system
   theme:
     - mexant_theme
 id: mexant_theme_calculatorformblock
@@ -17,4 +18,8 @@ settings:
   label: 'Calculator Form Block'
   label_display: visible
   provider: calculator_form
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

@@ -1,11 +1,39 @@
 display:
   default:
+    display_title: Standard
     display_options:
       fields:
         name:
           label: Autor
+        operations:
+          label: Aktionen
+      pager:
+        options:
+          tags:
+            next: 'nächste Seite ›'
+            previous: '‹ vorherige Seite'
+          expose:
+            items_per_page_label: 'Elemente pro Seite'
+            items_per_page_options_all_label: '- Alle -'
+            offset_label: Versatz
+      exposed_form:
+        options:
+          reset_button_label: Zurücksetzen
+          exposed_sorts_label: Sortierung
+          sort_asc_label: Aufsteigend
+          sort_desc_label: Absteigend
+      filters:
+        langcode:
+          expose:
+            label: Sprache
   page_unapproved:
     display_options:
       fields:
         name:
           label: Autor
+        operations:
+          label: Aktionen
+      filters:
+        langcode:
+          expose:
+            label: Sprache

@@ -1,0 +1,29 @@
+uuid: fd1f2f9b-0a1d-4d9e-b22c-96040a4cd542
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.content_type
+  module:
+    - facets
+    - system
+  theme:
+    - mexant_theme
+id: mexant_theme_contenttype
+theme: mexant_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: 'facet_block:content_type'
+settings:
+  id: 'facet_block:content_type'
+  label: 'Content type'
+  label_display: visible
+  provider: facets
+  context_mapping: {  }
+  block_id: mexant_theme_contenttype
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /solr-search-view

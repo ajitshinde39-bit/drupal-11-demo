@@ -8,3 +8,5 @@ display:
           label: Libellé
         item_type:
           label: Type
+        operations:
+          label: Actions

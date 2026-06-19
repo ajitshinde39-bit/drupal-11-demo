@@ -4,6 +4,7 @@ status: true
 dependencies:
   module:
     - chatgpt_integration
+    - system
   theme:
     - mexant_theme
 id: mexant_theme_chatgptchatblock
@@ -17,4 +18,8 @@ settings:
   label: 'ChatGPT Chat Block'
   label_display: visible
   provider: chatgpt_integration
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

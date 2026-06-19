@@ -26,6 +26,7 @@ module:
   eck: 0
   editor: 0
   employee_api: 0
+  facets: 0
   field: 0
   field_ui: 0
   file: 0
@@ -60,6 +61,8 @@ module:
   schemata: 0
   schemata_json_schema: 0
   search: 0
+  search_api: 0
+  search_api_solr: 0
   serialization: 0
   shortcut: 0
   standard: 0
@@ -75,9 +78,11 @@ module:
   tmgmt_local: 0
   tmgmt_locale: 0
   toolbar: 0
+  tracer: 0
   user: 0
   users_jwt: 0
   views_ui: 0
+  webprofiler: 0
   content_translation: 10
   views: 10
 theme:

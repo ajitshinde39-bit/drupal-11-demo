@@ -1,9 +1,18 @@
 display:
   default:
+    display_title: 'Par défaut'
     display_options:
       fields:
+        user_bulk_form:
+          label: 'Mise à jour en masse'
+        name:
+          label: "Nom d'utilisateur"
         status:
           label: État
+        roles_target_id:
+          label: Rôles
+        operations:
+          label: Actions
       filters:
         status:
           group_info:
