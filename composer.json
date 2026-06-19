@@ -37,6 +37,7 @@
         "drupal/tmgmt": "^1.18",
         "drupal/token": "^1.16",
         "drupal/ui_patterns": "^2.0",
+        "drupal/webprofiler": "^11.1",
         "drush/drush": "^13.7"
     },
     "conflict": {

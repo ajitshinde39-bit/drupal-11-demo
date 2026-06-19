@@ -40,9 +40,6 @@ class ChatGptForm extends FormBase {
     // 🔑 THIS IS CRITICAL
     $form['#attached']['library'][] = 'chatgpt_integration/chatgpt';
 
-    // Prevent caching
-    $form['#cache']['max-age'] = 0;
-
     return $form;
   }
 

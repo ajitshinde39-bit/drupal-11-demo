@@ -2,7 +2,7 @@
 use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\Core\Render\Markup;
-
+use Drupal\views\ViewExecutable;
 
 /**
  * Preprocess for our custom views style.
@@ -79,3 +79,13 @@ function template_preprocess_views_view_custom_testimonials_style(&$variables) {
   }
 }
 
+// Note : pass contextual filter values through query parameters instead of URL path arguments
+function mymodule_views_pre_view( ViewExecutable $view, $display_id, array &$args) {
+
+  if ($view->id() === 'context_view_by_user_id') {
+    $author_ids = \Drupal::request()->query->get('author_id');
+    if (!empty($author_ids)) {
+      $args[0] = $author_ids;
+    }
+  }
+}

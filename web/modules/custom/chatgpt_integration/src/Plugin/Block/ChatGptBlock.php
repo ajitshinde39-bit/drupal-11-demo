@@ -20,39 +20,4 @@ class ChatGptBlock extends BlockBase {
             'Drupal\chatgpt_integration\Form\ChatGptForm'
         );
     }
-
-//   public function build() {
-//     return [
-//         '#type' => 'container',
-//         '#attributes' => ['class' => ['chatgpt-box']],
-//         'message' => [
-//         '#type' => 'textfield',
-//         '#attributes' => [
-//             'id' => 'chat-message',
-//             'placeholder' => 'Ask something...',
-//         ],
-//         ],
-//         'send' => [
-//         '#type' => 'html_tag',
-//         '#tag' => 'button',
-//         '#value' => 'Send',
-//         '#attributes' => [
-//             'id' => 'chat-send',
-//             'type' => 'button',
-//         ],
-//         ],
-//         'response' => [
-//         '#type' => 'container',
-//         '#attributes' => ['id' => 'chat-response'],
-//         ],
-//         '#attached' => [
-//         'library' => [
-//             'chatgpt_integration/chatgpt',
-//         ],
-//         ],
-//         '#cache' => [
-//         'max-age' => 0,
-//         ],
-//     ];
-//   }
 }

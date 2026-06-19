@@ -30,3 +30,8 @@
 
 # Logs
 *.log
+
+.ssh
+.ssh.pub
+*.pem
+*.key
