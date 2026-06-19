@@ -25,6 +25,7 @@ display:
     display_plugin: default
     position: 0
     display_options:
+      title: article_view_rest_api
       fields:
         title:
           id: title
