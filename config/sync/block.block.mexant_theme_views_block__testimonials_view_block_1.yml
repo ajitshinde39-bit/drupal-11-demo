@@ -11,7 +11,7 @@ dependencies:
 id: mexant_theme_views_block__testimonials_view_block_1
 theme: mexant_theme
 region: testimonials
-weight: 0
+weight: -9
 provider: null
 plugin: 'views_block:testimonials_view-block_1'
 settings:

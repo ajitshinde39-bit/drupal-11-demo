@@ -1,0 +1,11 @@
+uuid: 073b943a-0856-49e2-9b29-8ac1b49b9eab
+langcode: en
+status: true
+dependencies:
+  module:
+    - tmgmt
+id: tmgmt_remote.token
+label: Token
+description: null
+targetEntityType: tmgmt_remote
+cache: true

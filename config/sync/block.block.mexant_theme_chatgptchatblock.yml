@@ -10,7 +10,7 @@ dependencies:
 id: mexant_theme_chatgptchatblock
 theme: mexant_theme
 region: testimonials
-weight: 0
+weight: -10
 provider: null
 plugin: chatgpt_chat_block
 settings:

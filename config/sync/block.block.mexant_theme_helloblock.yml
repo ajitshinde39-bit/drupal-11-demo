@@ -1,0 +1,26 @@
+uuid: 3eae0985-af8d-47aa-a123-bfb3293acc32
+langcode: en
+status: true
+dependencies:
+  module:
+    - custom_view_style
+    - system
+  theme:
+    - mexant_theme
+id: mexant_theme_helloblock
+theme: mexant_theme
+region: testimonials
+weight: -11
+provider: null
+plugin: hello_block
+settings:
+  id: hello_block
+  label: 'Hello Block'
+  label_display: '0'
+  provider: custom_view_style
+  message: 'Hello, Drupal! its custom block content'
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

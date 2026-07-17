@@ -1,0 +1,11 @@
+uuid: 7c595a7a-0c9c-43c1-957d-c3e34406e9fe
+langcode: en
+status: true
+dependencies:
+  module:
+    - eck
+id: student.token
+label: Token
+description: null
+targetEntityType: student
+cache: true

@@ -77,11 +77,15 @@ module:
   tmgmt_language_combination: 0
   tmgmt_local: 0
   tmgmt_locale: 0
+  token: 0
   toolbar: 0
   tracer: 0
   user: 0
   users_jwt: 0
   views_ui: 0
+  webform: 0
+  webform_attachment: 0
+  webform_ui: 0
   webprofiler: 0
   content_translation: 10
   views: 10

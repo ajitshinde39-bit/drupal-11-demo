@@ -1,0 +1,11 @@
+uuid: cdff9176-95ee-4a03-a93f-cd7ae3c721ea
+langcode: en
+status: true
+dependencies:
+  module:
+    - tmgmt
+id: tmgmt_message.token
+label: Token
+description: null
+targetEntityType: tmgmt_message
+cache: true
