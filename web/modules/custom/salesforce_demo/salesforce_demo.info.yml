@@ -1,0 +1,7 @@
+name: Salesforce Demo
+type: module
+description: Integrates Drupal Webforms with Salesforce CRM.
+package: Custom
+core_version_requirement: ^11
+dependencies:
+  - drupal:webform

@@ -1,0 +1,9 @@
+services:
+
+  salesforce_demo.api:
+    class: Drupal\salesforce_demo\Service\SalesforceApi
+
+    arguments:
+      - '@http_client'
+      - '@config.factory'
+      - '@logger.channel.default'

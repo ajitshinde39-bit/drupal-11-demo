@@ -1,0 +1,11 @@
+salesforce_demo.settings:
+
+  title: 'Salesforce'
+
+  description: 'Salesforce Integration Settings'
+
+  route_name: salesforce_demo.settings
+
+  parent: system.admin_config_services
+
+  weight: 100

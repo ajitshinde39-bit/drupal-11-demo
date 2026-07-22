@@ -1,7 +1,9 @@
 uuid: 50028eee-41fa-4331-b7ed-aa04ac1c6037
 langcode: en
 status: open
-dependencies: {  }
+dependencies:
+  module:
+    - salesforce_demo
 weight: 0
 open: null
 close: null
@@ -387,4 +389,19 @@ handlers:
       langcode: ''
       parameters: {  }
       debug: false
+  salesforce_integration:
+    id: salesforce_handler
+    handler_id: salesforce_integration
+    label: 'Salesforce Integration'
+    notes: ''
+    status: true
+    conditions:
+      disabled:
+        '':
+          '': ''
+    weight: 0
+    settings:
+      enabled: true
+      settings:
+        enabled: 1
 variants: {  }

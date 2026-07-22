@@ -59,6 +59,7 @@ module:
   path_alias: 0
   rest: 0
   restui: 0
+  salesforce_demo: 0
   schemata: 0
   schemata_json_schema: 0
   search: 0

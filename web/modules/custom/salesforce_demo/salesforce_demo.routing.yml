@@ -1,0 +1,16 @@
+salesforce_demo.settings:
+  path: '/admin/config/services/salesforce'
+  defaults:
+    _form: '\Drupal\salesforce_demo\Form\SalesforceSettingsForm'
+    _title: 'Salesforce Settings'
+  requirements:
+    _permission: 'administer salesforce settings'
+
+salesforce_demo.test:
+  path: '/salesforce/test'
+  defaults:
+    _controller: '\Drupal\salesforce_demo\Controller\SalesforceTestController::test'
+    _title: 'Salesforce Test'
+  requirements:
+    _permission: 'access content'
+
