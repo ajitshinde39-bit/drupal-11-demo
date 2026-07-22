@@ -1,0 +1,31 @@
+uuid: df07eae2-3f06-47a0-92ee-836aaf9f1c75
+langcode: en
+status: true
+dependencies:
+  config:
+    - webform.webform.contact_us
+  module:
+    - system
+    - webform
+  theme:
+    - mexant_theme
+id: mexant_theme_webform
+theme: mexant_theme
+region: testimonials
+weight: 0
+provider: null
+plugin: webform_block
+settings:
+  id: webform_block
+  label: Webform
+  label_display: visible
+  provider: webform
+  webform_id: contact_us
+  default_data: ''
+  redirect: false
+  lazy: false
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'

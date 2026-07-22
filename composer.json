@@ -24,6 +24,7 @@
         "drupal/devel": "^5",
         "drupal/eck": "^2.1",
         "drupal/facets": "^3.0",
+        "drupal/google_tag": "^2.0",
         "drupal/jsonapi_extras": "^3.28",
         "drupal/jwt": "^2.3",
         "drupal/openapi": "^2.3",

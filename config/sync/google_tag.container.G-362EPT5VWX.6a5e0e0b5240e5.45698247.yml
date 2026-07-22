@@ -1,0 +1,34 @@
+uuid: f7a5bc22-1f06-4f2f-82e9-d42874c27070
+langcode: en
+status: true
+dependencies: {  }
+id: G-362EPT5VWX.6a5e0e0b5240e5.45698247
+label: G-362EPT5VWX
+weight: 0
+tag_container_ids:
+  - G-362EPT5VWX
+  - GTM-KV5H5FRT
+advanced_settings:
+  consent_mode: false
+  gtm:
+    GTM-KV5H5FRT:
+      data_layer: dataLayer
+      include_classes: false
+      allowlist_classes: ''
+      blocklist_classes: ''
+      include_environment: false
+      environment_id: ''
+      environment_token: ''
+dimensions_metrics: {  }
+conditions: {  }
+events:
+  webform_purchase: {  }
+  search: {  }
+  login:
+    method: CMS
+  generate_lead:
+    value: ''
+    currency: ''
+  sign_up:
+    method: CMS
+  custom: {  }
