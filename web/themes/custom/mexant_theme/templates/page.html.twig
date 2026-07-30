@@ -46,13 +46,27 @@
 {% include '@mexant_theme/layout/header.html.twig' %}
 
 <main class="site-content">
-  {% if page.content %}
-    {% block content %}
+
+  {% if page.highlighted %}
+    <div class="highlighted">
       <div class="container">
-        {{ page.content }}
+        {{ page.highlighted }}
       </div>
-    {% endblock %}
+    </div>
   {% endif %}
+
+  {% if page.messages %}
+    <div class="container">
+      {{ page.messages }}
+    </div>
+  {% endif %}
+
+  {% if page.content %}
+    <div class="container">
+      {{ page.content }}
+    </div>
+  {% endif %}
+
 </main>
 
 {% include '@mexant_theme/layout/footer.html.twig' %}

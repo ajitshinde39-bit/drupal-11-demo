@@ -4,10 +4,13 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.tmgmt_translation_skills
     - field.field.user.user.user_picture
+    - image.style.thumbnail
   module:
-    - tmgmt_language_combination
+    - image
     - user
 id: user.user.register
 targetEntityType: user
@@ -15,31 +18,37 @@ bundle: user
 mode: register
 content:
   account:
-    weight: -10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
-  contact:
-    weight: 5
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  language:
+  field_first_name:
+    type: string_textfield
     weight: 0
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-  timezone:
-    weight: 6
+  field_last_name:
+    type: string_textfield
+    weight: 1
     region: content
-    settings: {  }
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-  tmgmt_translation_skills:
-    type: tmgmt_language_combination_default
-    weight: 7
+  user_picture:
+    type: image_image
+    weight: 3
     region: content
-    settings: {  }
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
     third_party_settings: {  }
 hidden:
+  contact: true
   langcode: true
-  user_picture: true
+  language: true
+  timezone: true
+  tmgmt_translation_skills: true

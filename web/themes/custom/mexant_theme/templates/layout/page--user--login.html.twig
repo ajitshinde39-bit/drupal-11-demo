@@ -1,0 +1,64 @@
+{#
+/**
+ * Custom login page template.
+ */
+#}
+
+<div class="login-page">
+
+  <div class="login-card">
+
+    <div class="login-logo">
+      <!-- <a href="{{ path('<front>') }}" class="login-logo-link">
+
+        {% if site_logo %}
+          <img
+            src="{{ site_logo }}"
+            alt="{{ 'Home'|t }}"
+          >
+        {% else %}
+          <span class="login-site-name">
+            {{ site_name }}
+          </span>
+        {% endif %}
+
+      </a> -->
+
+        {% if page.header %}
+            {{ page.header }}
+        {% endif %}
+
+
+    </div>
+
+    <div class="login-content">
+
+      <h1 class="login-title">
+        {{ 'Welcome Back'|t }}
+      </h1>
+
+      <p class="login-description">
+        {{ 'Sign in to access your account.'|t }}
+      </p>
+
+      {# Drupal error and status messages. #}
+      {% if page.messages %}
+        <div class="login-messages">
+          {{ page.messages }}
+        </div>
+      {% endif %}
+
+      {# Drupal login form. #}
+      {{ page.content }}
+
+      <div class="login-help-links">
+        <a href="{{ path('user.pass') }}">
+          {{ 'Forgot your password?'|t }}
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

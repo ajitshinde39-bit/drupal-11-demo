@@ -1,0 +1,52 @@
+{#
+/**
+ * Custom user registration page.
+ */
+#}
+
+<div class="login-page">
+
+  <div class="login-card login-register-card">
+
+    {# Logo section. #}
+    <div class="login-logo">
+
+      {% if page.header %}
+        {{ page.header }}
+      {% endif %}
+
+    </div>
+
+    <div class="login-content">
+
+      <h1 class="login-title">
+        {{ 'Create Your Account'|t }}
+      </h1>
+
+      <p class="login-description">
+        {{ 'Create an account to access all features.'|t }}
+      </p>
+
+      {# Drupal status and validation messages. #}
+      {% if page.messages %}
+        <div class="login-messages">
+          {{ page.messages }}
+        </div>
+      {% endif %}
+
+      {# Drupal registration form. #}
+      {{ page.content }}
+
+      <div class="login-help-links">
+        <span>{{ 'Already have an account?'|t }}</span>
+
+        <a href="{{ path('user.login') }}">
+          {{ 'Log in'|t }}
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

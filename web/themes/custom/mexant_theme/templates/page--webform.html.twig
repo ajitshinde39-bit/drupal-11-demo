@@ -1,0 +1,20 @@
+{{ attach_library('mexant_theme/contact-page') }}
+{% include '@mexant_theme/layout/header.html.twig' %}
+<section class="contact-section">
+    <div class="contact-container">
+
+        <!-- Left Side -->
+         <div class="contact-info">
+            {{ page.sidebar }}    
+         </div>
+         
+        <!-- Right Side -->
+        <div class="contact-form-wrapper">
+
+            {{ page.content }}
+
+        </div>
+
+    </div>
+</section>
+{% include '@mexant_theme/layout/footer.html.twig' %}

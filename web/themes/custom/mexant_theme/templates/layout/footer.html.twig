@@ -1,5 +1,17 @@
- <footer>
-    <div class="container">
-      {{ page.copy_right }}
-    </div>
-  </footer>
+<footer class="site-footer">
+  <div class="container">
+
+    {% if page.footer %}
+      <div class="footer-content">
+        {{ page.footer }}
+      </div>
+    {% endif %}
+
+    {% if page.copy_right %}
+      <div class="copyright">
+        {{ page.copy_right }}
+      </div>
+    {% endif %}
+
+  </div>
+</footer>

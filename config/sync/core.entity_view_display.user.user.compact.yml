@@ -4,6 +4,8 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.compact
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.tmgmt_translation_skills
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -17,6 +19,22 @@ targetEntityType: user
 bundle: user
 mode: compact
 content:
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
   user_picture:
     type: image
     label: hidden
@@ -26,9 +44,10 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 0
+    weight: 2
     region: content
 hidden:
   langcode: true
   member_for: true
+  search_api_excerpt: true
   tmgmt_translation_skills: true

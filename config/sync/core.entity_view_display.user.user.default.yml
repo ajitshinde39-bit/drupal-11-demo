@@ -3,6 +3,8 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_last_name
     - field.field.user.user.tmgmt_translation_skills
     - field.field.user.user.user_picture
     - image.style.thumbnail
@@ -16,7 +18,25 @@ targetEntityType: user
 bundle: user
 mode: default
 content:
+  field_first_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 6
+    region: content
+  field_last_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 7
+    region: content
   member_for:
+    settings: {  }
+    third_party_settings: {  }
     weight: 5
     region: content
   user_picture:
@@ -32,4 +52,5 @@ content:
     region: content
 hidden:
   langcode: true
+  search_api_excerpt: true
   tmgmt_translation_skills: true

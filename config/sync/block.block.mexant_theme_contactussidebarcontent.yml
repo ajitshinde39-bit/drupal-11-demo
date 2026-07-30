@@ -1,0 +1,30 @@
+uuid: 87e3ff78-1fab-486b-83a5-dae2d6985c66
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6909c8d2-b182-4040-a67a-ed3063e79ebb'
+  module:
+    - block_content
+    - system
+  theme:
+    - mexant_theme
+id: mexant_theme_contactussidebarcontent
+theme: mexant_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: 'block_content:6909c8d2-b182-4040-a67a-ed3063e79ebb'
+settings:
+  id: 'block_content:6909c8d2-b182-4040-a67a-ed3063e79ebb'
+  label: 'contact us sidebar content'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /form/contact-us

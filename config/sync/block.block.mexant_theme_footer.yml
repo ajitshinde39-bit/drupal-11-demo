@@ -1,0 +1,25 @@
+uuid: 4da7538d-4344-4b50-bef0-800454b413f6
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.footer
+  module:
+    - system
+  theme:
+    - mexant_theme
+id: mexant_theme_footer
+theme: mexant_theme
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer'
+settings:
+  id: 'system_menu_block:footer'
+  label: Footer
+  label_display: visible
+  provider: system
+  level: 1
+  depth: null
+  expand_all_items: false
+visibility: {  }

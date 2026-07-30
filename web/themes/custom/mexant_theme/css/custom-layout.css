@@ -1,0 +1,450 @@
+/* Header */
+.header-area {
+  width: 100%;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 999;
+}
+
+.header-area .container {
+  max-width: 1320px;
+}
+
+/* Navigation */
+.header-area nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+}
+
+.header-area ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.header-area ul.menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header-area ul.menu li {
+  margin: 0;
+}
+
+.header-area ul.menu li a {
+  color: #212741;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header-area ul.menu li a:hover,
+.header-area ul.menu li a.is-active {
+  color: #43ba7f;
+}
+
+/* Logo */
+.header-area .site-logo img {
+  max-width: 170px;
+  height: auto;
+}
+
+/* Main content */
+.site-content {
+  min-height: 500px;
+  padding: 50px 0;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #181d30;
+  color: #ffffff;
+  padding: 50px 0 20px;
+  margin-top: 50px;
+}
+
+.site-footer a {
+  color: #43ba7f;
+}
+
+.footer-content {
+  margin-bottom: 25px;
+}
+
+.copyright {
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .header-area ul.menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .site-content {
+    padding: 30px 0;
+  }
+}
+
+/* =====================================
+   Drupal Login Page
+===================================== */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: #f4f7fb;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+}
+
+.login-page .login-logo {
+  padding: 25px 35px;
+  text-align: center;
+  background: #181d30;
+}
+
+.login-page .login-logo img {
+  max-width: 180px;
+  height: auto;
+}
+
+.login-logo h1{
+    color: orange;
+}
+
+/* Hide menu inside the login page. */
+.login-logo nav,
+.login-logo .menu,
+.login-logo ul {
+  display: none;
+}
+
+.login-content {
+  padding: 40px;
+}
+
+.login-title {
+  margin: 0 0 10px;
+  color: #181d30;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-description {
+  margin: 0 0 30px;
+  color: #777777;
+  text-align: center;
+}
+
+/* Drupal login form */
+.login-content form {
+  width: 100%;
+}
+
+.login-content .form-item {
+  margin-bottom: 20px;
+}
+
+.login-content label {
+  display: block;
+  margin-bottom: 8px;
+  color: #181d30;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.login-content input[type="text"],
+.login-content input[type="password"],
+.login-content input[type="email"] {
+  width: 100%;
+  height: 48px;
+  padding: 10px 15px;
+  border: 1px solid #d7dce3;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.login-content input[type="text"]:focus,
+.login-content input[type="password"]:focus,
+.login-content input[type="email"]:focus {
+  border-color: #43ba7f;
+  outline: none;
+}
+
+/* Login button */
+.login-content input[type="submit"],
+.login-content .form-submit {
+  width: 100%;
+  height: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: #43ba7f;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-content input[type="submit"]:hover,
+.login-content .form-submit:hover {
+  background: #36a86f;
+}
+
+/* Login links */
+.login-content a {
+  color: #43ba7f;
+  text-decoration: none;
+}
+
+.login-content a:hover {
+  text-decoration: underline;
+}
+
+/* Drupal messages */
+.login-messages {
+  margin-bottom: 20px;
+}
+
+.login-messages .messages {
+  margin: 0;
+}
+
+@media (max-width: 576px) {
+  .login-page {
+    padding: 20px 15px;
+  }
+
+  .login-content {
+    padding: 30px 20px;
+  }
+}
+
+/* =====================================
+   Drupal Login Messages
+===================================== */
+
+.login-messages {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.login-messages .messages {
+  margin: 0;
+  padding: 14px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Error message */
+.login-messages .messages--error {
+  color: #842029;
+  background-color: #f8d7da;
+  border: 1px solid #f1aeb5;
+}
+
+/* Status message */
+.login-messages .messages--status {
+  color: #0f5132;
+  background-color: #d1e7dd;
+  border: 1px solid #a3cfbb;
+}
+
+/* Warning message */
+.login-messages .messages--warning {
+  color: #664d03;
+  background-color: #fff3cd;
+  border: 1px solid #ffecb5;
+}
+
+/* Remove unwanted list spacing */
+.login-messages .messages ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+/* Login and password-reset logo */
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110px;
+  padding: 25px;
+  background-color: #181d30;
+}
+
+.login-logo .site-branding {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-logo .site-logo {
+  display: block;
+  margin: 0;
+}
+
+.login-logo .site-logo img {
+  display: block;
+  width: auto;
+  max-width: 190px;
+  max-height: 65px;
+}
+
+/* =====================================
+   User Registration Page
+===================================== */
+
+.login-page .login-register-card {
+  max-width: 560px;
+}
+
+.login-page .login-register-card .login-content {
+  padding: 40px;
+}
+
+/* Registration form spacing */
+.login-page .login-register-card .form-item {
+  margin-bottom: 20px;
+}
+
+/* Registration labels */
+.login-page .login-register-card label {
+  display: block;
+  margin-bottom: 8px;
+  color: #181d30;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Registration inputs */
+.login-page .login-register-card input[type="text"],
+.login-page .login-register-card input[type="email"],
+.login-page .login-register-card input[type="password"] {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 15px;
+  border: 1px solid #d7dce3;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  color: #181d30;
+  font-size: 15px;
+}
+
+/* Input focus */
+.login-page .login-register-card input[type="text"]:focus,
+.login-page .login-register-card input[type="email"]:focus,
+.login-page .login-register-card input[type="password"]:focus {
+  border-color: #43ba7f;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(67, 186, 127, 0.12);
+}
+
+/* Drupal field descriptions */
+.login-page .login-register-card .description {
+  margin-top: 6px;
+  color: #777777;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Password strength meter */
+.login-page .login-register-card .password-strength {
+  margin-top: 10px;
+}
+
+.login-page .login-register-card .password-strength__meter {
+  height: 7px;
+  border-radius: 5px;
+}
+
+.login-page .login-register-card .password-strength__title {
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+/* Create account button */
+.login-page .login-register-card .form-actions {
+  margin-top: 25px;
+}
+
+.login-page .login-register-card .form-actions .button,
+.login-page .login-register-card input[type="submit"] {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #43ba7f;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-page .login-register-card .form-actions .button:hover,
+.login-page .login-register-card input[type="submit"]:hover {
+  background-color: #36a86f;
+}
+
+/* Validation errors */
+.login-page .login-register-card .form-item--error input {
+  border-color: #dc3545;
+}
+
+.login-page .login-register-card .form-item--error-message {
+  display: block;
+  margin-top: 6px;
+  color: #b42318;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Login link */
+.login-page .login-register-card .login-help-links {
+  margin-top: 25px;
+  text-align: center;
+  color: #777777;
+  font-size: 14px;
+}
+
+.login-page .login-register-card .login-help-links a {
+  margin-left: 5px;
+  color: #43ba7f;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-page .login-register-card .login-help-links a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .login-page .login-register-card .login-content {
+    padding: 30px 20px;
+  }
+}

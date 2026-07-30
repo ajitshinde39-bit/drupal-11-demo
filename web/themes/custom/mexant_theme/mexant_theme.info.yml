@@ -13,6 +13,8 @@ libraries:
 regions:
   header: Header
   navigation: Navigation
+  highlighted: Highlighted
+  messages: Messages
   services: Services
   simple_cta: Simple_cta
   about_us: About_us
