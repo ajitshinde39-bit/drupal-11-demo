@@ -46,3 +46,5 @@ global-scripts:
     - core/jquery
     - core/drupal
     - core/drupal.toolbar
+    - core/drupal.ajax
+    - core/internal.jquery.form

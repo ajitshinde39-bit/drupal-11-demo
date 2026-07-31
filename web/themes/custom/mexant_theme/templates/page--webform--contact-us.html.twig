@@ -1,0 +1,33 @@
+{{ attach_library('mexant_theme/contact-page') }}
+
+{% include '@mexant_theme/layout/header.html.twig' %}
+
+<section class="contact-section">
+
+  <div class="contact-container">
+
+    <!-- Left Side -->
+    <div class="contact-info">
+      {{ page.sidebar }}
+    </div>
+
+    <!-- Right Side -->
+    <div class="contact-form-wrapper">
+
+      {# Drupal validation messages #}
+      <div class="contact-form-messages">
+        {{ page.highlighted }}
+      </div>
+
+      {# Contact Us Webform #}
+      <div class="contact-webform">
+        {{ page.content }}
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+{% include '@mexant_theme/layout/footer.html.twig' %}
