@@ -1,5 +1,6 @@
 name: Student API
 type: module
+description: 'student_api was created to practice Drupal 11 API development — custom routes/controllers, dependency injection, JSON responses, REST Resource plugins, and OpenAPI/Swagger documentation.'
 core_version_requirement: ^11
 package: Custom
 dependencies:

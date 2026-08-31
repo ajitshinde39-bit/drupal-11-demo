@@ -1,4 +1,5 @@
 name: Calculator Form
 type: module
+description: 'calculator_form was created to practice Drupal Form API, custom Block plugins, rendering a form inside a block, custom theme hooks/Twig variables, and experimenting with Drupal components.'
 core_version_requirement: ^10 || ^11
 package: Custom

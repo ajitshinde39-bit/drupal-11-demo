@@ -1,5 +1,6 @@
 name: Employee API
 type: module
+description: 'employee_api was created to practice Drupal Schema API (hook_schema()), custom database tables, integrating custom tables with Views using hook_views_data(), and potentially exposing the Views data as a REST/JSON API.'
 core_version_requirement: ^11
 package: Custom
 dependencies:
