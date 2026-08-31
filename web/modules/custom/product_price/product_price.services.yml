@@ -1,0 +1,11 @@
+services:
+  logger.channel.product_price:
+    parent: logger.channel_base
+    arguments:
+      - 'product_price'
+
+  product_price.api:
+    class: Drupal\product_price\Service\ProductApiService
+    arguments:
+      - '@http_client'
+      - '@logger.channel.product_price'

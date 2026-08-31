@@ -1,0 +1,5 @@
+name: Product Price
+type: module
+description: 'Fetch product price from external API and calculate total by quantity.'
+package: Custom
+core_version_requirement: ^11 
